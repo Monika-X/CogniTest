@@ -1,4 +1,8 @@
 /* ===== NAVBAR ===== */
+/* Background + backdrop-filter stay ON permanently: toggling them mid-scroll
+   (via .scrolled) causes white-flash rendering glitches in Chromium.
+   .scrolled only toggles border/shadow. translateZ(0) promotes the bar to its
+   own compositing layer to prevent blur flicker while scrolling. */
 .navbar {
   position: fixed;
   top: 0;
@@ -6,20 +10,22 @@
   right: 0;
   height: var(--nav-height);
   z-index: var(--z-sticky);
-  transition: all var(--transition-base);
-  background: transparent;
-}
-
-.navbar.scrolled {
   background: rgba(21, 25, 35, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transform: translateZ(0);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.navbar.scrolled {
+  border-bottom-color: var(--border-color);
   box-shadow: var(--shadow-md);
 }
 
-[data-theme="light"] .navbar.scrolled {
-  background: rgba(247, 248, 250, 0.9);
+[data-theme="light"] .navbar {
+  background: rgba(247, 248, 250, 0.92);
 }
 
 .nav-container {
@@ -234,6 +240,54 @@
   color: var(--text-primary);
   background: rgba(67, 56, 202, 0.1);
   border-color: rgba(67, 56, 202, 0.3);
+}
+
+/* ===== PROFILE DROPDOWN ===== */
+.profile-menu {
+  position: relative;
+}
+
+.dropdown-menu.profile-dropdown {
+  left: auto;
+  right: 0;
+  transform: translateY(-10px);
+  min-width: 230px;
+}
+
+.profile-menu.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.profile-toggle[aria-expanded="true"] {
+  color: var(--text-primary);
+  background: rgba(67, 56, 202, 0.1);
+  border-color: rgba(67, 56, 202, 0.3);
+}
+
+.profile-toggle.profile-avatar-btn {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.profile-toggle.profile-avatar-btn img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid var(--border-active);
+}
+
+.profile-dropdown-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: var(--space-2) 0;
 }
 
 /* ===== HAMBURGER ===== */

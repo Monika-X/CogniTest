@@ -9,19 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234338CA'/><circle cx='50' cy='50' r='28' fill='%2306B6D4'/><circle cx='50' cy='50' r='12' fill='%23D4AF37'/></svg>">
   <link rel="stylesheet" href="../css/main.css">
 </head>
-<body style="display:flex;flex-direction:column;min-height:100vh">
-
-<nav class="navbar" role="navigation" aria-label="Main Navigation" style="position:relative;box-shadow:none">
-  <div class="nav-container">
-    <a href="../index.html" class="nav-logo" aria-label="CogniTest Home">
-      <div class="nav-logo-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-      <div class="nav-logo-text"><span class="nav-logo-primary">CogniTest</span></div>
-    </a>
-    <div class="nav-actions">
-      <a href="../index.html" class="btn btn-primary">Go Home</a>
-    </div>
-  </div>
-</nav>
+<body data-nav-only style="display:flex;flex-direction:column;min-height:100vh">
 
 <main style="flex:1;display:flex;align-items:center;justify-content:center;padding:var(--space-16) var(--space-8);background:var(--bg-primary);position:relative;overflow:hidden">
   <!-- Orbs -->
@@ -64,6 +52,7 @@
   </div>
 </main>
 
+<script src="../js/components.js"></script>
 <script src="../js/core.js"></script>
 </body>
 </html>

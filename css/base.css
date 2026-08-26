@@ -590,8 +590,15 @@ p { color: var(--text-secondary); line-height: 1.75; }
 }
 
 /* ===== PAGE TRANSITION ===== */
+/* Opacity-only: a retained transform on body would turn it into the containing
+   block for position:fixed children (navbar/loader would scroll away) */
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .page-transition {
-  animation: fadeIn 0.5s ease forwards;
+  animation: pageFadeIn 0.5s ease forwards;
 }
 
 /* ===== NOISE TEXTURE ===== */
