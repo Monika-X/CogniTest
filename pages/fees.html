@@ -206,14 +206,14 @@
       <article class="card reveal" style="text-align:center">
         <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-indigo-light)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></div>
         <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-2)">IBPS PO</h3>
-        <div style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹2,499</div>
+        <div style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">₹2,499</div>
         <div style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)"><del>₹8,999</del> — Lifetime Access</div>
         <a href="signup.html" class="btn btn-primary btn-sm w-full">Buy Now</a>
       </article>
       <article class="card reveal delay-100" style="text-align:center">
         <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-gold)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
         <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-2)">SSC CGL</h3>
-        <div style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹1,999</div>
+        <div style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;background:var(--gradient-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">₹1,999</div>
         <div style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)"><del>₹5,999</del> — Lifetime Access</div>
         <a href="signup.html" class="btn btn-primary btn-sm w-full">Buy Now</a>
       </article>
@@ -348,15 +348,6 @@
       toggle.classList.toggle('annual', isAnnual);
       toggle.setAttribute('aria-checked', isAnnual.toString());
       updatePrices();
-    });
-    toggle?.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.click(); }
-    });
-  });
-</script>
-</body>
-</html>
-ces();
     });
     toggle?.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.click(); }
