@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore CogniTest's courses for Banking, SSC, Railways, Engineering entrance exams. Comprehensive programs for IBPS, SBI, SSC CGL, RRB, JEE, and GATE.">
+  <title>Courses | CogniTest – Banking, SSC, Railways & Engineering Prep</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234338CA'/><circle cx='50' cy='50' r='28' fill='%2306B6D4'/><circle cx='50' cy='50' r='12' fill='%23D4AF37'/></svg>">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .course-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-8);
+      padding: var(--space-5);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+    }
+    .filter-btn {
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      background: transparent;
+      transition: all var(--transition-fast);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--color-indigo);
+      border-color: var(--color-indigo);
+      color: white;
+    }
+    .course-section-heading {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+  </style>
+</head>
+<body>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="courses-hero-heading">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-orb page-hero-orb-1" aria-hidden="true"></div>
+  <div class="page-hero-orb page-hero-orb-2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Courses</span>
+      </nav>
+      <h1 class="page-hero-title" id="courses-hero-heading">Find Your <span class="text-gradient">Perfect Course</span></h1>
+      <p class="page-hero-desc">Explore 50+ comprehensive courses across Banking, SSC, Railways, and Engineering entrance exams. Updated regularly for the latest exam patterns.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SECTION 1: FILTER + COURSES ====== -->
+<section class="section" id="all-courses" aria-labelledby="courses-main-heading">
+  <div class="container">
+    <!-- Filter Bar -->
+    <div class="course-filter-bar" role="group" aria-label="Course category filters">
+      <span style="font-size:var(--text-sm);font-weight:600;color:var(--text-muted);margin-right:var(--space-2)">Filter:</span>
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All Courses</button>
+      <button class="filter-btn" data-filter="banking" aria-pressed="false">Banking</button>
+      <button class="filter-btn" data-filter="ssc" aria-pressed="false">SSC</button>
+      <button class="filter-btn" data-filter="railways" aria-pressed="false">Railways</button>
+      <button class="filter-btn" data-filter="engineering" aria-pressed="false">Engineering</button>
+      <button class="filter-btn" data-filter="defence" aria-pressed="false">Defence</button>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:var(--space-2)">
+        <select class="form-select" style="width:auto;font-size:var(--text-sm);padding:var(--space-2) var(--space-8) var(--space-2) var(--space-3)" aria-label="Sort courses">
+          <option>Sort: Popular</option>
+          <option>Sort: Newest</option>
+          <option>Sort: Price Low</option>
+          <option>Sort: Price High</option>
+          <option>Sort: Rating</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div style="position:relative;margin-bottom:var(--space-8)">
+      <span style="position:absolute;left:var(--space-4);top:50%;transform:translateY(-50%);color:var(--text-muted);display:flex" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+      <input type="search" class="form-input" placeholder="Search courses by exam, subject, or faculty..." style="padding-left:3rem;font-size:var(--text-base)" id="course-search" aria-label="Search courses">
+    </div>
+
+    <!-- BANKING COURSES -->
+    <div id="banking">
+      <h2 class="course-section-heading" id="courses-main-heading"><span style="display:inline-flex;color:var(--color-cyan)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></span> Banking Courses</h2>
+      <div class="grid grid-3" role="list" aria-label="Banking courses">
+        <article class="course-card reveal" role="listitem" data-category="banking">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=400&h=200&fit=crop" alt="IBPS PO banking preparation course" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-cyan">Banking</span></div>
+            <div class="course-featured-tag">Bestseller</div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">IBPS PO</span><span class="tag">IBPS Clerk</span></div>
+            <h3 class="course-title">IBPS PO & Clerk Complete 2025</h3>
+            <p class="course-description">Full coverage of Prelims & Mains. Includes interview preparation, banking awareness & current affairs modules.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>320 Videos</span></div>
+              <div class="course-meta-item"><span>6500 MCQs</span></div>
+              <div class="course-meta-item"><span>8 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹2,499</span><span class="course-price-original">₹8,999</span></div>
+              <div class="course-rating">4.9/5 <span style="color:var(--text-muted);font-weight:400">(3.2k)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+        <article class="course-card reveal delay-100" role="listitem" data-category="banking">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=400&h=200&fit=crop" alt="SBI PO banking exam course" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-cyan">Banking</span></div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">SBI PO</span><span class="tag">SBI Clerk</span></div>
+            <h3 class="course-title">SBI PO & Clerk Master Course</h3>
+            <p class="course-description">Designed specifically for SBI exams with SBI-pattern mock tests, SBI GK capsule, and specialist officer modules.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>280 Videos</span></div>
+              <div class="course-meta-item"><span>5000 MCQs</span></div>
+              <div class="course-meta-item"><span>6 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹2,299</span><span class="course-price-original">₹7,999</span></div>
+              <div class="course-rating">4.8/5 <span style="color:var(--text-muted);font-weight:400">(2.1k)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+        <article class="course-card reveal delay-200" role="listitem" data-category="banking">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop" alt="RBI Grade B banking course" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-gold">Premium</span></div>
+            <div class="course-featured-tag">Elite</div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">RBI Grade B</span><span class="tag">NABARD</span></div>
+            <h3 class="course-title">RBI Grade B — Elite Preparation</h3>
+            <p class="course-description">India's most comprehensive RBI Grade B course covering Phase I, II (Economic, Finance, Management) and Interview prep.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>480 Videos</span></div>
+              <div class="course-meta-item"><span>4000 MCQs</span></div>
+              <div class="course-meta-item"><span>12 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹6,999</span><span class="course-price-original">₹18,000</span></div>
+              <div class="course-rating">4.9/5 <span style="color:var(--text-muted);font-weight:400">(987)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-gold w-full" style="margin-top:var(--space-4)">Enroll Elite</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="divider-gradient" style="margin:var(--space-12) 0"></div>
+
+    <!-- SSC COURSES -->
+    <div id="ssc">
+      <h2 class="course-section-heading"><span style="display:inline-flex;color:var(--color-gold)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span> SSC Courses</h2>
+      <div class="grid grid-3" role="list" aria-label="SSC courses">
+        <article class="course-card reveal" role="listitem" data-category="ssc">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop" alt="SSC CGL exam preparation" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-gold">SSC</span></div>
+            <div class="course-featured-tag">Top Rated</div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">SSC CGL</span><span class="tag">Tier I & II</span></div>
+            <h3 class="course-title">SSC CGL Complete Course 2025</h3>
+            <p class="course-description">Comprehensive Tier I & Tier II coverage with 200+ mock tests, topic-wise practice and expert video solutions.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>260 Videos</span></div>
+              <div class="course-meta-item"><span>4500 MCQs</span></div>
+              <div class="course-meta-item"><span>5 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹1,999</span><span class="course-price-original">₹5,999</span></div>
+              <div class="course-rating">4.8/5 <span style="color:var(--text-muted);font-weight:400">(2.4k)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+        <article class="course-card reveal delay-100" role="listitem" data-category="ssc">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=200&fit=crop" alt="SSC CHSL exam preparation course" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-gold">SSC</span></div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">SSC CHSL</span><span class="tag">MTS</span><span class="tag">GD</span></div>
+            <h3 class="course-title">SSC CHSL + MTS Combo Course</h3>
+            <p class="course-description">All-in-one preparation for SSC CHSL and MTS examinations with specialized content for each exam pattern.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>180 Videos</span></div>
+              <div class="course-meta-item"><span>3000 MCQs</span></div>
+              <div class="course-meta-item"><span>4 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹1,299</span><span class="course-price-original">₹3,999</span></div>
+              <div class="course-rating">4.7/5 <span style="color:var(--text-muted);font-weight:400">(1.6k)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+        <article class="course-card reveal delay-200" role="listitem" data-category="ssc">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=200&fit=crop" alt="SSC JE Junior Engineer exam preparation" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-gold">SSC</span></div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">SSC JE</span><span class="tag">Civil</span><span class="tag">Electrical</span></div>
+            <h3 class="course-title">SSC Junior Engineer (JE) 2025</h3>
+            <p class="course-description">Technical paper preparation for Civil, Electrical & Mechanical streams with subject-expert faculty.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>340 Videos</span></div>
+              <div class="course-meta-item"><span>5500 MCQs</span></div>
+              <div class="course-meta-item"><span>6 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹2,499</span><span class="course-price-original">₹6,999</span></div>
+              <div class="course-rating">4.8/5 <span style="color:var(--text-muted);font-weight:400">(890)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="divider-gradient" style="margin:var(--space-12) 0"></div>
+
+    <!-- RAILWAYS -->
+    <div id="railways">
+      <h2 class="course-section-heading"><span style="display:inline-flex;color:#10b981"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M7 15h0"/><path d="M17 15h0"/></svg></span> Railways Courses</h2>
+      <div class="grid grid-3" role="list" aria-label="Railway courses">
+        <article class="course-card reveal" role="listitem" data-category="railways">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1529854140025-25995121f16f?w=400&h=200&fit=crop" alt="RRB NTPC railway exam preparation" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-success">Railways</span></div>
+            <div class="course-featured-tag">New Batch</div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">RRB NTPC</span><span class="tag">Group D</span></div>
+            <h3 class="course-title">RRB NTPC Complete Preparation</h3>
+            <p class="course-description">CBT 1 & CBT 2 complete coverage with technical aptitude, general awareness and subject-specific modules.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>240 Videos</span></div>
+              <div class="course-meta-item"><span>4000 MCQs</span></div>
+              <div class="course-meta-item"><span>5 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹1,799</span><span class="course-price-original">₹4,999</span></div>
+              <div class="course-rating">4.7/5 <span style="color:var(--text-muted);font-weight:400">(1.8k)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+        <article class="course-card reveal delay-100" role="listitem" data-category="railways">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=400&h=200&fit=crop" alt="Railway Group D exam course" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-success">Railways</span></div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">RRB Group D</span><span class="tag">ALP</span></div>
+            <h3 class="course-title">Railway Group D & ALP Course</h3>
+            <p class="course-description">Fast-track preparation covering mathematics, GK, reasoning and trade-specific knowledge for Group D and ALP exams.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>160 Videos</span></div>
+              <div class="course-meta-item"><span>3000 MCQs</span></div>
+              <div class="course-meta-item"><span>3 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹999</span><span class="course-price-original">₹2,999</span></div>
+              <div class="course-rating">4.6/5 <span style="color:var(--text-muted);font-weight:400">(2.1k)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+        <article class="course-card reveal delay-200" role="listitem" data-category="railways">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1484291528015-3d25e77c1d3c?w=400&h=200&fit=crop" alt="Railway JE Junior Engineer exam preparation" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-success">Railways</span></div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">RRB JE</span><span class="tag">SSE</span></div>
+            <h3 class="course-title">RRB JE & Senior Section Engineer</h3>
+            <p class="course-description">Technical content for all engineering streams with basic science, general awareness and aptitude sections.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>300 Videos</span></div>
+              <div class="course-meta-item"><span>5000 MCQs</span></div>
+              <div class="course-meta-item"><span>6 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹2,199</span><span class="course-price-original">₹5,999</span></div>
+              <div class="course-rating">4.7/5 <span style="color:var(--text-muted);font-weight:400">(750)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="divider-gradient" style="margin:var(--space-12) 0"></div>
+
+    <!-- ENGINEERING -->
+    <div id="engineering">
+      <h2 class="course-section-heading"><span style="display:inline-flex;color:var(--color-indigo-light)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span> Engineering Entrance</h2>
+      <div class="grid grid-3" role="list" aria-label="Engineering courses">
+        <article class="course-card reveal" role="listitem" data-category="engineering">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=200&fit=crop" alt="JEE Main Advanced preparation" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-indigo">Engineering</span></div>
+            <div class="course-featured-tag">Premium</div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">JEE Main</span><span class="tag">JEE Advanced</span></div>
+            <h3 class="course-title">JEE 2025 — Full Preparation</h3>
+            <p class="course-description">Complete PCM preparation by IIT alumni with 8000+ practice problems, 50 full-length mock tests and doubt-clearing sessions.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>500 Videos</span></div>
+              <div class="course-meta-item"><span>8000 MCQs</span></div>
+              <div class="course-meta-item"><span>12 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹4,999</span><span class="course-price-original">₹14,999</span></div>
+              <div class="course-rating">4.9/5 <span style="color:var(--text-muted);font-weight:400">(3.1k)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+        <article class="course-card reveal delay-100" role="listitem" data-category="engineering">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=200&fit=crop" alt="GATE engineering exam preparation" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-indigo">Engineering</span></div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">GATE 2026</span><span class="tag">PSU Jobs</span></div>
+            <h3 class="course-title">GATE 2026 — CS, EC, ME, CE</h3>
+            <p class="course-description">Discipline-specific GATE preparation with subject-expert faculty, previous 20 years papers, and live doubt resolution.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>450 Videos</span></div>
+              <div class="course-meta-item"><span>7000 MCQs</span></div>
+              <div class="course-meta-item"><span>10 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹3,999</span><span class="course-price-original">₹11,999</span></div>
+              <div class="course-rating">4.8/5 <span style="color:var(--text-muted);font-weight:400">(1.4k)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+        <article class="course-card reveal delay-200" role="listitem" data-category="engineering">
+          <div class="course-thumbnail">
+            <img src="https://images.unsplash.com/photo-1581092787765-e3feb951d987?w=400&h=200&fit=crop" alt="ISRO DRDO preparation course" width="400" height="200" loading="lazy">
+            <div class="course-thumbnail-overlay"></div>
+            <div class="course-category-badge"><span class="badge badge-indigo">Engineering</span></div>
+          </div>
+          <div class="course-body">
+            <div class="course-exam-badges"><span class="tag">ISRO</span><span class="tag">DRDO</span><span class="tag">ESE</span></div>
+            <h3 class="course-title">ISRO / DRDO / IES Engineering</h3>
+            <p class="course-description">Specialized preparation for premium engineering jobs at ISRO, DRDO, and IES with technical depth and strategic approach.</p>
+            <div class="course-meta">
+              <div class="course-meta-item"><span>380 Videos</span></div>
+              <div class="course-meta-item"><span>6000 MCQs</span></div>
+              <div class="course-meta-item"><span>8 Months</span></div>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><span class="course-price-current">₹4,499</span><span class="course-price-original">₹12,999</span></div>
+              <div class="course-rating">4.9/5 <span style="color:var(--text-muted);font-weight:400">(680)</span></div>
+            </div>
+            <a href="signup.html" class="btn btn-primary w-full" style="margin-top:var(--space-4)">Enroll Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SECTION 2: COURSE FEATURES ====== -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="all-features-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">What's Included</div>
+      <h2 class="section-title" id="all-features-heading">Every Course Includes <span class="highlight">These Premium Features</span></h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card reveal" style="text-align:center">
+        <div class="feature-icon indigo" style="margin:0 auto var(--space-4);display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-2)">HD Video Lessons</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Crystal clear video lessons with subtitles, speed control and offline download.</p>
+      </div>
+      <div class="card reveal delay-100" style="text-align:center">
+        <div class="feature-icon cyan" style="margin:0 auto var(--space-4);display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-2)">Smart Practice</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary)">AI-powered adaptive practice that targets your exact weak spots automatically.</p>
+      </div>
+      <div class="card reveal delay-200" style="text-align:center">
+        <div class="feature-icon gold" style="margin:0 auto var(--space-4);display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-2)">Analytics Dashboard</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Real-time performance tracking, accuracy trends and comparative analysis.</p>
+      </div>
+      <div class="card reveal delay-300" style="text-align:center">
+        <div class="feature-icon green" style="margin:0 auto var(--space-4);display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-2)">Completion Certificate</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Industry-recognized digital certificate upon successful course completion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SECTION 3: TESTIMONIAL COMPACT ====== -->
+<section class="section" aria-labelledby="course-testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Student Reviews</div>
+      <h2 class="section-title" id="course-testimonials">What Our <span class="highlight">Students Say</span></h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">IBPS PO cleared on first attempt! The mock tests were harder than the actual exam which boosted my confidence tremendously.</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=52&h=52&fit=crop&crop=face" alt="Rahul Sharma" class="testimonial-avatar" width="52" height="52" loading="lazy">
+          <div><div class="testimonial-author-name">Rahul Sharma</div><div class="testimonial-author-role">IBPS PO Course Student</div></div>
+          <div class="testimonial-rank"><div class="testimonial-rank-number">AIR 12</div><div class="testimonial-rank-label">IBPS PO 2024</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-100">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">SSC CGL Tier 2 cleared with 185/200 in maths. The shortcuts taught in the quant videos saved 30 seconds per question!</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=52&h=52&fit=crop&crop=face" alt="Meera Joshi" class="testimonial-avatar" width="52" height="52" loading="lazy">
+          <div><div class="testimonial-author-name">Meera Joshi</div><div class="testimonial-author-role">SSC CGL Course Student</div></div>
+          <div class="testimonial-rank"><div class="testimonial-rank-number">185/200</div><div class="testimonial-rank-label">SSC Tier 2</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-200">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">JEE Advanced 2024 — AIR 847. The physics faculty at CogniTest breaks down complex concepts like no one else can.</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=52&h=52&fit=crop&crop=face" alt="Karan Mehta" class="testimonial-avatar" width="52" height="52" loading="lazy">
+          <div><div class="testimonial-author-name">Karan Mehta</div><div class="testimonial-author-role">JEE Course Student</div></div>
+          <div class="testimonial-rank"><div class="testimonial-rank-number">AIR 847</div><div class="testimonial-rank-label">JEE Advanced</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SECTION 4: CTA ====== -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="courses-cta">
+  <div class="container">
+    <div class="card reveal" style="background:var(--gradient-primary);border:none;text-align:center;padding:var(--space-12) var(--space-8)">
+      <h2 style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;color:white;margin-bottom:var(--space-4)" id="courses-cta">Not Sure Which Course to Pick?</h2>
+      <p style="color:rgba(255,255,255,0.85);font-size:var(--text-lg);margin-bottom:var(--space-8)">Take our 5-minute exam readiness quiz and get a personalized course recommendation.</p>
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-gold btn-lg">Talk to an Expert</a>
+        <a href="signup.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);padding:var(--space-3) var(--space-8);font-size:var(--text-base);border-radius:var(--radius-lg)">Take Free Quiz</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/core.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const courseCards = document.querySelectorAll('.course-card[data-category]');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        const filter = btn.dataset.filter;
+        courseCards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.closest('article').style.display = show ? '' : 'none';
+        });
+      });
+    });
+
+    // Search
+    const searchInput = document.getElementById('course-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value.toLowerCase();
+        courseCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>

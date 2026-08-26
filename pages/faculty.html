@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CogniTest Faculty - Learn from India's top competitive exam experts. IIT/IIM alumni, former banking officers and subject matter experts with 10+ years of experience.">
+  <title>Our Faculty | CogniTest – Expert Competitive Exam Coaches</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234338CA'/><circle cx='50' cy='50' r='28' fill='%2306B6D4'/><circle cx='50' cy='50' r='12' fill='%23D4AF37'/></svg>">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .faculty-profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-3xl);
+      overflow: hidden;
+      transition: all var(--transition-base);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+    .faculty-profile-card:hover { box-shadow: var(--shadow-xl); border-color: var(--border-active); }
+    .faculty-profile-image { height: 100%; min-height: 300px; position: relative; overflow: hidden; }
+    .faculty-profile-image img { width: 100%; height: 100%; object-fit: cover; }
+    .faculty-profile-body { padding: var(--space-8); }
+    .faculty-subject-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
+    .faculty-achievements { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-5); }
+    .faculty-achievement-item { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-sm); color: var(--text-secondary); }
+    @media (max-width: 768px) {
+      .faculty-profile-card { grid-template-columns: 1fr; }
+      .faculty-profile-image { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="page-hero" aria-labelledby="faculty-hero-heading">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-orb page-hero-orb-1" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Faculty</span>
+      </nav>
+      <h1 class="page-hero-title" id="faculty-hero-heading">Learn from <span class="text-gradient">India's Best</span></h1>
+      <p class="page-hero-desc">Our 200+ expert faculty bring decades of experience, deep subject mastery, and a passion for student success that sets CogniTest apart.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: FACULTY STATS -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="faculty-stats">
+  <div class="container">
+    <div class="grid grid-4" id="faculty-stats">
+      <div class="card reveal" style="text-align:center">
+        <span class="counter-number" data-counter="200" data-suffix="+" style="font-family:var(--font-heading);font-size:var(--text-5xl);font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent">0</span>
+        <div class="counter-label" style="margin-top:var(--space-2)">Expert Faculty Members</div>
+      </div>
+      <div class="card reveal delay-100" style="text-align:center">
+        <span class="counter-number" data-counter="15" data-suffix="+" style="font-family:var(--font-heading);font-size:var(--text-5xl);font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent">0</span>
+        <div class="counter-label" style="margin-top:var(--space-2)">Average Years Experience</div>
+      </div>
+      <div class="card reveal delay-200" style="text-align:center">
+        <span class="counter-number" data-counter="50" data-suffix="+" style="font-family:var(--font-heading);font-size:var(--text-5xl);font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent">0</span>
+        <div class="counter-label" style="margin-top:var(--space-2)">IIT/IIM Alumni Faculty</div>
+      </div>
+      <div class="card reveal delay-300" style="text-align:center">
+        <span class="counter-number" data-counter="4.8" data-suffix="/5" data-decimals="1" style="font-family:var(--font-heading);font-size:var(--text-5xl);font-weight:800;color:var(--color-gold)">0</span>
+        <div class="counter-label" style="margin-top:var(--space-2)">Average Faculty Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: FEATURED FACULTY PROFILES -->
+<section class="section" aria-labelledby="featured-faculty-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Star Faculty</div>
+      <h2 class="section-title" id="featured-faculty-heading">Our <span class="highlight">Star Educators</span></h2>
+      <p class="section-subtitle">The top-rated faculty members loved by thousands of students for their clarity, teaching style and exam insight.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-8)">
+
+      <!-- Faculty 1 -->
+      <article class="faculty-profile-card reveal" aria-label="Dr. Arjun Mehta faculty profile">
+        <div class="faculty-profile-image">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=280&h=360&fit=crop&crop=face" alt="Dr. Arjun Mehta - Quantitative Aptitude Expert" width="280" height="360" loading="lazy">
+        </div>
+        <div class="faculty-profile-body">
+          <div class="faculty-subject-tags">
+            <span class="badge badge-cyan">Quantitative Aptitude</span>
+            <span class="badge badge-indigo">Data Interpretation</span>
+          </div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Dr. Arjun Mehta</h3>
+          <div style="color:var(--color-indigo-light);font-weight:600;margin-bottom:var(--space-4)">Head of Quantitative Aptitude | IIT Kharagpur '08</div>
+          <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:1.8;margin-bottom:var(--space-6)">With 15+ years of experience, Dr. Mehta has mentored over 12,000 students to banking selections. His unique shortcut-based approach has been featured in leading financial newspapers. Former SBI PO examiner with deep knowledge of exam paper patterns.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-bottom:var(--space-6)">
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-indigo-light)">12K+</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Students Mentored</div>
+            </div>
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-gold)">4.9 / 5</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Average Rating</div>
+            </div>
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-cyan)">15yr</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Experience</div>
+            </div>
+          </div>
+          <div class="faculty-achievements">
+            <div class="faculty-achievement-item"><span style="color:var(--color-gold)">•</span> Former SBI PO Paper Setter & Examiner</div>
+            <div class="faculty-achievement-item"><span style="color:var(--color-indigo-light)">•</span> Author of 'Speed Math for Competitive Exams' — 2 lakh+ copies sold</div>
+            <div class="faculty-achievement-item"><span style="color:var(--color-cyan)">•</span> 3x National Best Teacher Award Winner (Ed-Tech Category)</div>
+          </div>
+          <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3)">
+            <a href="courses.html#banking" class="btn btn-primary">View Courses</a>
+            <a href="#" class="btn btn-outline">Watch Free Lesson</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Faculty 2 -->
+      <article class="faculty-profile-card reveal" aria-label="Prof. Sunita Rao faculty profile">
+        <div class="faculty-profile-image">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=280&h=360&fit=crop&crop=face" alt="Prof. Sunita Rao - Logical Reasoning Expert" width="280" height="360" loading="lazy">
+        </div>
+        <div class="faculty-profile-body">
+          <div class="faculty-subject-tags">
+            <span class="badge badge-gold">Logical Reasoning</span>
+            <span class="badge badge-success">Verbal Ability</span>
+          </div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Prof. Sunita Rao</h3>
+          <div style="color:var(--color-indigo-light);font-weight:600;margin-bottom:var(--space-4)">Logical Reasoning & English Head | Delhi University '12</div>
+          <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:1.8;margin-bottom:var(--space-6)">Prof. Rao specializes in turning complex reasoning patterns into simple, memorable frameworks. Her "SOLVE method" for puzzles has helped thousands of students score 20+ marks higher. Known for her energetic, engaging teaching style.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-bottom:var(--space-6)">
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-indigo-light)">9K+</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Students Mentored</div>
+            </div>
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-gold)">4.8 / 5</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Average Rating</div>
+            </div>
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-cyan)">10yr</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Experience</div>
+            </div>
+          </div>
+          <div class="faculty-achievements">
+            <div class="faculty-achievement-item"><span style="color:var(--color-gold)">•</span> IBPS Reasoning Paper Reviewer for 3 consecutive years</div>
+            <div class="faculty-achievement-item"><span style="color:var(--color-indigo-light)">•</span> YouTube channel with 5,00,000+ subscribers on reasoning tutorials</div>
+            <div class="faculty-achievement-item"><span style="color:var(--color-cyan)">•</span> NASSCOM Women in Ed-Tech Award 2023</div>
+          </div>
+          <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3)">
+            <a href="courses.html#banking" class="btn btn-primary">View Courses</a>
+            <a href="#" class="btn btn-outline">Watch Free Lesson</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Faculty 3 -->
+      <article class="faculty-profile-card reveal" aria-label="Prof. Vikram Singh faculty profile">
+        <div class="faculty-profile-image">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=280&h=360&fit=crop&crop=face" alt="Prof. Vikram Singh - General Awareness Expert" width="280" height="360" loading="lazy">
+        </div>
+        <div class="faculty-profile-body">
+          <div class="faculty-subject-tags">
+            <span class="badge badge-success">General Awareness</span>
+            <span class="badge badge-indigo">Current Affairs</span>
+            <span class="badge badge-gold">Banking Awareness</span>
+          </div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Prof. Vikram Singh</h3>
+          <div style="color:var(--color-indigo-light);font-weight:600;margin-bottom:var(--space-4)">General Awareness Lead | JNU Delhi '10</div>
+          <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:1.8;margin-bottom:var(--space-6)">Prof. Singh's daily current affairs capsule is the most-downloaded resource on CogniTest with over 18,000 subscribers. His banking awareness crash courses have a proven track record of helping students score 40+ out of 40 in GK sections.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-bottom:var(--space-6)">
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-indigo-light)">18K+</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Students Mentored</div>
+            </div>
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-gold)">4.9 / 5</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Average Rating</div>
+            </div>
+            <div style="text-align:center;padding:var(--space-4);background:var(--bg-secondary);border-radius:var(--radius-lg)">
+              <div style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--color-cyan)">12yr</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Experience</div>
+            </div>
+          </div>
+          <div class="faculty-achievements">
+            <div class="faculty-achievement-item"><span style="color:var(--color-gold)">•</span> Official Banking Awareness Consultant for RBI Financial Literacy Programs</div>
+            <div class="faculty-achievement-item"><span style="color:var(--color-indigo-light)">•</span> Weekly current affairs columnist for The Economic Times Education Section</div>
+            <div class="faculty-achievement-item"><span style="color:var(--color-cyan)">•</span> Daily GA Capsule podcast downloaded 2,00,000+ times monthly</div>
+          </div>
+          <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3)">
+            <a href="courses.html" class="btn btn-primary">View Courses</a>
+            <a href="#" class="btn btn-outline">Watch Free Lesson</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: ALL FACULTY GRID -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="all-faculty-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">All Faculty</div>
+      <h2 class="section-title" id="all-faculty-heading">Our Complete <span class="highlight">Teaching Team</span></h2>
+    </div>
+    <div class="grid grid-4" role="list" aria-label="All faculty members">
+      <article class="faculty-card reveal" role="listitem">
+        <div class="faculty-image-wrap">
+          <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?w=300&h=260&fit=crop&crop=face" alt="Dr. Kavitha Nair - Physics faculty" width="300" height="260" loading="lazy">
+          <div class="faculty-overlay">
+            <div class="faculty-name">Dr. Kavitha Nair</div>
+            <div class="faculty-designation">Engineering Physics | IIT Madras</div>
+          </div>
+        </div>
+        <div class="faculty-body">
+          <div class="faculty-stats">
+            <div class="faculty-stat"><div class="faculty-stat-val">7K+</div><div class="faculty-stat-lbl">Students</div></div>
+            <div class="faculty-stat"><div class="faculty-stat-val">8yr</div><div class="faculty-stat-lbl">Exp</div></div>
+            <div class="faculty-stat"><div class="faculty-stat-val">4.7/5</div><div class="faculty-stat-lbl">Rating</div></div>
+          </div>
+          <a href="courses.html#engineering" class="btn btn-outline btn-sm w-full">View Courses</a>
+        </div>
+      </article>
+      <article class="faculty-card reveal delay-100" role="listitem">
+        <div class="faculty-image-wrap">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=260&fit=crop&crop=face" alt="Sanjay Kumar - Chemistry faculty" width="300" height="260" loading="lazy">
+          <div class="faculty-overlay">
+            <div class="faculty-name">Sanjay Kumar</div>
+            <div class="faculty-designation">Chemistry | GATE Expert</div>
+          </div>
+        </div>
+        <div class="faculty-body">
+          <div class="faculty-stats">
+            <div class="faculty-stat"><div class="faculty-stat-val">5K+</div><div class="faculty-stat-lbl">Students</div></div>
+            <div class="faculty-stat"><div class="faculty-stat-val">6yr</div><div class="faculty-stat-lbl">Exp</div></div>
+            <div class="faculty-stat"><div class="faculty-stat-val">4.8/5</div><div class="faculty-stat-lbl">Rating</div></div>
+          </div>
+          <a href="courses.html#engineering" class="btn btn-outline btn-sm w-full">View Courses</a>
+        </div>
+      </article>
+      <article class="faculty-card reveal delay-200" role="listitem">
+        <div class="faculty-image-wrap">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=260&fit=crop&crop=face" alt="Preethi Sharma - English faculty" width="300" height="260" loading="lazy">
+          <div class="faculty-overlay">
+            <div class="faculty-name">Preethi Sharma</div>
+            <div class="faculty-designation">English Language Expert</div>
+          </div>
+        </div>
+        <div class="faculty-body">
+          <div class="faculty-stats">
+            <div class="faculty-stat"><div class="faculty-stat-val">11K+</div><div class="faculty-stat-lbl">Students</div></div>
+            <div class="faculty-stat"><div class="faculty-stat-val">9yr</div><div class="faculty-stat-lbl">Exp</div></div>
+            <div class="faculty-stat"><div class="faculty-stat-val">4.9/5</div><div class="faculty-stat-lbl">Rating</div></div>
+          </div>
+          <a href="courses.html#banking" class="btn btn-outline btn-sm w-full">View Courses</a>
+        </div>
+      </article>
+      <article class="faculty-card reveal delay-300" role="listitem">
+        <div class="faculty-image-wrap">
+          <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=300&h=260&fit=crop&crop=face" alt="Ramesh Gupta - General Studies faculty" width="300" height="260" loading="lazy">
+          <div class="faculty-overlay">
+            <div class="faculty-name">Ramesh Gupta</div>
+            <div class="faculty-designation">General Studies & GK</div>
+          </div>
+        </div>
+        <div class="faculty-body">
+          <div class="faculty-stats">
+            <div class="faculty-stat"><div class="faculty-stat-val">14K+</div><div class="faculty-stat-lbl">Students</div></div>
+            <div class="faculty-stat"><div class="faculty-stat-val">11yr</div><div class="faculty-stat-lbl">Exp</div></div>
+            <div class="faculty-stat"><div class="faculty-stat-val">4.8/5</div><div class="faculty-stat-lbl">Rating</div></div>
+          </div>
+          <a href="courses.html#ssc" class="btn btn-outline btn-sm w-full">View Courses</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: JOIN AS FACULTY -->
+<section class="section" aria-labelledby="join-faculty-heading">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center">
+      <div class="reveal-left">
+        <div class="section-badge">Join Our Team</div>
+        <h2 class="section-title" id="join-faculty-heading">Are You an <span class="highlight">Expert Educator?</span></h2>
+        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-6)">We're always looking for passionate experts who can make a difference in students' lives. If you have domain expertise and a great teaching style, we'd love to hear from you.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="about-point-icon" aria-hidden="true" style="color:var(--color-gold)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div>
+              <div class="about-point-title">Competitive Compensation</div>
+              <div class="about-point-desc">Earn 3-5x more than traditional coaching. Revenue sharing model with unlimited earning potential.</div>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon" aria-hidden="true" style="color:var(--color-cyan)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+            <div>
+              <div class="about-point-title">Massive Scale & Reach</div>
+              <div class="about-point-desc">Your lessons can reach millions of students across India, amplifying your impact exponentially.</div>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon" aria-hidden="true" style="color:var(--color-indigo-light)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <div>
+              <div class="about-point-title">World-Class Tools</div>
+              <div class="about-point-desc">Studio recording facility, AI question generator, live class tech and full production support provided.</div>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-lg" style="margin-top:var(--space-6)">Apply as Faculty</a>
+      </div>
+      <div class="reveal-right">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=560&h=420&fit=crop" alt="CogniTest faculty recording sessions" width="560" height="420" style="border-radius:var(--radius-3xl);box-shadow:var(--shadow-xl)" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: STUDENT REVIEWS OF FACULTY -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="faculty-reviews-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Faculty Reviews</div>
+      <h2 class="section-title" id="faculty-reviews-heading">Why Students <span class="gold">Love Our Faculty</span></h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">Dr. Mehta's shortcut techniques for number series were absolutely revolutionary. I went from 12/25 to 22/25 in quant in just 3 weeks.</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?w=52&h=52&fit=crop&crop=face" alt="Sneha Patel student" class="testimonial-avatar" width="52" height="52" loading="lazy">
+          <div><div class="testimonial-author-name">Sneha Patel</div><div class="testimonial-author-role">IBPS PO 2024 Qualifier</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-100">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">Prof. Rao's SOLVE method for puzzle seating arrangements changed everything. Even the toughest puzzles became manageable in 4 minutes.</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=52&h=52&fit=crop&crop=face" alt="Anil Kumar student" class="testimonial-avatar" width="52" height="52" loading="lazy">
+          <div><div class="testimonial-author-name">Anil Kumar</div><div class="testimonial-author-role">SSC CGL 2024 Qualifier</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-200">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">Prof. Singh's daily current affairs capsules are so well-structured. 20 minutes every day for 6 months and I scored 38/40 in GK!</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=52&h=52&fit=crop&crop=face" alt="Lakshmi Devi student" class="testimonial-avatar" width="52" height="52" loading="lazy">
+          <div><div class="testimonial-author-name">Lakshmi Devi</div><div class="testimonial-author-role">SBI PO 2024 Qualifier</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: CTA -->
+<section class="section" aria-labelledby="faculty-cta">
+  <div class="container">
+    <div class="card reveal" style="background:var(--gradient-primary);border:none;text-align:center;padding:var(--space-16)">
+      <h2 style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;color:white;margin-bottom:var(--space-4)" id="faculty-cta">Start Learning with Our Expert Faculty Today</h2>
+      <p style="color:rgba(255,255,255,0.85);font-size:var(--text-lg);margin-bottom:var(--space-8)">Access 200+ expert-led courses. First 7 days absolutely free.</p>
+      <a href="signup.html" class="btn btn-gold btn-xl">Start Free Trial</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/core.js"></script>
+</body>
+</html>

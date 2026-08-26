@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your free CogniTest account and start preparing for Banking, SSC, Railways and Engineering exams with AI-powered tools and expert faculty.">
+  <title>Sign Up Free | CogniTest – Start Your Exam Preparation</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234338CA'/><circle cx='50' cy='50' r='28' fill='%2306B6D4'/><circle cx='50' cy='50' r='12' fill='%23D4AF37'/></svg>">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .auth-left {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-16);
+      background: var(--bg-secondary);
+    }
+    .auth-left-bg { position: absolute; inset: 0; background: var(--gradient-primary); opacity: 0.06; }
+    .auth-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-8) var(--space-16);
+      overflow-y: auto;
+    }
+    .auth-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+    .social-btn {
+      width: 100%; display: flex; align-items: center; justify-content: center; gap: var(--space-3);
+      padding: var(--space-4) var(--space-5); border: 1px solid var(--border-color); border-radius: var(--radius-xl);
+      background: var(--bg-card); color: var(--text-primary); font-weight: 600; font-size: var(--text-sm);
+      cursor: pointer; transition: all var(--transition-fast); text-decoration: none;
+    }
+    .social-btn:hover { border-color: var(--border-active); background: var(--bg-hover); }
+    .divider-text { display: flex; align-items: center; gap: var(--space-4); color: var(--text-muted); font-size: var(--text-sm); margin: var(--space-5) 0; }
+    .divider-text::before, .divider-text::after { content: ''; flex: 1; height: 1px; background: var(--border-color); }
+    .step-indicator { display: flex; gap: var(--space-2); margin-bottom: var(--space-8); }
+    .step-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-color); transition: background var(--transition-base); }
+    .step-dot.active { background: var(--color-indigo); width: 24px; border-radius: 4px; }
+    @media (max-width: 768px) {
+      .auth-page { grid-template-columns: 1fr; }
+      .auth-left { display: none; }
+      .auth-right { padding: var(--space-8); }
+    }
+  </style>
+</head>
+<body style="background:var(--bg-primary)">
+
+<div class="auth-page">
+  <!-- Left Panel -->
+  <div class="auth-left">
+    <div class="auth-left-bg" aria-hidden="true"></div>
+    <div class="auth-orb" style="width:400px;height:400px;background:var(--color-indigo);top:-100px;right:-100px;opacity:0.15" aria-hidden="true"></div>
+    <div class="auth-orb" style="width:300px;height:300px;background:var(--color-gold);bottom:-50px;left:-50px;opacity:0.1" aria-hidden="true"></div>
+    <div style="position:relative;z-index:1">
+      <a href="../index.html" aria-label="CogniTest Home">
+        <div class="nav-logo" style="margin-bottom:var(--space-10)">
+          <div class="nav-logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div class="nav-logo-text"><span class="nav-logo-primary">CogniTest</span><span class="nav-logo-tagline">Excel. Qualify. Succeed.</span></div>
+        </div>
+      </a>
+      <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-8)">Join <span class="text-gradient">1,00,000+ students</span> who chose CogniTest</h2>
+      <!-- Benefits -->
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:28px;height:28px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#10b981;font-weight:700;flex-shrink:0" aria-hidden="true">✓</div>
+          <span style="font-size:var(--text-sm);color:var(--text-secondary)">7-day free trial — no credit card required</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:28px;height:28px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#10b981;font-weight:700;flex-shrink:0" aria-hidden="true">✓</div>
+          <span style="font-size:var(--text-sm);color:var(--text-secondary)">AI diagnostic test to map your current level</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:28px;height:28px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#10b981;font-weight:700;flex-shrink:0" aria-hidden="true">✓</div>
+          <span style="font-size:var(--text-sm);color:var(--text-secondary)">Personalized study plan generated instantly</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:28px;height:28px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#10b981;font-weight:700;flex-shrink:0" aria-hidden="true">✓</div>
+          <span style="font-size:var(--text-sm);color:var(--text-secondary)">5 free full-length mock tests with analytics</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:28px;height:28px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#10b981;font-weight:700;flex-shrink:0" aria-hidden="true">✓</div>
+          <span style="font-size:var(--text-sm);color:var(--text-secondary)">Access to community forum and study resources</span>
+        </div>
+      </div>
+
+      <!-- Social Proof -->
+      <div class="card" style="margin-top:var(--space-10);padding:var(--space-5);background:rgba(255,255,255,0.03)">
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="display:flex" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="" width="32" height="32" style="border-radius:50%;object-fit:cover;border:2px solid var(--bg-secondary)" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" alt="" width="32" height="32" style="border-radius:50%;object-fit:cover;border:2px solid var(--bg-secondary);margin-left:-10px" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=32&h=32&fit=crop&crop=face" alt="" width="32" height="32" style="border-radius:50%;object-fit:cover;border:2px solid var(--bg-secondary);margin-left:-10px" loading="lazy">
+          </div>
+          <div>
+            <div style="font-size:var(--text-sm);font-weight:700">847 students joined this week</div>
+            <div style="color:var(--text-muted);font-size:var(--text-xs)">Rated 4.9/5 by users</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel: Signup Form -->
+  <div class="auth-right">
+    <div style="max-width:460px;width:100%;margin:0 auto">
+      <div class="step-indicator" role="progressbar" aria-label="Signup progress" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3">
+        <div class="step-dot active" id="step-1-dot"></div>
+        <div class="step-dot" id="step-2-dot"></div>
+        <div class="step-dot" id="step-3-dot"></div>
+      </div>
+      <h1 style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;margin-bottom:var(--space-2)">Create Free Account</h1>
+      <p style="color:var(--text-muted);margin-bottom:var(--space-6)">Already have an account? <a href="login.html" style="color:var(--color-indigo-light);font-weight:600">Sign in</a></p>
+
+      <!-- Social Signup -->
+      <div style="display:flex;gap:var(--space-3)">
+        <a href="#" class="social-btn" role="button" aria-label="Sign up with Google">
+          <span style="font-size:1.1rem;font-weight:900;color:#4285f4" aria-hidden="true">G</span> Google
+        </a>
+        <a href="#" class="social-btn" role="button" aria-label="Sign up with Mobile OTP">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Mobile OTP
+        </a>
+      </div>
+
+      <div class="divider-text">or create with email</div>
+
+      <form id="signup-form" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+          <div class="form-group">
+            <label class="form-label" for="signup-fname">First Name *</label>
+            <input type="text" id="signup-fname" class="form-input" placeholder="First name" data-validate="required" autocomplete="given-name" aria-required="true">
+            <div class="form-error" role="alert"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signup-lname">Last Name *</label>
+            <input type="text" id="signup-lname" class="form-input" placeholder="Last name" data-validate="required" autocomplete="family-name" aria-required="true">
+            <div class="form-error" role="alert"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signup-email">Email Address *</label>
+          <input type="email" id="signup-email" class="form-input" placeholder="your@email.com" data-validate="required,email" autocomplete="email" aria-required="true">
+          <div class="form-error" role="alert"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signup-phone">Mobile Number *</label>
+          <input type="tel" id="signup-phone" class="form-input" placeholder="10-digit number" data-validate="required,phone" autocomplete="tel" aria-required="true">
+          <div class="form-error" role="alert"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signup-exam">Target Exam *</label>
+          <select id="signup-exam" class="form-select" data-validate="required" aria-required="true">
+            <option value="">Select your target exam</option>
+            <option>IBPS PO 2025</option>
+            <option>IBPS Clerk 2025</option>
+            <option>SBI PO 2025</option>
+            <option>SBI Clerk 2025</option>
+            <option>RBI Grade B</option>
+            <option>SSC CGL 2025</option>
+            <option>SSC CHSL 2025</option>
+            <option>RRB NTPC 2025</option>
+            <option>JEE Main 2025</option>
+            <option>JEE Advanced 2025</option>
+            <option>GATE 2026</option>
+            <option>Multiple Exams</option>
+          </select>
+          <div class="form-error" role="alert"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signup-password">Password *</label>
+          <div style="position:relative">
+            <input type="password" id="signup-password" class="form-input" placeholder="Minimum 8 characters" data-validate="required,minLength:8" autocomplete="new-password" style="padding-right:3rem" aria-required="true">
+            <button type="button" id="toggle-signup-pw" aria-label="Toggle password visibility" style="position:absolute;right:var(--space-4);top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text-muted)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <div class="form-error" role="alert"></div>
+          <!-- Password Strength -->
+          <div id="pw-strength" style="display:flex;gap:var(--space-1);margin-top:var(--space-2)" aria-live="polite">
+            <div class="pw-bar" style="height:3px;flex:1;background:var(--border-color);border-radius:2px;transition:background var(--transition-fast)"></div>
+            <div class="pw-bar" style="height:3px;flex:1;background:var(--border-color);border-radius:2px;transition:background var(--transition-fast)"></div>
+            <div class="pw-bar" style="height:3px;flex:1;background:var(--border-color);border-radius:2px;transition:background var(--transition-fast)"></div>
+            <div class="pw-bar" style="height:3px;flex:1;background:var(--border-color);border-radius:2px;transition:background var(--transition-fast)"></div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:var(--space-3);margin-bottom:var(--space-6)">
+          <input type="checkbox" id="signup-terms" style="width:16px;height:16px;margin-top:2px;accent-color:var(--color-indigo)" data-validate="required" aria-required="true">
+          <label for="signup-terms" style="font-size:var(--text-xs);color:var(--text-muted);line-height:1.6">I agree to CogniTest's <a href="terms-conditions.html" style="color:var(--color-indigo-light)">Terms & Conditions</a> and <a href="privacy-policy.html" style="color:var(--color-indigo-light)">Privacy Policy</a>. I consent to receive course updates via email/SMS.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-full" id="signup-btn">
+          Create Free Account
+        </button>
+      </form>
+
+      <p style="text-align:center;font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-4)">
+        By creating an account, you start your 7-day free trial. No payment required.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="../js/core.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('signup-form');
+    const pwInput = document.getElementById('signup-password');
+    const toggleBtn = document.getElementById('toggle-signup-pw');
+
+    // Toggle password
+    toggleBtn?.addEventListener('click', () => {
+      const isText = pwInput.type === 'text';
+      pwInput.type = isText ? 'password' : 'text';
+      toggleBtn.innerHTML = isText ? `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>` : `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+    });
+
+    // Password strength indicator
+    const bars = document.querySelectorAll('.pw-bar');
+    const colors = ['#ef4444', '#f97316', '#eab308', '#10b981'];
+    const getStrength = (pw) => {
+      let score = 0;
+      if (pw.length >= 8) score++;
+      if (/[A-Z]/.test(pw)) score++;
+      if (/[0-9]/.test(pw)) score++;
+      if (/[!@#$%^&*]/.test(pw)) score++;
+      return score;
+    };
+
+    pwInput?.addEventListener('input', () => {
+      const strength = getStrength(pwInput.value);
+      bars.forEach((bar, i) => {
+        bar.style.background = i < strength ? colors[strength - 1] : 'var(--border-color)';
+      });
+    });
+
+    // Form submit
+    if (form) {
+      window.CogniTest?.FormValidator?.initRealTime?.(form);
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (window.CogniTest?.FormValidator?.validate?.(form)) {
+          const btn = document.getElementById('signup-btn');
+          btn.textContent = 'Creating your account...';
+          btn.disabled = true;
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 1500);
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>
+

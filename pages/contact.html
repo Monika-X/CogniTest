@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact CogniTest - Get in touch for course enquiries, support, partnerships or feedback. We respond within 24 hours.">
+  <title>Contact Us | CogniTest – We're Here to Help</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234338CA'/><circle cx='50' cy='50' r='28' fill='%2306B6D4'/><circle cx='50' cy='50' r='12' fill='%23D4AF37'/></svg>">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<section class="page-hero" aria-labelledby="contact-hero-heading">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-orb page-hero-orb-1" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Contact</span>
+      </nav>
+      <h1 class="page-hero-title" id="contact-hero-heading">We'd Love to <span class="text-gradient">Hear From You</span></h1>
+      <p class="page-hero-desc">Whether you have a question, need course guidance, or want to explore enterprise partnerships — our team is ready to help within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: CONTACT FORM + INFO -->
+<section class="section" aria-labelledby="contact-form-heading">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 380px;gap:var(--space-12);align-items:start">
+
+      <!-- Contact Form -->
+      <div class="card reveal">
+        <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-2)" id="contact-form-heading">Send Us a Message</h2>
+        <p style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-8)">Fill in the form below and our team will get back to you within 24 hours. We typically respond much faster!</p>
+        <form id="contact-form" novalidate>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Your full name" data-validate="required,minLength:2" aria-required="true">
+              <div class="form-error" role="alert"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="your@email.com" data-validate="required,email" aria-required="true">
+              <div class="form-error" role="alert"></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+            <div class="form-group">
+              <label class="form-label" for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" class="form-input" placeholder="10-digit mobile number" data-validate="phone">
+              <div class="form-error" role="alert"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-exam">Target Exam</label>
+              <select id="contact-exam" class="form-select">
+                <option value="">Select your target exam</option>
+                <option>IBPS PO</option>
+                <option>IBPS Clerk</option>
+                <option>SBI PO</option>
+                <option>SBI Clerk</option>
+                <option>RBI Grade B</option>
+                <option>SSC CGL</option>
+                <option>SSC CHSL</option>
+                <option>RRB NTPC</option>
+                <option>JEE Main/Advanced</option>
+                <option>GATE</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">Subject *</label>
+            <select id="contact-subject" class="form-select" data-validate="required" aria-required="true">
+              <option value="">Select query type</option>
+              <option>Course Enquiry</option>
+              <option>Technical Support</option>
+              <option>Billing & Payments</option>
+              <option>Partnership / Enterprise</option>
+              <option>Faculty Application</option>
+              <option>Content Feedback</option>
+              <option>Other</option>
+            </select>
+            <div class="form-error" role="alert"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Your Message *</label>
+            <textarea id="contact-message" class="form-textarea" rows="5" placeholder="Describe your question or requirement in detail..." data-validate="required,minLength:20" aria-required="true"></textarea>
+            <div class="form-error" role="alert"></div>
+          </div>
+          <div class="form-group" style="display:flex;align-items:flex-start;gap:var(--space-3)">
+            <input type="checkbox" id="contact-consent" style="width:16px;height:16px;margin-top:2px;accent-color:var(--color-indigo)" aria-required="true">
+            <label for="contact-consent" style="font-size:var(--text-sm);color:var(--text-muted)">I agree to CogniTest's <a href="privacy-policy.html" style="color:var(--color-indigo-light)">Privacy Policy</a> and consent to being contacted regarding my enquiry.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg w-full" id="contact-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <div class="contact-info-card reveal delay-100">
+          <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-xl);margin-bottom:var(--space-5)">Get in Touch</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-icon" style="background:rgba(67,56,202,0.1);color:var(--color-indigo-light);display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div>
+              <div class="contact-info-label">Phone</div>
+              <div class="contact-info-value">+91 18002 43838</div>
+              <div class="contact-info-sub">Mon–Sat, 9 AM – 7 PM IST</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon" style="background:rgba(6,182,212,0.1);color:var(--color-cyan);display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-value">support@cognitest.in</div>
+              <div class="contact-info-sub">Response within 24 hours</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon" style="background:rgba(212,175,55,0.1);color:var(--color-gold);display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div>
+              <div class="contact-info-label">Live Chat</div>
+              <div class="contact-info-value">Available on Platform</div>
+              <div class="contact-info-sub">24/7 for Pro & Elite users</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon" style="background:rgba(16,185,129,0.1);color:#10b981;display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="contact-info-label">Office</div>
+              <div class="contact-info-value">CogniTest Pvt. Ltd.</div>
+              <div class="contact-info-sub">Level 12, Prestige Tower, Baner, Pune — 411045</div>
+            </div>
+          </div>
+          <div class="contact-info-item" style="border-bottom:none">
+            <div class="contact-info-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6;display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+            <div>
+              <div class="contact-info-label">Telegram Community</div>
+              <div class="contact-info-value">@CogniTestOfficial</div>
+              <div class="contact-info-sub">50,000+ member study group</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal delay-200" style="margin-top:var(--space-6)">
+          <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-base);margin-bottom:var(--space-4)">Response Times</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+            <div style="display:flex;justify-content:space-between;font-size:var(--text-sm)">
+              <span style="color:var(--text-secondary)">General Enquiries</span>
+              <span class="badge badge-success">≤ 24h</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--text-sm)">
+              <span style="color:var(--text-secondary)">Technical Support</span>
+              <span class="badge badge-success">≤ 4h</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--text-sm)">
+              <span style="color:var(--text-secondary)">Billing Issues</span>
+              <span class="badge badge-cyan">≤ 2h</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--text-sm)">
+              <span style="color:var(--text-secondary)">Enterprise / Partnerships</span>
+              <span class="badge badge-gold">≤ 48h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: MAP / OFFICE -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="office-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Our Office</div>
+      <h2 class="section-title" id="office-heading">Visit Our <span class="highlight">Headquarters</span></h2>
+      <p class="section-subtitle">Located in the heart of Pune's tech district — Baner. Walk-in visits welcome Mon–Fri 10 AM to 5 PM.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:stretch">
+      <div class="card reveal">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=560&h=300&fit=crop" alt="CogniTest headquarters office building exterior" width="560" height="300" style="width:100%;border-radius:var(--radius-xl);margin-bottom:var(--space-5)" loading="lazy">
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-xl);margin-bottom:var(--space-4)">CogniTest Pvt. Ltd.</h3>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <div style="display:flex;gap:var(--space-3);align-items:flex-start">
+            <span style="color:var(--color-indigo-light)" aria-hidden="true">•</span>
+            <span style="font-size:var(--text-sm);color:var(--text-secondary)">Level 12, Prestige Tower, Baner Road, Baner, Pune, Maharashtra — 411045</span>
+          </div>
+          <div style="display:flex;gap:var(--space-3)">
+            <span style="color:var(--color-indigo-light)" aria-hidden="true">•</span>
+            <span style="font-size:var(--text-sm);color:var(--text-secondary)">Monday – Friday: 10:00 AM – 6:00 PM IST</span>
+          </div>
+          <div style="display:flex;gap:var(--space-3)">
+            <span style="color:var(--color-indigo-light)" aria-hidden="true">•</span>
+            <span style="font-size:var(--text-sm);color:var(--text-secondary)">Nearest stop: Baner Signal, Pune Bus Route 101, 154</span>
+          </div>
+        </div>
+      </div>
+      <div class="card reveal delay-100">
+        <div style="background:var(--bg-secondary);border-radius:var(--radius-xl);height:300px;margin-bottom:var(--space-5);display:flex;align-items:center;justify-content:center;border:1px solid var(--border-color)" aria-label="Office location map">
+          <div style="text-align:center">
+            <div style="font-size:var(--text-sm);color:var(--text-muted)">CogniTest HQ — Baner, Pune</div>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:var(--space-4)">Open in Google Maps</a>
+          </div>
+        </div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-xl);margin-bottom:var(--space-4)">Department-wise Contacts</h3>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:var(--text-sm)">
+            <span style="color:var(--text-secondary)">Student Support</span>
+            <span style="color:var(--color-indigo-light);font-weight:600">support@cognitest.in</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:var(--text-sm)">
+            <span style="color:var(--text-secondary)">Partnerships</span>
+            <span style="color:var(--color-indigo-light);font-weight:600">partners@cognitest.in</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:var(--text-sm)">
+            <span style="color:var(--text-secondary)">Faculty Applications</span>
+            <span style="color:var(--color-indigo-light);font-weight:600">faculty@cognitest.in</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:var(--text-sm)">
+            <span style="color:var(--text-secondary)">Media / Press</span>
+            <span style="color:var(--color-indigo-light);font-weight:600">press@cognitest.in</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:var(--text-sm)">
+            <span style="color:var(--text-secondary)">Investor Relations</span>
+            <span style="color:var(--color-indigo-light);font-weight:600">ir@cognitest.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: FAQ -->
+<section class="section" aria-labelledby="contact-faq-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Common Questions</div>
+      <h2 class="section-title" id="contact-faq-heading">Before You <span class="highlight">Contact Us</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);max-width:960px;margin:0 auto" role="list" aria-label="Common contact questions">
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false"><span class="faq-question-text">How do I reset my password?</span><div class="faq-icon" aria-hidden="true">▼</div></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Click "Forgot Password" on the login page. Enter your registered email and we'll send a reset link within 2 minutes. Check your spam folder if it doesn't arrive.</div></div>
+      </div>
+      <div class="faq-item reveal delay-100" role="listitem">
+        <button class="faq-question" aria-expanded="false"><span class="faq-question-text">How do I request a refund?</span><div class="faq-icon" aria-hidden="true">▼</div></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Email billing@cognitest.in within 7 days of purchase with your order ID. Refunds are processed within 5-7 business days to your original payment method.</div></div>
+      </div>
+      <div class="faq-item reveal delay-200" role="listitem">
+        <button class="faq-question" aria-expanded="false"><span class="faq-question-text">Can I use CogniTest on multiple devices?</span><div class="faq-icon" aria-hidden="true">▼</div></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Yes! You can use CogniTest on up to 3 devices simultaneously. Web browser, iOS app, and Android app all sync your progress in real-time.</div></div>
+      </div>
+      <div class="faq-item reveal delay-300" role="listitem">
+        <button class="faq-question" aria-expanded="false"><span class="faq-question-text">I found a technical bug. How do I report it?</span><div class="faq-icon" aria-hidden="true">▼</div></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Use the in-app feedback button or email tech@cognitest.in with screenshots and your device details. Our tech team resolves issues within 24 hours and you'll receive a notification when fixed.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: SOCIAL CHANNELS -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="social-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Stay Connected</div>
+      <h2 class="section-title" id="social-heading">Follow Us for <span class="highlight">Daily Updates</span></h2>
+      <p class="section-subtitle">Get daily current affairs, study tips, live class notifications and exam news across our social channels.</p>
+    </div>
+    <div class="grid grid-4">
+      <a href="#" class="card reveal" style="text-align:center;text-decoration:none;display:block" aria-label="Follow us on YouTube">
+        <div style="margin-bottom:var(--space-4);color:#ef4444;display:flex;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-2)">YouTube</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3)">2,00,000+ subscribers</p>
+        <span class="badge badge-danger">Subscribe</span>
+      </a>
+      <a href="#" class="card reveal delay-100" style="text-align:center;text-decoration:none;display:block" aria-label="Join us on Telegram">
+        <div style="margin-bottom:var(--space-4);color:var(--color-cyan);display:flex;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-2)">Telegram</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3)">50,000+ community members</p>
+        <span class="badge badge-cyan">Join Group</span>
+      </a>
+      <a href="#" class="card reveal delay-200" style="text-align:center;text-decoration:none;display:block" aria-label="Follow us on Instagram">
+        <div style="margin-bottom:var(--space-4);color:var(--color-gold);display:flex;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-2)">Instagram</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3)">80,000+ followers</p>
+        <span class="badge badge-gold">Follow</span>
+      </a>
+      <a href="#" class="card reveal delay-300" style="text-align:center;text-decoration:none;display:block" aria-label="Follow us on LinkedIn">
+        <div style="margin-bottom:var(--space-4);color:var(--color-indigo-light);display:flex;justify-content:center" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-2)">LinkedIn</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3)">30,000+ connections</p>
+        <span class="badge badge-indigo">Connect</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5-6 handled inline above -->
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/core.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (form) {
+      window.CogniTest?.FormValidator?.initRealTime?.(form);
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const consent = document.getElementById('contact-consent');
+        if (!consent?.checked) {
+          window.CogniTest?.Toast?.show?.('Please agree to the Privacy Policy to proceed.', 'warning');
+          return;
+        }
+        if (window.CogniTest?.FormValidator?.validate?.(form)) {
+          const btn = document.getElementById('contact-submit');
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+          setTimeout(() => {
+            window.CogniTest?.Toast?.show?.('Message sent successfully! We\'ll get back within 24 hours.', 'success');
+            form.reset();
+            btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
+            btn.disabled = false;
+          }, 1500);
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>

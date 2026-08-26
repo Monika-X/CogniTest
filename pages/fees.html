@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CogniTest Fees & Pricing - Affordable plans for Banking, SSC, Railways and Engineering exam preparation. Starting from ₹249/month.">
+  <title>Fees & Pricing | CogniTest – Affordable Competitive Exam Prep</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234338CA'/><circle cx='50' cy='50' r='28' fill='%2306B6D4'/><circle cx='50' cy='50' r='12' fill='%23D4AF37'/></svg>">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      justify-content: center;
+      margin-bottom: var(--space-10);
+    }
+    .pricing-toggle-label {
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+    .toggle-switch {
+      width: 52px;
+      height: 28px;
+      background: var(--color-indigo);
+      border-radius: var(--radius-full);
+      position: relative;
+      cursor: pointer;
+      transition: background var(--transition-base);
+    }
+    .toggle-switch::before {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: white;
+      top: 3px;
+      left: 3px;
+      transition: transform var(--transition-base);
+    }
+    .toggle-switch.annual::before { transform: translateX(24px); }
+    .annual-badge {
+      background: var(--gradient-gold);
+      color: var(--color-charcoal);
+      padding: 3px var(--space-2);
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+<section class="page-hero" aria-labelledby="fees-hero-heading">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-orb page-hero-orb-1" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Fees & Plans</span>
+      </nav>
+      <h1 class="page-hero-title" id="fees-hero-heading">Simple, <span class="text-gradient">Transparent Pricing</span></h1>
+      <p class="page-hero-desc">No hidden fees. No exam-specific paywalls. Choose the plan that fits your preparation needs and budget.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: PRICING PLANS -->
+<section class="section" aria-labelledby="plans-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Pricing Plans</div>
+      <h2 class="section-title" id="plans-heading">Choose Your <span class="highlight">Success Plan</span></h2>
+    </div>
+
+    <!-- Billing Toggle -->
+    <div class="pricing-toggle">
+      <span class="pricing-toggle-label" id="monthly-label">Monthly</span>
+      <div class="toggle-switch annual" id="billing-toggle" role="switch" aria-checked="true" aria-label="Switch between monthly and annual billing" tabindex="0">
+      </div>
+      <span class="pricing-toggle-label" id="annual-label" style="color:var(--text-primary)">Annual <span class="annual-badge">Save 40%</span></span>
+    </div>
+
+    <div class="grid grid-3" role="list" aria-label="Pricing plans">
+
+      <!-- Starter Plan -->
+      <article class="pricing-card reveal" role="listitem" aria-label="Starter Plan">
+        <div class="pricing-plan-name">Starter</div>
+        <div class="pricing-plan-desc">Perfect for early-stage preparation</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">₹</span><span class="pricing-amount" data-monthly="499" data-annual="249" id="price-starter">249</span>
+          <span class="pricing-period">/month</span>
+          <div style="color:var(--text-muted);font-size:var(--text-sm);margin-top:var(--space-1)"><del data-monthly-old="" data-annual-old="₹499/mo">Billed ₹2,988/yr</del></div>
+        </div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>5 Subject Mock Tests / Month</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Basic Performance Analytics</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Previous Year Papers (2 exams)</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Mobile App Access</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon cross" aria-hidden="true">✕</div>Live Classes</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon cross" aria-hidden="true">✕</div>AI Weakness Analysis</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon cross" aria-hidden="true">✕</div>Expert Doubt Resolution</li>
+        </ul>
+        <a href="signup.html" class="btn btn-outline w-full btn-lg">Get Started Free</a>
+      </article>
+
+      <!-- Pro Plan (Featured) -->
+      <article class="pricing-card featured reveal delay-100" role="listitem" aria-label="Pro Plan — Most Popular">
+        <div class="pricing-popular-tag">Most Popular</div>
+        <div class="pricing-plan-name">Pro</div>
+        <div class="pricing-plan-desc">Best value for serious exam aspirants</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">₹</span><span class="pricing-amount" data-monthly="999" data-annual="599" id="price-pro">599</span>
+          <span class="pricing-period">/month</span>
+          <div style="color:var(--text-muted);font-size:var(--text-sm);margin-top:var(--space-1)"><del>Billed ₹7,188/yr</del></div>
+        </div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Unlimited Mock Tests</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>AI-Powered Analytics Dashboard</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>All Previous Year Papers</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>10 Live Classes / Month</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Weak Area Identification</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Study Material Downloads</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon cross" aria-hidden="true">✕</div>Personal Mentor</li>
+        </ul>
+        <a href="signup.html" class="btn btn-primary w-full btn-lg">Start Free Trial</a>
+        <p style="text-align:center;font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-3)">7 days free • No credit card</p>
+      </article>
+
+      <!-- Elite Plan -->
+      <article class="pricing-card reveal delay-200" role="listitem" aria-label="Elite Plan">
+        <div class="pricing-plan-name">Elite</div>
+        <div class="pricing-plan-desc">Complete system for topper-level results</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">₹</span><span class="pricing-amount" data-monthly="1999" data-annual="1199" id="price-elite">1,199</span>
+          <span class="pricing-period">/month</span>
+          <div style="color:var(--text-muted);font-size:var(--text-sm);margin-top:var(--space-1)"><del>Billed ₹14,388/yr</del></div>
+        </div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Everything in Pro</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Unlimited Live Classes</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Personal Expert Mentor</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>1:1 Doubt Sessions (4/month)</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Personalized Study Plan</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Interview Preparation</li>
+          <li class="pricing-feature"><div class="pricing-feature-icon check" aria-hidden="true">✓</div>Completion Certificate</li>
+        </ul>
+        <a href="signup.html" class="btn btn-gold w-full btn-lg">Go Elite</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: FEATURES COMPARISON -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="compare-plans-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Plan Comparison</div>
+      <h2 class="section-title" id="compare-plans-heading">Detailed <span class="highlight">Feature Comparison</span></h2>
+    </div>
+    <div class="comparison-table-wrap reveal" role="region" aria-label="Plan feature comparison table">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th class="featured-col">Pro (Popular)</th>
+            <th>Elite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Mock Tests</td><td>5 / month</td><td class="featured-col">Unlimited</td><td>Unlimited</td></tr>
+          <tr><td>Full-Length Tests</td><td>2 / month</td><td class="featured-col">Unlimited</td><td>Unlimited</td></tr>
+          <tr><td>Video Lessons</td><td>Basic</td><td class="featured-col">All Courses</td><td>All + Exclusive</td></tr>
+          <tr><td>Previous Year Papers</td><td>2 exams</td><td class="featured-col">All exams</td><td>All + Solutions</td></tr>
+          <tr><td>Live Classes</td><td>✕</td><td class="featured-col">10 / month</td><td>Unlimited</td></tr>
+          <tr><td>AI Analytics</td><td>Basic</td><td class="featured-col">Full AI Analytics</td><td>Advanced AI + Reports</td></tr>
+          <tr><td>Weak Area Analysis</td><td>✕</td><td class="featured-col">✓</td><td>✓ Priority</td></tr>
+          <tr><td>Study Material Download</td><td>✕</td><td class="featured-col">✓</td><td>✓</td></tr>
+          <tr><td>Personal Mentor</td><td>✕</td><td class="featured-col">✕</td><td>✓</td></tr>
+          <tr><td>1:1 Doubt Sessions</td><td>✕</td><td class="featured-col">2 / month</td><td>4 / month</td></tr>
+          <tr><td>Interview Prep</td><td>✕</td><td class="featured-col">✕</td><td>✓</td></tr>
+          <tr><td>Certificate</td><td>✕</td><td class="featured-col">Digital</td><td>Digital + Physical</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: EXAM-SPECIFIC PLANS -->
+<section class="section" aria-labelledby="exam-plans-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Exam Specific</div>
+      <h2 class="section-title" id="exam-plans-heading">Exam-Specific <span class="highlight">One-Time Plans</span></h2>
+      <p class="section-subtitle">Prefer to pay once for a specific exam? Our one-time course plans include lifetime access to that exam's content.</p>
+    </div>
+    <div class="grid grid-4">
+      <article class="card reveal" style="text-align:center">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-indigo-light)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-2)">IBPS PO</h3>
+        <div style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹2,499</div>
+        <div style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)"><del>₹8,999</del> — Lifetime Access</div>
+        <a href="signup.html" class="btn btn-primary btn-sm w-full">Buy Now</a>
+      </article>
+      <article class="card reveal delay-100" style="text-align:center">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-gold)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-2)">SSC CGL</h3>
+        <div style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹1,999</div>
+        <div style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)"><del>₹5,999</del> — Lifetime Access</div>
+        <a href="signup.html" class="btn btn-primary btn-sm w-full">Buy Now</a>
+      </article>
+      <article class="card reveal delay-200" style="text-align:center">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:#10b981" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M7 15h0"/><path d="M17 15h0"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-2)">RRB NTPC</h3>
+        <div style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;color:#10b981">₹1,799</div>
+        <div style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)"><del>₹4,999</del> — Lifetime Access</div>
+        <a href="signup.html" class="btn btn-primary btn-sm w-full">Buy Now</a>
+      </article>
+      <article class="card reveal delay-300" style="text-align:center">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-cyan)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-2)">JEE Main</h3>
+        <div style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:800;color:var(--color-indigo-light)">₹4,999</div>
+        <div style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)"><del>₹14,999</del> — Lifetime Access</div>
+        <a href="signup.html" class="btn btn-primary btn-sm w-full">Buy Now</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: PAYMENT OPTIONS -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="payment-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Payment Options</div>
+      <h2 class="section-title" id="payment-heading">Flexible <span class="highlight">Payment Methods</span></h2>
+      <p class="section-subtitle">We accept all major payment methods. EMI options available for annual plans.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card reveal" style="text-align:center">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-cyan)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:600;margin-bottom:var(--space-2)">UPI</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-muted)">PhonePe, GPay, Paytm, BHIM</p>
+      </div>
+      <div class="card reveal delay-100" style="text-align:center">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-indigo-light)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:600;margin-bottom:var(--space-2)">Cards</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-muted)">Visa, Mastercard, Amex, RuPay</p>
+      </div>
+      <div class="card reveal delay-200" style="text-align:center">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-gold)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:600;margin-bottom:var(--space-2)">Net Banking</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-muted)">50+ banks supported</p>
+      </div>
+      <div class="card reveal delay-300" style="text-align:center">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:#10b981" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:600;margin-bottom:var(--space-2)">EMI</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-muted)">0% EMI on 3, 6, 12 months</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: GUARANTEES -->
+<section class="section" aria-labelledby="guarantee-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Our Guarantees</div>
+      <h2 class="section-title" id="guarantee-heading">Your <span class="highlight">Investment Is Safe</span></h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal" style="text-align:center;border-top:3px solid var(--color-gold)">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-gold)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-xl);margin-bottom:var(--space-3)">7-Day Money Back</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.7">Not satisfied? Request a full refund within 7 days of purchase, no questions asked.</p>
+      </div>
+      <div class="card reveal delay-100" style="text-align:center;border-top:3px solid var(--color-indigo)">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-indigo-light)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-xl);margin-bottom:var(--space-3)">Lifetime Access</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.7">One-time purchase courses include lifetime access with all future content updates included.</p>
+      </div>
+      <div class="card reveal delay-200" style="text-align:center;border-top:3px solid var(--color-cyan)">
+        <div style="height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-cyan)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-xl);margin-bottom:var(--space-3)">Secure Payments</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.7">256-bit SSL encryption, PCI-DSS compliant payment processing. Your data is always safe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: FAQ -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="fees-faq-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Pricing FAQ</div>
+      <h2 class="section-title" id="fees-faq-heading">Common <span class="highlight">Pricing Questions</span></h2>
+    </div>
+    <div style="max-width:760px;margin:0 auto" role="list" aria-label="Pricing FAQs">
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false"><span class="faq-question-text">Can I switch plans after subscribing?</span><div class="faq-icon" aria-hidden="true">▼</div></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Yes, you can upgrade or downgrade your plan at any time. Upgrades take effect immediately with pro-rated billing. Downgrades apply from the next billing cycle.</div></div>
+      </div>
+      <div class="faq-item reveal delay-100" role="listitem">
+        <button class="faq-question" aria-expanded="false"><span class="faq-question-text">Is there a discount for students from rural areas?</span><div class="faq-icon" aria-hidden="true">▼</div></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Yes! We offer a 30% additional discount for students from tier-3 cities, rural areas, or those demonstrating financial need. Contact our support team with relevant documentation.</div></div>
+      </div>
+      <div class="faq-item reveal delay-200" role="listitem">
+        <button class="faq-question" aria-expanded="false"><span class="faq-question-text">Do you offer group/institute discounts?</span><div class="faq-icon" aria-hidden="true">▼</div></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Absolutely! We offer group discounts for 10+ students (20% off) and institute partnerships for 50+ students (40% off). Contact our partnerships team at partnerships@cognitest.in</div></div>
+      </div>
+      <div class="faq-item reveal delay-300" role="listitem">
+        <button class="faq-question" aria-expanded="false"><span class="faq-question-text">What if I miss my exam and need to switch courses?</span><div class="faq-icon" aria-expanded="false"><div class="faq-icon" aria-hidden="true">▼</div></div></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Pro and Elite subscription holders can access content for all exam categories within their plan. One-time course buyers can upgrade to a subscription to access other exams.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/core.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('billing-toggle');
+    let isAnnual = true;
+    const prices = {
+      starter: { monthly: '499', annual: '249' },
+      pro: { monthly: '999', annual: '599' },
+      elite: { monthly: '1,999', annual: '1,199' },
+    };
+    const updatePrices = () => {
+      const mode = isAnnual ? 'annual' : 'monthly';
+      document.getElementById('price-starter').textContent = prices.starter[mode];
+      document.getElementById('price-pro').textContent = prices.pro[mode];
+      document.getElementById('price-elite').textContent = prices.elite[mode];
+      document.getElementById('annual-label').style.color = isAnnual ? 'var(--text-primary)' : 'var(--text-secondary)';
+      document.getElementById('monthly-label').style.color = isAnnual ? 'var(--text-secondary)' : 'var(--text-primary)';
+    };
+    toggle?.addEventListener('click', () => {
+      isAnnual = !isAnnual;
+      toggle.classList.toggle('annual', isAnnual);
+      toggle.setAttribute('aria-checked', isAnnual.toString());
+      updatePrices();
+    });
+    toggle?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.click(); }
+    });
+  });
+</script>
+</body>
+</html>
+ces();
+    });
+    toggle?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.click(); }
+    });
+  });
+</script>
+</body>
+</html>
