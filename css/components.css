@@ -617,6 +617,7 @@
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-nav { display: block; }
+  .nav-actions .btn { display: none !important; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-10); }
 }
 
@@ -761,5 +762,10 @@
 [dir="rtl"] .top-right-controls {
   right: auto;
   left: var(--space-4);
+}
+
+[dir="rtl"] .nav-actions {
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
 
