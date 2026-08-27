@@ -253,30 +253,8 @@ const injectComponents = () => {
   const footerHTML = `
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <!-- Newsletter Banner -->
-      <div class="footer-newsletter">
-        <div class="footer-newsletter-content">
-          <div class="footer-newsletter-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Stay Ahead
-          </div>
-          <h3 class="footer-newsletter-title">Subscribe to Exam Updates & Free Notes</h3>
-          <p class="footer-newsletter-desc">Get weekly current affairs, exam notification alerts, and exclusive practice questions delivered directly to your inbox.</p>
-        </div>
-        <form class="footer-newsletter-form" id="footer-newsletter-form" novalidate>
-          <div class="footer-newsletter-input-wrap">
-            <input type="email" class="footer-newsletter-input" id="footer-email-input" placeholder="Enter your email address" required aria-label="Email address for newsletter">
-            <button type="submit" class="btn btn-primary footer-newsletter-btn">
-              <span>Subscribe</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-          </div>
-          <p class="footer-newsletter-privacy">Join 45,000+ aspirants. No spam ever. Unsubscribe anytime.</p>
-        </form>
-      </div>
-
       <div class="footer-grid">
-        <!-- Brand -->
+        <!-- Col 1: Brand -->
         <div class="footer-brand">
           <a href="${SITE_ROOT}index.html" class="nav-logo" style="margin-bottom:var(--space-4)">
             <div class="nav-logo-icon">${SVG_ICONS.logo}</div>
@@ -285,62 +263,66 @@ const injectComponents = () => {
               <span class="nav-logo-tagline">Excel. Qualify. Succeed.</span>
             </div>
           </a>
-          <p>India's most advanced online coaching platform for competitive exams. Trusted by 1,00,000+ students across Banking, SSC, Railways & Engineering entrance exams.</p>
+          <p>India's most exclusive destination for competitive exam preparation. A curated sanctuary where every aspirant reaches their full potential.</p>
           <div class="footer-socials" aria-label="Social Media Links">
+            <a href="#" class="footer-social" aria-label="Instagram" title="Follow us on Instagram">${SVG_ICONS.instagram}</a>
             <a href="#" class="footer-social" aria-label="Facebook" title="Follow us on Facebook">${SVG_ICONS.facebook}</a>
             <a href="#" class="footer-social" aria-label="Twitter/X" title="Follow us on X">${SVG_ICONS.twitter}</a>
-            <a href="#" class="footer-social" aria-label="Instagram" title="Follow us on Instagram">${SVG_ICONS.instagram}</a>
             <a href="#" class="footer-social" aria-label="YouTube" title="Subscribe on YouTube">${SVG_ICONS.youtube}</a>
-            <a href="#" class="footer-social" aria-label="LinkedIn" title="Follow us on LinkedIn">${SVG_ICONS.linkedin}</a>
-            <a href="#" class="footer-social" aria-label="Telegram" title="Join our Telegram">${SVG_ICONS.telegram}</a>
           </div>
         </div>
 
-        <!-- Navigation (Same Order as Header Navbar) -->
+        <!-- Col 2: Courses / Categories -->
         <div>
-          <div class="footer-heading">Navigation</div>
+          <div class="footer-heading">COURSES</div>
+          <div class="footer-links">
+            <a href="${SITE_ROOT}pages/courses.html#banking" class="footer-link">Banking (IBPS / SBI)</a>
+            <a href="${SITE_ROOT}pages/courses.html#ssc" class="footer-link">SSC CGL / CHSL</a>
+            <a href="${SITE_ROOT}pages/courses.html#railways" class="footer-link">Railways RRB</a>
+            <a href="${SITE_ROOT}pages/courses.html#engineering" class="footer-link">JEE Main & Advanced</a>
+            <a href="${SITE_ROOT}pages/courses.html#engineering" class="footer-link">GATE Preparation</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Navigation (Matches Top Navbar Sequence) -->
+        <div>
+          <div class="footer-heading">NAVIGATION</div>
           <div class="footer-links">
             <a href="${SITE_ROOT}index.html" class="footer-link">Home</a>
             <a href="${SITE_ROOT}pages/home2.html" class="footer-link">Home 2</a>
             <a href="${SITE_ROOT}pages/about.html" class="footer-link">About</a>
-            <a href="${SITE_ROOT}pages/courses.html" class="footer-link">Courses</a>
             <a href="${SITE_ROOT}pages/services.html" class="footer-link">Services</a>
             <a href="${SITE_ROOT}pages/blog.html" class="footer-link">Blog</a>
             <a href="${SITE_ROOT}pages/contact.html" class="footer-link">Contact</a>
           </div>
         </div>
 
-        <!-- More Links & Faculty -->
-        <div>
-          <div class="footer-heading">Explore</div>
-          <div class="footer-links">
-            <a href="${SITE_ROOT}pages/faculty.html" class="footer-link">Faculty</a>
-            <a href="${SITE_ROOT}pages/results.html" class="footer-link">Results</a>
-            <a href="${SITE_ROOT}pages/fees.html" class="footer-link">Fees & Plans</a>
-            <a href="${SITE_ROOT}pages/courses.html#banking" class="footer-link">Banking (IBPS / SBI)</a>
-            <a href="${SITE_ROOT}pages/courses.html#ssc" class="footer-link">SSC CGL / CHSL</a>
-            <a href="${SITE_ROOT}pages/courses.html#engineering" class="footer-link">Engineering (JEE / GATE)</a>
-          </div>
+        <!-- Col 4: Newsletter Form (The Private List style) -->
+        <div class="footer-newsletter-col">
+          <div class="footer-heading">EXAM UPDATES</div>
+          <p class="footer-newsletter-text">Receive exclusive exam notifications, free mock test alerts, and study insights before anyone else.</p>
+          <form class="footer-inline-form" id="footer-newsletter-form" novalidate>
+            <div class="footer-inline-input-wrap">
+              <input type="email" class="footer-inline-input" id="footer-email-input" placeholder="Your email" required aria-label="Your Email Address">
+              <button type="submit" class="btn btn-primary footer-inline-btn">JOIN</button>
+            </div>
+          </form>
         </div>
+      </div>
 
-        <!-- Legal & Info -->
-        <div>
-          <div class="footer-heading">Legal & Info</div>
-          <div class="footer-links">
-            <a href="${SITE_ROOT}pages/privacy-policy.html" class="footer-link">Privacy Policy</a>
-            <a href="${SITE_ROOT}pages/terms-conditions.html" class="footer-link">Terms & Conditions</a>
-            <a href="${SITE_ROOT}pages/sitemap.html" class="footer-link">Sitemap</a>
-            <a href="${SITE_ROOT}pages/contact.html" class="footer-link">Refund Policy</a>
-            <a href="${SITE_ROOT}pages/maintenance.html" class="footer-link">System Status</a>
-          </div>
+      <!-- Divider Line with Ring Dot in Center -->
+      <div class="footer-divider-wrap">
+        <div class="footer-divider-line"></div>
+        <div class="footer-divider-badge">
+          <div class="footer-divider-dot"></div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-bottom-text">© 2025 CogniTest. All rights reserved. Built for India's competitive exam aspirants.</p>
+        <p class="footer-bottom-text">© 2026 CogniTest. All rights reserved. Established 2024, India.</p>
         <div class="footer-bottom-links">
-          <a href="${SITE_ROOT}pages/privacy-policy.html" class="footer-bottom-link">Privacy</a>
-          <a href="${SITE_ROOT}pages/terms-conditions.html" class="footer-bottom-link">Terms</a>
+          <a href="${SITE_ROOT}pages/privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
+          <a href="${SITE_ROOT}pages/terms-conditions.html" class="footer-bottom-link">Terms & Conditions</a>
           <a href="${SITE_ROOT}pages/sitemap.html" class="footer-bottom-link">Sitemap</a>
         </div>
       </div>
