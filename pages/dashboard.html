@@ -1198,8 +1198,231 @@
       clearTimeout(window.__chartResizeTimer);
       window.__chartResizeTimer = setTimeout(() => renderDashboardCharts(), 200);
     });
+
+    // ====== DYNAMIC INTERACTIVITY SUITE ======
+
+    // 1. Topbar Real-Time Search
+    const searchInput = document.querySelector('.dashboard-search-input');
+    searchInput?.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      const activeTab = document.querySelector('.dashboard-tab:not([hidden])');
+      if (!activeTab) return;
+
+      const searchableItems = activeTab.querySelectorAll('.dashboard-card, .upcoming-item, tr');
+      searchableItems.forEach(item => {
+        if (!q) {
+          item.style.display = '';
+          return;
+        }
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+
+    // 2. Interactive Mock Test Simulator Engine
+    const mockModal = document.getElementById('mock-test-modal');
+    const mockTitle = document.getElementById('modal-test-title');
+    const mockTimer = document.getElementById('modal-test-timer');
+    const mockQNum = document.getElementById('modal-q-num');
+    const mockQText = document.getElementById('modal-q-text');
+    const mockQOptions = document.getElementById('modal-q-options');
+    const btnNext = document.getElementById('modal-test-next');
+    const btnSubmit = document.getElementById('modal-test-submit');
+    const btnExit = document.getElementById('modal-test-close');
+
+    let timerInterval = null;
+    let currentQIndex = 0;
+    let secondsLeft = 1200;
+
+    const sampleQuestions = [
+      {
+        text: 'A boat covers 36 km downstream and 24 km upstream in 6 hours. If the speed of the boat in still water is 10 km/h, what is the speed of the stream?',
+        options: ['A) 2 km/h', 'B) 4 km/h', 'C) 3 km/h', 'D) 5 km/h'],
+        correct: 'A'
+      },
+      {
+        text: 'Statements: All A are B. Some B are C. Conclusions: I. Some A are C. II. No A is C.',
+        options: ['A) Only I follows', 'B) Only II follows', 'C) Either I or II follows', 'D) Neither follows'],
+        correct: 'C'
+      },
+      {
+        text: 'Select the word which is most OPPOSITE in meaning to "OBFUSCATE":',
+        options: ['A) Clarify', 'B) Complicate', 'C) Obscure', 'D) Perplex'],
+        correct: 'A'
+      },
+      {
+        text: 'In a code language, "SYSTEM" is written as "SYSMET". How is "FRACTION" written in that code?',
+        options: ['A) CARFNOIT', 'B) NOITCARF', 'C) CARFTINO', 'D) ARFCITNO'],
+        correct: 'C'
+      },
+      {
+        text: 'A sum of ₹12,000 becomes ₹15,000 in 3 years at simple interest. What will be the interest rate per annum?',
+        options: ['A) 6.25%', 'B) 8.33%', 'C) 7.50%', 'D) 10.0%'],
+        correct: 'B'
+      }
+    ];
+
+    const loadQuestion = (index) => {
+      const q = sampleQuestions[index];
+      if (!q) return;
+      if (mockQNum) mockQNum.textContent = `Question ${index + 1} of ${sampleQuestions.length}`;
+      if (mockQText) mockQText.textContent = q.text;
+      if (mockQOptions) {
+        mockQOptions.innerHTML = q.options.map((opt, i) => `
+          <label style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3) var(--space-4);background:var(--bg-glass);border:1px solid var(--border-color);border-radius:var(--radius-lg);cursor:pointer">
+            <input type="radio" name="test-option" value="${opt[0]}" style="accent-color:var(--color-indigo)">
+            <span>${opt}</span>
+          </label>
+        `).join('');
+      }
+    };
+
+    const startMockExam = (titleText) => {
+      if (!mockModal) return;
+      if (mockTitle) mockTitle.textContent = titleText || 'IBPS PO Live Mock Test';
+      currentQIndex = 0;
+      secondsLeft = 1200;
+      loadQuestion(0);
+      mockModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        secondsLeft--;
+        const m = Math.floor(secondsLeft / 60).toString().padStart(2, '0');
+        const s = (secondsLeft % 60).toString().padStart(2, '0');
+        if (mockTimer) mockTimer.textContent = `${m}:${s}`;
+        if (secondsLeft <= 0) {
+          clearInterval(timerInterval);
+          finishMockExam();
+        }
+      }, 1000);
+    };
+
+    const finishMockExam = () => {
+      clearInterval(timerInterval);
+      if (mockModal) mockModal.classList.remove('open');
+      document.body.style.overflow = '';
+      window.CogniTest?.Toast?.show('Test Submitted Successfully! Evaluation Complete: Score 4/5 (Accuracy 80%). Your Rank updated: AIR 172!', 'success');
+      
+      // Dynamically update dashboard score widgets
+      const statVal = document.querySelector('.stat-widget-value');
+      if (statVal) statVal.textContent = '80.2%';
+    };
+
+    btnNext?.addEventListener('click', () => {
+      if (currentQIndex < sampleQuestions.length - 1) {
+        currentQIndex++;
+        loadQuestion(currentQIndex);
+      } else {
+        window.CogniTest?.Toast?.show('Last question reached. Click Submit Test to complete!', 'info');
+      }
+    });
+
+    btnSubmit?.addEventListener('click', finishMockExam);
+    btnExit?.addEventListener('click', () => {
+      clearInterval(timerInterval);
+      if (mockModal) mockModal.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    // Attach mock launcher to ALL test buttons across all tabs
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button, .btn, a');
+      if (!btn) return;
+      const text = btn.textContent.trim();
+      if (text.includes('Start Test') || text.includes('Attempt Mock') || text.includes('Practice 50 Puzzles') || text.includes('Attempt Paper') || text.includes('Practice Now')) {
+        e.preventDefault();
+        const cardTitle = btn.closest('.dashboard-card, .upcoming-item, tr')?.querySelector('h3, .upcoming-item div, strong')?.textContent || 'Mock Test Simulator';
+        startMockExam(cardTitle);
+      }
+    });
+
+    // 3. Live Profile & Settings Updater
+    const settingsForm = document.getElementById('settings-form');
+    settingsForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputs = settingsForm.querySelectorAll('input, select');
+      const name = inputs[0]?.value || 'Rahul Sharma';
+      const exam = inputs[2]?.value || 'IBPS PO 2025';
+
+      document.querySelectorAll('.sidebar-user-name').forEach(el => el.textContent = name);
+      document.querySelectorAll('.sidebar-user-role').forEach(el => el.textContent = `${exam} Aspirant`);
+      const subtitle = document.querySelector('.dashboard-page-subtitle');
+      if (subtitle) subtitle.textContent = `Welcome back, ${name.split(' ')[0]}. Your ${exam} exam is in 47 days`;
+
+      window.CogniTest?.Toast?.show('Profile & Settings updated in real-time!', 'success');
+    });
+
+    // 4. Interactive Bookmarks Remover & Solution Toggle
+    document.querySelectorAll('#bookmarks .btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const text = btn.textContent.trim();
+        const card = btn.closest('.dashboard-card');
+        if (text === 'Remove' && card) {
+          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => card.remove(), 300);
+          window.CogniTest?.Toast?.show('Bookmark removed from your collection', 'info');
+        } else if (text === 'Show Solution' && card) {
+          let solBox = card.querySelector('.solution-box');
+          if (!solBox) {
+            solBox = document.createElement('div');
+            solBox.className = 'solution-box';
+            solBox.style.cssText = 'margin-top:var(--space-3);padding:var(--space-3);background:rgba(67,56,202,0.1);border-left:3px solid var(--color-indigo-light);font-size:var(--text-xs);line-height:1.5';
+            solBox.innerHTML = '<strong>Solution:</strong> C sits 3rd right of F → Arrangement: F - - C. Remaining 4 persons sit facing North. Hence C\'s position is 6th from Left End.';
+            card.appendChild(solBox);
+            btn.textContent = 'Hide Solution';
+          } else {
+            solBox.style.display = solBox.style.display === 'none' ? 'block' : 'none';
+            btn.textContent = solBox.style.display === 'none' ? 'Show Solution' : 'Hide Solution';
+          }
+        }
+      });
+    });
   });
 </script>
+
+<!-- ====== MOCK TEST SIMULATOR MODAL ====== -->
+<div class="modal" id="mock-test-modal" role="dialog" aria-labelledby="modal-test-title" aria-hidden="true">
+  <div class="modal-content" style="max-width:760px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-6);box-shadow:var(--shadow-2xl)">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-4);padding-bottom:var(--space-4);border-bottom:1px solid var(--border-color)">
+      <div>
+        <span class="badge badge-gold" id="modal-test-badge">LIVE MOCK TEST</span>
+        <h3 style="font-family:var(--font-heading);font-size:var(--text-xl);font-weight:800;margin-top:var(--space-1)" id="modal-test-title">IBPS PO Prelims Live Mock</h3>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:var(--text-xs);color:var(--text-muted)">Time Remaining</div>
+        <div style="font-family:var(--font-heading);font-size:var(--text-xl);font-weight:800;color:#ef4444" id="modal-test-timer">19:59</div>
+      </div>
+    </div>
+
+    <!-- Question View -->
+    <div id="test-question-box" style="margin-bottom:var(--space-6)">
+      <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3)">
+        <span id="modal-q-num">Question 1 of 5</span>
+        <span style="color:var(--color-indigo-light)">Marks: +1 / -0.25</span>
+      </div>
+      <div style="background:var(--bg-glass);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:var(--space-5);margin-bottom:var(--space-4);font-size:var(--text-base);line-height:1.6" id="modal-q-text">
+        A boat covers 36 km downstream and 24 km upstream in 6 hours. If the speed of the boat in still water is 10 km/h, what is the speed of the stream?
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)" id="modal-q-options">
+        <!-- Radio choices populated dynamically -->
+      </div>
+    </div>
+
+    <!-- Modal Footer Controls -->
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:var(--space-4);border-top:1px solid var(--border-color)">
+      <button class="btn btn-outline btn-sm" id="modal-test-close">Exit Test</button>
+      <div style="display:flex;gap:var(--space-3)">
+        <button class="btn btn-cyan btn-sm" id="modal-test-next">Next Question →</button>
+        <button class="btn btn-primary btn-sm" id="modal-test-submit">Submit Test</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
 
