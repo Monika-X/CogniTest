@@ -612,75 +612,88 @@
   .footer-bottom { flex-direction: column; text-align: center; }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   :root {
-    --nav-height: 56px;
+    --nav-height: 48px;
   }
   .navbar {
-    height: 56px;
+    height: 48px;
   }
   .nav-container {
-    padding: 0 var(--space-3);
-    gap: 6px;
+    padding: 0 10px;
+    gap: 4px;
   }
   .nav-logo {
-    gap: 6px;
+    gap: 5px;
   }
   .nav-logo-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: var(--radius-md);
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
   }
   .nav-logo-icon svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
   .nav-logo-primary {
-    font-size: 1rem;
+    font-size: 0.85rem;
     letter-spacing: -0.01em;
   }
   .nav-logo-tagline {
     display: none !important;
   }
   .nav-actions {
-    gap: 4px;
+    gap: 3px;
   }
   .nav-action-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 0.75rem;
-    border-radius: var(--radius-md);
+    width: 28px;
+    height: 28px;
+    font-size: 0.65rem;
+    border-radius: 6px;
+    padding: 0;
   }
   .nav-action-btn svg {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
   }
   .hamburger {
-    width: 32px;
-    height: 32px;
-    padding: 4px;
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+  }
+  .hamburger span {
+    width: 14px;
+    height: 1.5px;
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 360px) {
   .nav-container {
-    padding: 0 4px;
-    gap: 3px;
+    padding: 0 6px;
+    gap: 2px;
   }
   .nav-logo-primary {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .nav-logo-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
+  }
+  .nav-logo-icon svg {
+    width: 12px;
+    height: 12px;
   }
   .nav-action-btn {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
+  }
+  .nav-action-btn svg {
+    width: 12px;
+    height: 12px;
   }
   .hamburger {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
   }
 }
 
