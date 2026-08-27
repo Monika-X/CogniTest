@@ -1051,20 +1051,31 @@
   outline: none !important;
   border: 1px solid transparent;
   background: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.legal-toc-link:hover {
+.legal-toc-link:not(.active):hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   transform: translateX(4px);
 }
 
+.legal-toc-link:not(.active):focus,
+.legal-toc-link:not(.active):focus-visible,
+.legal-toc-link:not(.active):active {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
 .legal-toc-link.active {
-  background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(67, 56, 202, 0.1) 100%);
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.18) 0%, rgba(67, 56, 202, 0.12) 100%) !important;
   color: var(--color-gold) !important;
   font-weight: 700;
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.12) !important;
   transform: translateX(4px);
 }
 
@@ -1078,12 +1089,6 @@
   background: var(--color-gold);
   border-radius: 4px;
   box-shadow: 0 0 8px var(--color-gold);
-}
-
-.legal-toc-link:focus, .legal-toc-link:focus-visible,
-.category-filter-btn:focus, .category-filter-btn:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
 }
 
 /* ===== DASHBOARD STYLES ===== */

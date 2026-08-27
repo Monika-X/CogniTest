@@ -119,9 +119,9 @@
         </div>
       </article>
 
-      <!-- Sidebar -->
-      <aside>
-        <div class="card" style="position:sticky;top:calc(var(--nav-height) + var(--space-6))">
+      <!-- Sidebar (Sticky Navigation) -->
+      <aside style="position:sticky;top:calc(var(--nav-height) + var(--space-6));z-index:10">
+        <div class="card">
           <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-base);margin-bottom:var(--space-4)">Article Overview</h3>
           <nav aria-label="Article table of contents">
             <a href="#sec-intro" class="legal-toc-link active">Introduction</a>
@@ -626,9 +626,9 @@
     function updateActiveTOC() {
       if (isClickScrolling) return;
 
-      const threshold = 240;
       let activeLink = null;
 
+      // Check section bounding rects to find which section is currently inside viewport
       for (let i = 0; i < tocLinks.length; i++) {
         const link = tocLinks[i];
         const href = link.getAttribute('href');
@@ -636,20 +636,37 @@
           const targetEl = document.querySelector(href);
           if (targetEl) {
             const rect = targetEl.getBoundingClientRect();
-            if (rect.top <= threshold) {
+            // Active if section top is <= 280px from top AND section bottom > 100px from top
+            if (rect.top <= 280 && rect.bottom > 100) {
               activeLink = link;
+              break;
             }
           }
         }
       }
 
-      // If near bottom of the document, activate last section
-      if ((window.innerHeight + window.pageYOffset) >= (document.body.offsetHeight - 60)) {
+      // Bottom of page fallback: activate last link (Author Profile)
+      if ((window.innerHeight + window.pageYOffset) >= (document.body.offsetHeight - 80)) {
         activeLink = tocLinks[tocLinks.length - 1];
       }
 
-      if (!activeLink && tocLinks.length > 0) {
+      // Top of page fallback: activate first link (Introduction)
+      if (!activeLink && tocLinks.length > 0 && window.pageYOffset < 250) {
         activeLink = tocLinks[0];
+      }
+
+      // If still null, pick the last section whose top passed above top of viewport
+      if (!activeLink && tocLinks.length > 0) {
+        for (let i = tocLinks.length - 1; i >= 0; i--) {
+          const href = tocLinks[i].getAttribute('href');
+          if (href && href.startsWith('#')) {
+            const targetEl = document.querySelector(href);
+            if (targetEl && targetEl.getBoundingClientRect().top <= 280) {
+              activeLink = tocLinks[i];
+              break;
+            }
+          }
+        }
       }
 
       tocLinks.forEach(l => {
