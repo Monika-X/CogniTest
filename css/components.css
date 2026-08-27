@@ -612,27 +612,35 @@
   .footer-bottom { flex-direction: column; text-align: center; }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 425px) {
+  :root {
+    --nav-height: 56px;
+  }
+  .navbar {
+    height: 56px;
+  }
   .nav-container {
     padding: 0 var(--space-3);
-    gap: var(--space-2);
+    gap: 6px;
   }
   .nav-logo {
-    gap: var(--space-2);
+    gap: 6px;
   }
   .nav-logo-icon {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
   }
   .nav-logo-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
   .nav-logo-primary {
-    font-size: var(--text-base);
+    font-size: 1rem;
+    letter-spacing: -0.01em;
   }
   .nav-logo-tagline {
-    font-size: 0.55rem;
+    display: none !important;
   }
   .nav-actions {
     gap: 4px;
@@ -640,37 +648,39 @@
   .nav-action-btn {
     width: 32px;
     height: 32px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    border-radius: var(--radius-md);
+  }
+  .nav-action-btn svg {
+    width: 15px;
+    height: 15px;
   }
   .hamburger {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     padding: 4px;
   }
 }
 
 @media (max-width: 340px) {
   .nav-container {
-    padding: 0 6px;
-    gap: 4px;
-  }
-  .nav-logo-tagline {
-    display: none;
+    padding: 0 4px;
+    gap: 3px;
   }
   .nav-logo-primary {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   .nav-logo-icon {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
   }
   .nav-action-btn {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
   }
   .hamburger {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
   }
 }
 
