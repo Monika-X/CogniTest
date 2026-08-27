@@ -2,13 +2,15 @@
 
 /* Dashboard Layout */
 .dashboard-layout {
-  display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
+  display: block;
   min-height: 100vh;
   padding-top: 0;
+  position: relative;
+  width: 100%;
 }
 
 /* Sidebar */
+.sidebar,
 .dashboard-sidebar {
   position: fixed;
   top: 0;
@@ -141,9 +143,11 @@
 /* Dashboard Main */
 .dashboard-main {
   margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
   min-height: 100vh;
   background: var(--bg-primary);
   padding: var(--space-8);
+  box-sizing: border-box;
 }
 
 .dashboard-header {
