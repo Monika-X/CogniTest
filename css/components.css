@@ -316,25 +316,39 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: var(--space-2);
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
+  cursor: pointer;
+  flex-shrink: 0;
+  align-self: center;
   transition: all var(--transition-fast);
 }
 
 .hamburger span {
-  width: 22px;
+  width: 18px;
   height: 2px;
   background: var(--text-primary);
   border-radius: var(--radius-full);
   transition: all var(--transition-base);
   transform-origin: center;
+  display: block;
 }
 
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger:hover {
+  border-color: var(--border-active);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 /* ===== MOBILE NAV ===== */
 .mobile-nav {
@@ -665,12 +679,17 @@
   .hamburger {
     width: 28px;
     height: 28px;
-    padding: 2px;
+    padding: 0;
+    border-radius: 6px;
+    align-self: center;
   }
   .hamburger span {
     width: 14px;
     height: 1.5px;
   }
+  .hamburger.active span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.active span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
 }
 
 @media (max-width: 360px) {
@@ -703,7 +722,17 @@
   .hamburger {
     width: 26px;
     height: 26px;
+    padding: 0;
+    border-radius: 5px;
+    align-self: center;
   }
+  .hamburger span {
+    width: 12px;
+    height: 1.5px;
+  }
+  .hamburger.active span:nth-child(1) { transform: translateY(4.5px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.active span:nth-child(3) { transform: translateY(-4.5px) rotate(-45deg); }
 }
 
 /* ===== TOP RIGHT CONTROLS ===== */
