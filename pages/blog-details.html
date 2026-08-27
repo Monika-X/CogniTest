@@ -43,7 +43,7 @@
 <!-- SECTION 1: HERO IMAGE + ARTICLE -->
 <section class="section" aria-label="Article content">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 340px;gap:var(--space-10);align-items:start">
+    <div class="blog-details-layout" style="display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:var(--space-6);align-items:start">
 
       <!-- Article Body -->
       <article class="blog-content" aria-labelledby="sec-intro">
@@ -120,7 +120,7 @@
       </article>
 
       <!-- Sidebar (Sticky Navigation) -->
-      <aside style="position:sticky;top:calc(var(--nav-height) + var(--space-6));z-index:10">
+      <aside style="position:sticky;top:calc(var(--nav-height) + 20px);z-index:10;width:100%">
         <div class="card">
           <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-base);margin-bottom:var(--space-4)">Article Overview</h3>
           <nav aria-label="Article table of contents">

@@ -1091,6 +1091,19 @@
   box-shadow: 0 0 8px var(--color-gold);
 }
 
+.blog-details-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .blog-details-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== DASHBOARD STYLES ===== */
 .dashboard-layout { display: flex; min-height: 100vh; }
 .sidebar {
