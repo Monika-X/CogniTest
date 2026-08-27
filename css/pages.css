@@ -805,7 +805,7 @@
 .service-card-premium:hover { border-color: var(--border-active); box-shadow: var(--shadow-xl); }
 .service-card-premium:nth-child(even) { direction: rtl; }
 .service-card-premium:nth-child(even) > * { direction: ltr; }
-.service-card-img img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; display: block; }
+.service-card-img img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: center 20%; display: block; }
 .service-card-body { padding: var(--space-10); }
 .service-steps { display: flex; flex-direction: column; gap: var(--space-4); }
 .service-step { display: flex; align-items: flex-start; gap: var(--space-3); font-size: var(--text-sm); color: var(--text-secondary); }
