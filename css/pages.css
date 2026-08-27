@@ -676,7 +676,7 @@
 }
 .faculty-card:hover { border-color: var(--border-active); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .faculty-image-wrap { position: relative; height: 260px; overflow: hidden; }
-.faculty-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 90% !important; transition: transform var(--transition-slow); }
+.faculty-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transition: transform var(--transition-slow); }
 .faculty-card:hover .faculty-image-wrap img { transform: scale(1.05); }
 .faculty-overlay {
   position: absolute;
