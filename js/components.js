@@ -75,11 +75,24 @@ const initProfileMenus = () => {
 };
 
 const injectComponents = () => {
-  // Dashboard uses its own app shell; nav-only pages get the navbar without footer chrome
+  // Dashboard uses its own app shell; no-header-footer pages skip navbar/footer chrome
   const isDashboardLayout = document.body.classList.contains('dashboard-body');
+  const noHeaderFooter = document.body.hasAttribute('data-no-header-footer') || 
+                         document.body.hasAttribute('data-no-nav-footer');
   const navOnly = document.body.hasAttribute('data-nav-only');
 
-  if (isDashboardLayout) {
+  if (isDashboardLayout || noHeaderFooter) {
+    if (noHeaderFooter && !document.querySelector('.top-right-controls')) {
+      const controls = document.createElement('div');
+      controls.className = 'top-right-controls';
+      controls.innerHTML = `
+        <button class="nav-action-btn" data-theme-toggle aria-label="Toggle theme" title="Toggle Light/Dark Mode">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav-action-btn" data-rtl-toggle aria-label="Toggle RTL" style="font-size:0.7rem;font-weight:700;font-family:var(--font-heading)" title="Toggle RTL/LTR">RTL</button>
+      `;
+      document.body.prepend(controls);
+    }
     initProfileMenus();
     return;
   }
