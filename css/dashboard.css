@@ -824,6 +824,10 @@
   padding: var(--space-4) var(--space-6);
   margin-bottom: var(--space-6);
   border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
 }
 
 .dashboard-topbar-header {
@@ -1090,6 +1094,10 @@ html, body {
   .dashboard-topbar, .dashboard-header {
     padding: 6px 8px !important;
     border-radius: var(--radius-lg) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
   }
 
   .dashboard-topbar-header {
