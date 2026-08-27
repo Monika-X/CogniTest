@@ -1095,12 +1095,24 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
   gap: var(--space-6);
-  align-items: start;
+  align-items: stretch;
+}
+
+.blog-sidebar-sticky {
+  position: sticky;
+  top: calc(var(--nav-height) + 24px);
+  z-index: 10;
+  width: 100%;
+  height: fit-content;
 }
 
 @media (max-width: 900px) {
   .blog-details-layout {
     grid-template-columns: 1fr;
+  }
+  .blog-sidebar-sticky {
+    position: relative;
+    top: 0;
   }
 }
 
