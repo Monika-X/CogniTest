@@ -1024,6 +1024,7 @@
   .home2-hero-grid { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
   .home2-steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .home2-app-newsletter-grid { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
 }
 
 @media (max-width: 768px) {
@@ -1042,6 +1043,8 @@
   .trust-bar-inner { flex-direction: column; gap: var(--space-3); text-align: center; }
   .trust-item { justify-content: center; font-size: 0.8rem; }
   #faq .container > div { grid-template-columns: 1fr !important; gap: var(--space-6) !important; }
+  .home2-app-buttons { flex-direction: column !important; gap: var(--space-3) !important; }
+  .home2-app-buttons .btn { width: 100% !important; text-align: center; }
 }
 
 @media (max-width: 480px) {
@@ -1056,6 +1059,7 @@
   .course-card, .feature-card, .testimonial-card { padding: var(--space-5) !important; }
   .testimonial-author { flex-wrap: wrap; gap: var(--space-3); }
   .testimonial-rank { margin-left: 0 !important; margin-top: var(--space-2); }
+  .home2-app-newsletter-grid .card { max-width: 100% !important; padding: var(--space-4) !important; }
 }
 
 /* ===== ULTRA-COMPACT MOBILE VIEWPORTS (320px - 360px) ===== */
