@@ -1051,9 +1051,113 @@ html, body {
   .dashboard-main { padding: var(--space-3) var(--space-2) !important; }
   .dashboard-page-subtitle,
   .dashboard-subtitle {
-    display: none;
+    display: none !important;
   }
   .stats-grid { grid-template-columns: 1fr; }
   .dashboard-card { padding: var(--space-4); }
   .nav-action-btn { padding: 4px 8px; font-size: 0.75rem; }
+}
+
+/* ===== ULTRA-COMPACT MOBILE VIEWPORTS (320px - 360px) ===== */
+@media (max-width: 360px) {
+  html, body {
+    font-size: 13px !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .sidebar, .dashboard-sidebar {
+    width: min(260px, 85vw) !important;
+  }
+
+  .dashboard-main {
+    padding: var(--space-3) 6px !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .dashboard-topbar, .dashboard-header {
+    padding: 6px 8px !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .dashboard-topbar-header {
+    gap: 4px !important;
+  }
+
+  .dashboard-topbar-title-group {
+    gap: 4px !important;
+    margin-right: 2px !important;
+  }
+
+  .dashboard-page-title, .dashboard-title {
+    font-size: 0.9rem !important;
+    font-weight: 800 !important;
+  }
+
+  .dashboard-topbar-actions {
+    gap: 2px !important;
+  }
+
+  .nav-action-btn {
+    width: 26px !important;
+    height: 26px !important;
+    padding: 0 !important;
+    font-size: 0.6rem !important;
+  }
+
+  .profile-avatar-btn img,
+  .profile-toggle img {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-3) !important;
+  }
+
+  .dashboard-grid-2,
+  .dashboard-grid-3,
+  .topic-performance-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-card {
+    padding: 10px 8px !important;
+    border-radius: var(--radius-xl) !important;
+  }
+
+  .stat-widget {
+    padding: 10px !important;
+  }
+
+  .stat-widget-value {
+    font-size: var(--text-lg) !important;
+  }
+
+  .comparison-table-wrap {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-table {
+    min-width: 440px !important;
+  }
+
+  .btn {
+    padding: 5px 10px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .btn-lg {
+    padding: 7px 12px !important;
+    font-size: 0.78rem !important;
+  }
+
+  .badge {
+    font-size: 0.65rem !important;
+    padding: 2px 6px !important;
+  }
 }
