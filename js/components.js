@@ -363,8 +363,38 @@ const injectComponents = () => {
     </button>
   `);
 
-  // ===== TOAST CONTAINER =====
-  document.body.insertAdjacentHTML('beforeend', `<div class="toast-container" id="toast-container"></div>`);
+  // ===== AUTOMATIC ACTIVE NAV LINK DETECTION =====
+  const currentPath = window.location.pathname.toLowerCase();
+  const pageName = currentPath.split('/').pop() || 'index.html';
+
+  const allNavLinks = document.querySelectorAll('.nav-link, .dropdown-link, .mobile-nav-link');
+
+  allNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const cleanHref = href.replace(/\.\.\//g, '').replace(/\.\//g, '').toLowerCase();
+
+    let isActive = false;
+
+    if (pageName === cleanHref || pageName === cleanHref.split('#')[0]) {
+      isActive = true;
+    } else if (cleanHref.includes('pages/blog.html') && pageName.includes('blog-details.html')) {
+      isActive = true;
+    } else if (cleanHref.includes('index.html') && (pageName === '' || pageName === 'index.html')) {
+      isActive = true;
+    }
+
+    if (isActive) {
+      link.classList.add('active');
+
+      const parentNavItem = link.closest('.nav-item');
+      if (parentNavItem) {
+        const topLink = parentNavItem.querySelector(':scope > .nav-link');
+        if (topLink) topLink.classList.add('active');
+      }
+    }
+  });
 
   // ===== PROFILE DROPDOWN =====
   initProfileMenus();
