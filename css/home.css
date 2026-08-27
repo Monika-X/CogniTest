@@ -1021,12 +1021,17 @@
   .hero-content { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
   .counter-grid { grid-template-columns: repeat(2, 1fr); }
+  .home2-hero-grid { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
+  .home2-steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 @media (max-width: 768px) {
   .hero-stats { flex-wrap: wrap; gap: var(--space-6); }
   .hero-cta { flex-direction: column; }
   .counter-grid { grid-template-columns: repeat(2, 1fr); }
+  .home2-steps-grid { grid-template-columns: 1fr !important; }
+  .grid-4 { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 576px) {
