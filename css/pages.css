@@ -607,6 +607,27 @@
 }
 .about-point-title { font-family: var(--font-heading); font-weight: 700; margin-bottom: var(--space-1); }
 .about-point-desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; }
+.about-cta-card { padding: var(--space-16); }
+
+@media (max-width: 1024px) {
+  .about-story-grid { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
+}
+
+@media (max-width: 576px) {
+  .about-image-main { height: 280px !important; width: 100% !important; }
+  .about-image-secondary { width: 150px !important; height: 100px !important; }
+  .about-award-badge { left: 0 !important; top: 10px !important; padding: var(--space-2) var(--space-4) !important; }
+  .about-award-number { font-size: 1.3rem !important; }
+  .about-award-text { font-size: 0.6rem !important; }
+  .about-cta-card { padding: var(--space-6) var(--space-4) !important; }
+}
+
+@media (max-width: 360px) {
+  .about-image-main { height: 210px !important; }
+  .about-image-secondary { display: none !important; }
+  .about-cta-card { padding: var(--space-5) 12px !important; }
+  .performance-timeline { padding-left: var(--space-5) !important; }
+}
 
 /* ===== TIMELINE ===== */
 .performance-timeline {
