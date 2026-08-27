@@ -400,5 +400,19 @@ const injectComponents = () => {
   initProfileMenus();
 };
 
+// Global Logo Navigation Handler (Ensures all logo clicks redirect to Home Page)
+document.addEventListener('click', (e) => {
+  const logo = e.target.closest('.nav-logo, .auth-logo');
+  if (!logo) return;
+
+  const href = logo.getAttribute('href');
+  if (logo.tagName === 'A' && href && href !== '#') {
+    return; // Allow standard anchor navigation
+  }
+
+  e.preventDefault();
+  window.location.href = `${SITE_ROOT}index.html`;
+});
+
 document.addEventListener('DOMContentLoaded', injectComponents);
 
