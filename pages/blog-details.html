@@ -609,7 +609,7 @@
         const excerptText = relPost.takeaways && relPost.takeaways[0] ? relPost.takeaways[0] : 'Read full strategy and study tips.';
 
         return `
-          <article class="blog-card reveal ${delayClass}" role="listitem">
+          <article class="blog-card reveal active ${delayClass}" role="listitem">
             <div class="blog-thumbnail" style="height:240px">
               <img src="${relPost.heroImage}" alt="${relPost.title}" width="400" height="240" loading="lazy" style="object-position:${relPost.imagePosition || 'center 0%'}">
               <div class="blog-category-tag"><span class="badge ${relPost.badgeClass}">${relPost.category}</span></div>
