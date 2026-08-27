@@ -204,11 +204,24 @@
         </div>
       </div>
       <div class="card reveal delay-100">
-        <div style="background:var(--bg-secondary);border-radius:var(--radius-xl);height:300px;margin-bottom:var(--space-5);display:flex;align-items:center;justify-content:center;border:1px solid var(--border-color)" aria-label="Office location map">
-          <div style="text-align:center">
-            <div style="font-size:var(--text-sm);color:var(--text-muted)">CogniTest HQ — Baner, Pune</div>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:var(--space-4)">Open in Google Maps</a>
+        <div style="position:relative;border-radius:var(--radius-xl);overflow:hidden;height:320px;margin-bottom:var(--space-5);border:1px solid var(--border-color)">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.2613173278896!2d73.7844!3d18.5596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2becdc342b35f%3A0x6b24d6d6b0553754!2sBaner%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;filter:grayscale(0.25) contrast(1.1) invert(0.9) hue-rotate(180deg)" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="CogniTest HQ Location Map — Baner, Pune">
+          </iframe>
+          <div style="position:absolute;top:12px;left:12px;background:rgba(15,23,42,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);padding:8px 14px;border-radius:var(--radius-lg);font-size:var(--text-xs);font-weight:600;color:var(--text-primary);display:flex;align-items:center;gap:8px">
+            <span style="width:8px;height:8px;background:var(--color-gold);border-radius:50%;display:inline-block"></span>
+            CogniTest HQ — Baner, Pune
           </div>
+          <a href="https://maps.google.com/?q=Baner,+Pune,+Maharashtra+411045" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm" style="position:absolute;bottom:12px;right:12px;box-shadow:0 4px 15px rgba(0,0,0,0.5)">
+            Open in Google Maps ↗
+          </a>
         </div>
         <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-xl);margin-bottom:var(--space-4)">Department-wise Contacts</h3>
         <div style="display:flex;flex-direction:column;gap:var(--space-3)">
