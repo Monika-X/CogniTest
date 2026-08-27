@@ -640,5 +640,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('page-transition');
 });
 
+const Chart = {
+  line(canvasId, datasets, labels) { LineChart.draw(canvasId, datasets, labels); },
+  bar(canvasId, data, labels, colors) { BarChart.draw(canvasId, data, labels, colors); },
+  donut(canvasId, data, colors, labels) { DonutChart.draw(canvasId, data, colors, labels); }
+};
+
 // Export for page-specific usage
-window.CogniTest = { Toast, Modal, FormValidator, BarChart, LineChart, DonutChart, LS };
+window.CogniTest = { Toast, Modal, FormValidator, BarChart, LineChart, DonutChart, Chart, LS };

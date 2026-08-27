@@ -206,8 +206,8 @@
             <div class="dashboard-card-header">
               <h2 class="dashboard-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:text-top"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Score Trend (Last 10 Tests)</h2>
               <div style="display:flex;gap:var(--space-2)">
-                <button class="btn btn-sm" style="background:rgba(67,56,202,0.1);color:var(--color-indigo-light);border:1px solid rgba(67,56,202,0.2)">Week</button>
-                <button class="btn btn-sm" style="background:rgba(67,56,202,0.08);color:var(--text-muted);border:1px solid transparent">Month</button>
+                <button class="btn btn-sm" id="btn-trend-week" style="background:rgba(67,56,202,0.15);color:var(--color-indigo-light);border:1px solid rgba(67,56,202,0.3)">Week</button>
+                <button class="btn btn-sm" id="btn-trend-month" style="background:rgba(255,255,255,0.05);color:var(--text-muted);border:1px solid transparent">Month</button>
               </div>
             </div>
             <div style="height:220px;position:relative">
@@ -1144,29 +1144,60 @@
     }
 
     // Render charts
-    setTimeout(() => {
-      const scoreTrendEl = document.getElementById('score-trend-chart');
-      if (scoreTrendEl && window.CogniTest?.Chart) {
-        window.CogniTest.Chart.line(scoreTrendEl, {
-          labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10'],
-          datasets: [{
-            label: 'Score %',
-            data: [58, 62, 66, 64, 70, 73, 75, 78, 76, 82]
-          }]
-        });
+    const renderDashboardCharts = (mode = 'week') => {
+      const labels = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10'];
+      const weekData = [58, 62, 66, 64, 70, 73, 75, 78, 76, 82];
+      const monthData = [50, 55, 60, 68, 72, 75, 80, 84, 85, 89];
+      const selectedData = (mode === 'month') ? monthData : weekData;
+
+      // Score Trend Line Chart
+      if (window.CogniTest?.LineChart) {
+        window.CogniTest.LineChart.draw('score-trend-chart', [
+          { label: 'Score %', data: selectedData, color: '#6366f1' }
+        ], labels);
       }
 
-      const accuracyEl = document.getElementById('accuracy-chart');
-      if (accuracyEl && window.CogniTest?.Chart) {
-        window.CogniTest.Chart.bar(accuracyEl, {
-          labels: ['QA', 'Reasoning', 'English', 'GA', 'Computer'],
-          datasets: [{
-            label: 'Accuracy %',
-            data: [82, 74, 88, 67, 91]
-          }]
-        });
+      // Section-wise Accuracy Bar Chart
+      if (window.CogniTest?.BarChart) {
+        window.CogniTest.BarChart.draw(
+          'accuracy-chart',
+          [82, 74, 88, 67, 91],
+          ['QA', 'Reasoning', 'English', 'GA', 'Computer'],
+          ['#4338CA', '#06B6D4', '#D4AF37', '#10b981', '#8b5cf6']
+        );
       }
-    }, 300);
+    };
+
+    // Filter toggles
+    const btnWeek = document.getElementById('btn-trend-week');
+    const btnMonth = document.getElementById('btn-trend-month');
+
+    btnWeek?.addEventListener('click', () => {
+      btnWeek.style.background = 'rgba(67,56,202,0.15)';
+      btnWeek.style.color = 'var(--color-indigo-light)';
+      btnWeek.style.borderColor = 'rgba(67,56,202,0.3)';
+      btnMonth.style.background = 'rgba(255,255,255,0.05)';
+      btnMonth.style.color = 'var(--text-muted)';
+      btnMonth.style.borderColor = 'transparent';
+      renderDashboardCharts('week');
+    });
+
+    btnMonth?.addEventListener('click', () => {
+      btnMonth.style.background = 'rgba(67,56,202,0.15)';
+      btnMonth.style.color = 'var(--color-indigo-light)';
+      btnMonth.style.borderColor = 'rgba(67,56,202,0.3)';
+      btnWeek.style.background = 'rgba(255,255,255,0.05)';
+      btnWeek.style.color = 'var(--text-muted)';
+      btnWeek.style.borderColor = 'transparent';
+      renderDashboardCharts('month');
+    });
+
+    // Initial render & window resize handler
+    setTimeout(() => renderDashboardCharts('week'), 200);
+    window.addEventListener('resize', () => {
+      clearTimeout(window.__chartResizeTimer);
+      window.__chartResizeTimer = setTimeout(() => renderDashboardCharts(), 200);
+    });
   });
 </script>
 </body>
