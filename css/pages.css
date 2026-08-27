@@ -296,10 +296,10 @@
   flex-direction: column;
 }
 .course-card:hover { border-color: var(--border-active); transform: translateY(-6px); box-shadow: var(--shadow-xl); }
-.course-thumbnail { position: relative; height: 225px; overflow: hidden; background: #0e121b; }
-.course-thumbnail img { width: 100%; height: 100%; object-fit: cover; object-position: center 0%; transition: transform var(--transition-slow); }
+.course-thumbnail { position: relative; height: 240px; overflow: hidden; background: #0e121b; }
+.course-thumbnail img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; transition: transform var(--transition-slow); }
 .course-card:hover .course-thumbnail img { transform: scale(1.05); }
-.course-thumbnail-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15, 20, 32, 0.25) 0%, transparent 40%, rgba(15, 20, 32, 0.85) 100%); }
+.course-thumbnail-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15, 20, 32, 0.15) 0%, transparent 35%, rgba(15, 20, 32, 0.85) 100%); }
 .course-category-badge { position: absolute; top: var(--space-3); left: var(--space-3); z-index: 2; }
 .course-featured-tag {
   position: absolute;
