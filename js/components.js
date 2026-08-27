@@ -223,14 +223,15 @@ const injectComponents = () => {
   <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
     <div class="mobile-nav-inner">
       <a href="${SITE_ROOT}index.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.home}</span> Home</a>
-      <a href="${SITE_ROOT}pages/about.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.info}</span> About Us</a>
+      <a href="${SITE_ROOT}pages/home2.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.home}</span> Home 2</a>
+      <a href="${SITE_ROOT}pages/about.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.info}</span> About</a>
       <a href="${SITE_ROOT}pages/courses.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.book}</span> Courses</a>
       <a href="${SITE_ROOT}pages/services.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.star}</span> Services</a>
+      <a href="${SITE_ROOT}pages/blog.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.edit}</span> Blog</a>
+      <a href="${SITE_ROOT}pages/contact.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.phone}</span> Contact</a>
       <a href="${SITE_ROOT}pages/faculty.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.teacher}</span> Faculty</a>
       <a href="${SITE_ROOT}pages/results.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.trophy}</span> Results</a>
       <a href="${SITE_ROOT}pages/fees.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.creditCard}</span> Fees & Plans</a>
-      <a href="${SITE_ROOT}pages/blog.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.edit}</span> Blog</a>
-      <a href="${SITE_ROOT}pages/contact.html" class="mobile-nav-link"><span class="dropdown-link-icon">${SVG_ICONS.phone}</span> Contact</a>
       <div class="mobile-nav-divider"></div>
       <div class="mobile-nav-cta">
         <a href="${SITE_ROOT}pages/login.html" class="btn btn-outline w-full">Login</a>
@@ -273,42 +274,42 @@ const injectComponents = () => {
           </div>
         </div>
 
-        <!-- Courses -->
+        <!-- Navigation (Same Order as Header Navbar) -->
         <div>
-          <div class="footer-heading">Courses</div>
+          <div class="footer-heading">Navigation</div>
           <div class="footer-links">
+            <a href="${SITE_ROOT}index.html" class="footer-link">Home</a>
+            <a href="${SITE_ROOT}pages/home2.html" class="footer-link">Home 2</a>
+            <a href="${SITE_ROOT}pages/about.html" class="footer-link">About</a>
+            <a href="${SITE_ROOT}pages/courses.html" class="footer-link">Courses</a>
+            <a href="${SITE_ROOT}pages/services.html" class="footer-link">Services</a>
+            <a href="${SITE_ROOT}pages/blog.html" class="footer-link">Blog</a>
+            <a href="${SITE_ROOT}pages/contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- More Links & Faculty -->
+        <div>
+          <div class="footer-heading">Explore</div>
+          <div class="footer-links">
+            <a href="${SITE_ROOT}pages/faculty.html" class="footer-link">Faculty</a>
+            <a href="${SITE_ROOT}pages/results.html" class="footer-link">Results</a>
+            <a href="${SITE_ROOT}pages/fees.html" class="footer-link">Fees & Plans</a>
             <a href="${SITE_ROOT}pages/courses.html#banking" class="footer-link">Banking (IBPS / SBI)</a>
             <a href="${SITE_ROOT}pages/courses.html#ssc" class="footer-link">SSC CGL / CHSL</a>
-            <a href="${SITE_ROOT}pages/courses.html#railways" class="footer-link">Railways RRB</a>
-            <a href="${SITE_ROOT}pages/courses.html#engineering" class="footer-link">JEE Main & Advanced</a>
-            <a href="${SITE_ROOT}pages/courses.html#engineering" class="footer-link">GATE</a>
-            <a href="${SITE_ROOT}pages/courses.html" class="footer-link">All Courses</a>
+            <a href="${SITE_ROOT}pages/courses.html#engineering" class="footer-link">Engineering (JEE / GATE)</a>
           </div>
         </div>
 
-        <!-- Company -->
-        <div>
-          <div class="footer-heading">Company</div>
-          <div class="footer-links">
-            <a href="${SITE_ROOT}pages/about.html" class="footer-link">About Us</a>
-            <a href="${SITE_ROOT}pages/faculty.html" class="footer-link">Our Faculty</a>
-            <a href="${SITE_ROOT}pages/results.html" class="footer-link">Student Results</a>
-            <a href="${SITE_ROOT}pages/blog.html" class="footer-link">Blog & Resources</a>
-            <a href="${SITE_ROOT}pages/services.html" class="footer-link">Services</a>
-            <a href="${SITE_ROOT}pages/contact.html" class="footer-link">Contact Us</a>
-          </div>
-        </div>
-
-        <!-- Legal -->
+        <!-- Legal & Info -->
         <div>
           <div class="footer-heading">Legal & Info</div>
           <div class="footer-links">
             <a href="${SITE_ROOT}pages/privacy-policy.html" class="footer-link">Privacy Policy</a>
             <a href="${SITE_ROOT}pages/terms-conditions.html" class="footer-link">Terms & Conditions</a>
             <a href="${SITE_ROOT}pages/sitemap.html" class="footer-link">Sitemap</a>
-            <a href="${SITE_ROOT}pages/fees.html" class="footer-link">Pricing & Plans</a>
             <a href="${SITE_ROOT}pages/contact.html" class="footer-link">Refund Policy</a>
-            <a href="${SITE_ROOT}pages/maintenance.html" class="footer-link">Status</a>
+            <a href="${SITE_ROOT}pages/maintenance.html" class="footer-link">System Status</a>
           </div>
         </div>
       </div>
