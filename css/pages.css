@@ -868,18 +868,27 @@
   .service-card-premium:nth-child(even) { direction: ltr !important; }
   .services-steps-grid { grid-template-columns: repeat(2, 1fr) !important; gap: var(--space-4) !important; }
   .services-enterprise-grid { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
+  .blog-main-grid,
+  .blog-details-layout { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
 }
 
 @media (max-width: 576px) {
   .service-card-body { padding: var(--space-5) var(--space-4) !important; }
   .services-steps-grid { grid-template-columns: 1fr !important; }
   .services-cta-card { padding: var(--space-6) var(--space-4) !important; }
+  .blog-thumbnail { height: 180px !important; }
+  .blog-body { padding: var(--space-4) !important; }
+  .blog-footer { flex-wrap: wrap; gap: var(--space-3); }
+  .blog-author { width: 100%; }
 }
 
 @media (max-width: 360px) {
   .service-card-img img { min-height: 180px !important; height: 180px !important; }
   .services-cta-card { padding: var(--space-5) 10px !important; }
   .service-card-body h2 { font-size: 1.2rem !important; }
+  .blog-thumbnail { height: 150px !important; }
+  .blog-title { font-size: 0.95rem !important; }
+  .blog-excerpt { font-size: 0.8rem !important; }
 }
 
 /* ===== BLOG ===== */
