@@ -582,31 +582,42 @@
 .about-point-desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; }
 
 /* ===== TIMELINE ===== */
-.performance-timeline { position: relative; }
+.performance-timeline {
+  position: relative;
+  padding-left: var(--space-8);
+}
+
 .performance-timeline::before {
   content: '';
   position: absolute;
-  left: 12px;
-  top: 0; bottom: 0;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
   width: 2px;
   background: var(--gradient-primary);
-  opacity: 0.3;
+  border-radius: var(--radius-full);
 }
+
 .timeline-item {
-  padding-left: var(--space-10);
-  padding-bottom: var(--space-8);
   position: relative;
+  padding: 0 0 var(--space-8) 0;
+  margin-left: var(--space-2);
 }
+
+.timeline-item:last-child { padding-bottom: 0; }
+
 .timeline-dot {
   position: absolute;
-  left: 6px;
+  left: calc(-1 * var(--space-8) - var(--space-2));
   top: 4px;
-  width: 14px; height: 14px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: var(--color-indigo);
+  background: var(--gradient-primary);
   border: 2px solid var(--bg-primary);
   z-index: 1;
 }
+
 .timeline-date {
   font-size: var(--text-xs);
   color: var(--color-indigo-light);
@@ -615,8 +626,43 @@
   letter-spacing: 0.08em;
   margin-bottom: var(--space-2);
 }
-.timeline-title { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-2); }
-.timeline-desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.7; }
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.timeline-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* RTL Timeline Overrides */
+[dir="rtl"] .performance-timeline {
+  padding-left: 0;
+  padding-right: var(--space-8);
+}
+
+[dir="rtl"] .performance-timeline::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .timeline-item {
+  padding: 0 0 var(--space-8) 0;
+  margin-left: 0;
+  margin-right: var(--space-2);
+  text-align: right;
+}
+
+[dir="rtl"] .timeline-dot {
+  left: auto;
+  right: calc(-1 * var(--space-8) - var(--space-2));
+}
 
 /* ===== FACULTY CARDS ===== */
 .faculty-card {
