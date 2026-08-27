@@ -200,7 +200,7 @@ const injectComponents = () => {
           </button>
           <div class="dropdown-menu profile-dropdown" role="menu" aria-label="Account Menu">
             <a href="${SITE_ROOT}pages/dashboard.html" class="dropdown-link" role="menuitem"><div class="dropdown-link-icon">${SVG_ICONS.dashboard}</div>User Dashboard</a>
-            <a href="${SITE_ROOT}pages/dashboard.html#admin" class="dropdown-link" role="menuitem"><div class="dropdown-link-icon">${SVG_ICONS.shield}</div>Admin Dashboard</a>
+            <a href="${SITE_ROOT}pages/admin-dashboard.html" class="dropdown-link" role="menuitem"><div class="dropdown-link-icon">${SVG_ICONS.shield}</div>Admin Portal</a>
             <div class="profile-dropdown-divider" role="separator"></div>
             <a href="${SITE_ROOT}pages/login.html" class="dropdown-link" role="menuitem"><div class="dropdown-link-icon">${SVG_ICONS.login}</div>Login / Signup</a>
           </div>
