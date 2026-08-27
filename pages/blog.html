@@ -307,6 +307,13 @@
 
         </div>
 
+        <!-- View More Button (Loads +2 cards per click) -->
+        <div class="text-center" style="margin-top:var(--space-8)">
+          <button id="view-more-btn" class="btn btn-outline btn-lg" style="min-width:220px">
+            View More Articles (+2)
+          </button>
+        </div>
+
       </div>
 
       <!-- Sidebar -->
@@ -422,38 +429,82 @@
     const filterBtns = document.querySelectorAll('.category-filter-btn');
     const blogCards = document.querySelectorAll('.blog-card-item');
     const searchInput = document.getElementById('blog-search-input');
+    const viewMoreBtn = document.getElementById('view-more-btn');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const cat = btn.getAttribute('data-category');
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    let currentCategory = 'all';
+    let visibleCount = 2; // Default show 2 cards
 
-        blogCards.forEach(card => {
-          if (cat === 'all' || card.getAttribute('data-category') === cat) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+    function renderCards() {
+      const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+      // Collect matching cards for current category & search query
+      let matchingCards = [];
+      blogCards.forEach(card => {
+        const catMatch = (currentCategory === 'all' || card.getAttribute('data-category') === currentCategory);
+        const searchMatch = (!query || card.textContent.toLowerCase().includes(query));
+
+        if (catMatch && searchMatch) {
+          matchingCards.push(card);
+        } else {
+          card.style.display = 'none';
+        }
       });
-    });
 
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        blogCards.forEach(card => {
-          const text = card.textContent.toLowerCase();
-          if (!query || text.includes(query)) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+      // Display up to visibleCount cards
+      matchingCards.forEach((card, index) => {
+        if (index < visibleCount) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update View More button state & remaining badge
+      if (viewMoreBtn) {
+        if (visibleCount >= matchingCards.length) {
+          viewMoreBtn.style.display = 'none';
+        } else {
+          viewMoreBtn.style.display = 'inline-flex';
+          const remaining = matchingCards.length - visibleCount;
+          const nextCount = Math.min(2, remaining);
+          viewMoreBtn.innerHTML = `View More Articles (+${nextCount})`;
+        }
+      }
+    }
+
+    // View More Button click -> loads 2 more cards per click
+    if (viewMoreBtn) {
+      viewMoreBtn.addEventListener('click', () => {
+        visibleCount += 2;
+        renderCards();
       });
     }
 
+    // Sidebar Category Filter Buttons click
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentCategory = btn.getAttribute('data-category');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        visibleCount = 2; // Reset visible count to 2 cards
+        renderCards();
+      });
+    });
+
+    // Search input
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        visibleCount = 2;
+        renderCards();
+      });
+    }
+
+    // Initial render on DOM ready
+    renderCards();
+
+    // Newsletter validation
     const form = document.getElementById('blog-newsletter');
     if (form) {
       form.addEventListener('submit', (e) => {
