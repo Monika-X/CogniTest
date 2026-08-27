@@ -1385,17 +1385,20 @@
       });
     });
 
-    // Check initial location hash or query
-    const initialHash = window.location.hash.replace('#', '');
-    if (initialHash) {
-      const matchLink = document.querySelector(`.sidebar-link[href="#${initialHash}"]`);
-      if (matchLink) {
-        const titleText = matchLink.querySelector('.sidebar-link-text')?.textContent || 'Dashboard';
-        activateTab(initialHash, titleText);
-      } else if (initialHash === 'admin' || initialHash === 'admin-overview') {
+    // Check initial location hash or query & window hashchange listener
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.replace('#', '') || 'dashboard-overview';
+      if (hash === 'admin' || hash === 'admin-overview') {
         activateTab('admin-overview', 'Admin Control Center');
+        return;
       }
-    }
+      const matchLink = document.querySelector(`.sidebar-link[href="#${hash}"]`) || document.querySelector(`.sidebar-link[data-tab="${hash}"]`);
+      const titleText = matchLink?.querySelector('.sidebar-link-text')?.textContent || 'Dashboard';
+      activateTab(hash, titleText);
+    };
+
+    window.addEventListener('hashchange', handleHashNavigation);
+    handleHashNavigation();
 
     // ===== REAL-TIME INSTANT SEARCH ENGINE =====
     const searchInput = document.getElementById('dashboard-search-input');
