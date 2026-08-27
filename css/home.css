@@ -712,7 +712,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top !important;
+  object-position: center 90% !important;
   transition: transform 0.5s ease;
 }
 
