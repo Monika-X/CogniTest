@@ -82,7 +82,7 @@ const injectComponents = () => {
   const navOnly = document.body.hasAttribute('data-nav-only');
 
   if (isDashboardLayout || noHeaderFooter) {
-    if (noHeaderFooter && !document.querySelector('.top-right-controls')) {
+    if (noHeaderFooter && !isDashboardLayout && !document.querySelector('.top-right-controls')) {
       const controls = document.createElement('div');
       controls.className = 'top-right-controls';
       controls.innerHTML = `

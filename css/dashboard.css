@@ -5,13 +5,13 @@
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
   min-height: 100vh;
-  padding-top: var(--nav-height);
+  padding-top: 0;
 }
 
 /* Sidebar */
 .dashboard-sidebar {
   position: fixed;
-  top: var(--nav-height);
+  top: 0;
   left: 0;
   bottom: 0;
   width: var(--sidebar-width);
@@ -141,7 +141,7 @@
 /* Dashboard Main */
 .dashboard-main {
   margin-left: var(--sidebar-width);
-  min-height: calc(100vh - var(--nav-height));
+  min-height: 100vh;
   background: var(--bg-primary);
   padding: var(--space-8);
 }
@@ -531,7 +531,7 @@
   padding: var(--space-6);
   height: fit-content;
   position: sticky;
-  top: calc(var(--nav-height) + 80px);
+  top: 80px;
 }
 
 .navigator-title {
