@@ -188,6 +188,11 @@
           <button class="btn btn-sm" style="background:#ef4444;color:#fff;border:none;font-weight:700" onclick="window.CogniTest?.Toast?.show('Preparing All-India Push Broadcast Notification...', 'info')"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Push Broadcast</button>
         </div>
       </div>
+
+      <div class="dashboard-search">
+        <input type="search" placeholder="Search users, courses, AI questions, financial logs..." class="dashboard-search-input" id="admin-search-input" aria-label="Search admin portal">
+        <div class="search-dropdown-results" id="admin-search-dropdown" hidden></div>
+      </div>
     </header>
 
     <!-- TAB 1: COMMAND OVERVIEW -->
@@ -607,6 +612,73 @@
     if (hash && document.getElementById(hash)) {
       activateAdminTab(hash);
     }
+
+    // ===== ADMIN INSTANT SEARCH ENGINE =====
+    const adminSearchInput = document.getElementById('admin-search-input');
+    const adminSearchDropdown = document.getElementById('admin-search-dropdown');
+
+    const adminSearchableItems = [
+      { title: 'User Directory & Account Moderation', cat: 'Tab', tabId: 'user-management' },
+      { title: 'Rahul Sharma (Student Account)', cat: 'User', tabId: 'user-management' },
+      { title: 'Ananya Verma (Plus Subscription)', cat: 'User', tabId: 'user-management' },
+      { title: 'Karthik Raja (Pro Subscription)', cat: 'User', tabId: 'user-management' },
+      { title: 'Course Catalog & Pricing Studio', cat: 'Tab', tabId: 'content-management' },
+      { title: 'IBPS PO 2025 Complete Super Pack', cat: 'Course', tabId: 'content-management' },
+      { title: 'SBI PO Mains Ultimate Mock Series', cat: 'Course', tabId: 'content-management' },
+      { title: 'AI Question Bank Generator Studio', cat: 'Tab', tabId: 'ai-generator' },
+      { title: 'Financial Logs & Revenue Analytics', cat: 'Tab', tabId: 'revenue-analytics' },
+      { title: 'Server Terminal & System Diagnostic Logs', cat: 'Tab', tabId: 'system-logs' },
+      { title: 'Global Platform Configuration & Maintenance', cat: 'Tab', tabId: 'admin-settings' }
+    ];
+
+    const handleAdminSearch = (query) => {
+      if (!query || !query.trim()) {
+        adminSearchDropdown.hidden = true;
+        adminSearchDropdown.innerHTML = '';
+        return;
+      }
+      const q = query.toLowerCase().trim();
+      const results = adminSearchableItems.filter(item => item.title.toLowerCase().includes(q) || item.cat.toLowerCase().includes(q));
+
+      if (results.length === 0) {
+        adminSearchDropdown.innerHTML = `<div class="search-result-item" style="color:var(--text-muted);font-size:var(--text-xs)">No admin records found for "${query}"</div>`;
+      } else {
+        adminSearchDropdown.innerHTML = results.map((item, idx) => `
+          <div class="search-result-item" data-admin-search-idx="${idx}">
+            <div class="search-result-icon">⚙️</div>
+            <div class="search-result-info">
+              <div class="search-result-title">${item.title}</div>
+              <div class="search-result-category">${item.cat}</div>
+            </div>
+          </div>
+        `).join('');
+
+        adminSearchDropdown.querySelectorAll('.search-result-item').forEach((el, idx) => {
+          el.addEventListener('click', () => {
+            const item = results[idx];
+            if (item && item.tabId) {
+              activateAdminTab(item.tabId);
+              window.location.hash = item.tabId;
+              window.CogniTest?.Toast?.show(`Switched to ${item.title}`, 'info');
+            }
+            adminSearchDropdown.hidden = true;
+            adminSearchInput.value = '';
+          });
+        });
+      }
+      adminSearchDropdown.hidden = false;
+    };
+
+    adminSearchInput?.addEventListener('input', (e) => handleAdminSearch(e.target.value));
+    adminSearchInput?.addEventListener('focus', (e) => {
+      if (e.target.value) handleAdminSearch(e.target.value);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!adminSearchInput?.contains(e.target) && !adminSearchDropdown?.contains(e.target)) {
+        adminSearchDropdown.hidden = true;
+      }
+    });
 
     // Responsive Mobile Sidebar Toggle Engine
     const toggle = document.getElementById('sidebar-toggle');

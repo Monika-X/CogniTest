@@ -160,7 +160,8 @@
       </div>
 
       <div class="dashboard-search">
-        <input type="search" placeholder="Search tests, topics..." class="dashboard-search-input" aria-label="Search the dashboard">
+        <input type="search" placeholder="Search tests, topics..." class="dashboard-search-input" id="dashboard-search-input" aria-label="Search the dashboard">
+        <div class="search-dropdown-results" id="search-dropdown" hidden></div>
       </div>
     </header>
 
@@ -1282,6 +1283,83 @@
         activateTab('admin-overview', 'Admin Control Center');
       }
     }
+
+    // ===== REAL-TIME INSTANT SEARCH ENGINE =====
+    const searchInput = document.getElementById('dashboard-search-input');
+    const searchDropdown = document.getElementById('search-dropdown');
+
+    const searchableItems = [
+      { title: 'IBPS PO Prelims All-India Live Mock Test 08', cat: 'Mock Test', action: () => openMockTestModal() },
+      { title: 'SBI PO Mains Speed Diagnostic Test 04', cat: 'Mock Test', action: () => openMockTestModal() },
+      { title: 'SSC CGL Tier 1 Full Length Model Paper 12', cat: 'Mock Test', action: () => openMockTestModal() },
+      { title: 'RRB NTPC CBT 2 Full Length Speed Test 06', cat: 'Mock Test', action: () => openMockTestModal() },
+      { title: 'My Courses & Enrolled Series', cat: 'Section', action: () => activateTab('my-courses', 'My Courses') },
+      { title: 'Live Classes & Interactive Sessions', cat: 'Section', action: () => activateTab('live-classes', 'Live Classes') },
+      { title: 'Full-Length Tests & Exam Series', cat: 'Section', action: () => activateTab('full-tests', 'Full-Length Tests') },
+      { title: 'Previous Year Papers & Answer Keys', cat: 'Section', action: () => activateTab('prev-papers', 'Previous Year Papers') },
+      { title: 'Weakness Analysis & Speed Radar', cat: 'Section', action: () => activateTab('weakness-analysis', 'Weakness Analysis') },
+      { title: 'Progress Tracker & Test Analytics', cat: 'Section', action: () => activateTab('progress-tracker', 'Progress Tracker') },
+      { title: 'Study Material & PDF Notes', cat: 'Section', action: () => activateTab('study-material', 'Study Material') },
+      { title: 'Daily Current Affairs & Banking Digest', cat: 'Section', action: () => activateTab('current-affairs', 'Current Affairs') },
+      { title: 'Bookmarked & Flagged Questions', cat: 'Section', action: () => activateTab('bookmarks', 'Bookmarked Questions') },
+      { title: 'Account Settings & Target Exam', cat: 'Section', action: () => activateTab('settings', 'Account Settings') },
+      { title: 'Reasoning Masterclass: Floor Puzzles', cat: 'Live Class', action: () => activateTab('live-classes', 'Live Classes') },
+      { title: 'Quant Speed Math & Data Interpretation PDF', cat: 'Study Material', action: () => activateTab('study-material', 'Study Material') }
+    ];
+
+    const handleSearch = (query) => {
+      if (!query || !query.trim()) {
+        searchDropdown.hidden = true;
+        searchDropdown.innerHTML = '';
+        return;
+      }
+      const q = query.toLowerCase().trim();
+      const results = searchableItems.filter(item => item.title.toLowerCase().includes(q) || item.cat.toLowerCase().includes(q));
+
+      if (results.length === 0) {
+        searchDropdown.innerHTML = `<div class="search-result-item" style="color:var(--text-muted);font-size:var(--text-xs)">No results found for "${query}"</div>`;
+      } else {
+        searchDropdown.innerHTML = results.map((item, idx) => `
+          <div class="search-result-item" data-search-idx="${idx}">
+            <div class="search-result-icon">🔍</div>
+            <div class="search-result-info">
+              <div class="search-result-title">${item.title}</div>
+              <div class="search-result-category">${item.cat}</div>
+            </div>
+          </div>
+        `).join('');
+
+        searchDropdown.querySelectorAll('.search-result-item').forEach((el, idx) => {
+          el.addEventListener('click', () => {
+            const item = results[idx];
+            if (item && item.action) {
+              item.action();
+              window.CogniTest?.Toast?.show(`Navigated to ${item.title}`, 'info');
+            }
+            searchDropdown.hidden = true;
+            searchInput.value = '';
+          });
+        });
+      }
+      searchDropdown.hidden = false;
+    };
+
+    searchInput?.addEventListener('input', (e) => handleSearch(e.target.value));
+    searchInput?.addEventListener('focus', (e) => {
+      if (e.target.value) handleSearch(e.target.value);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!searchInput?.contains(e.target) && !searchDropdown?.contains(e.target)) {
+        searchDropdown.hidden = true;
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchDropdown.hidden = true;
+      }
+    });
 
     // Render charts
     const renderDashboardCharts = (mode = 'week') => {
