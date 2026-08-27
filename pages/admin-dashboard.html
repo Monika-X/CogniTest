@@ -68,6 +68,7 @@
   <!-- ====== DEDICATED ADMIN SIDEBAR ====== -->
   <aside class="dashboard-sidebar" id="sidebar" role="navigation" aria-label="Admin Navigation">
     <div class="sidebar-inner">
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text-muted);font-size:1.2rem;cursor:pointer">✕</button>
       
       <!-- Admin Logo Header -->
       <a href="../index.html" class="nav-logo" style="text-decoration:none;margin-bottom:var(--space-6)" aria-label="Go to Home Page">
@@ -159,15 +160,23 @@
     </div>
   </aside>
 
+  <!-- Mobile Backdrop Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
   <!-- ====== MAIN CONTENT AREA ====== -->
   <main class="dashboard-main">
     
     <!-- Admin Topbar Header -->
     <header class="dashboard-header">
-      <div>
-        <div class="admin-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px;margin-right:4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> SUPER ADMIN COMMAND CENTER</div>
-        <h1 class="dashboard-title" style="margin-top:var(--space-2)">Platform Administration</h1>
-        <div class="dashboard-subtitle" id="admin-subtitle">● All 12 Microservices Online • Active Test Takers: 4,820 • DB Latency: 12ms</div>
+      <div style="display:flex;align-items:center;gap:var(--space-3)">
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <div>
+          <div class="admin-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px;margin-right:4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> SUPER ADMIN COMMAND CENTER</div>
+          <h1 class="dashboard-title" style="margin-top:var(--space-2)">Platform Administration</h1>
+          <div class="dashboard-subtitle" id="admin-subtitle">● All 12 Microservices Online • Active Test Takers: 4,820 • DB Latency: 12ms</div>
+        </div>
       </div>
 
       <div style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap">
@@ -588,6 +597,7 @@
         const targetId = link.dataset.adminTab;
         activateAdminTab(targetId);
         window.location.hash = targetId;
+        closeSidebar();
       });
     });
 
@@ -595,6 +605,28 @@
     if (hash && document.getElementById(hash)) {
       activateAdminTab(hash);
     }
+
+    // Responsive Mobile Sidebar Toggle Engine
+    const toggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const close = document.getElementById('sidebar-close');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    const openSidebar = () => {
+      sidebar?.classList.add('open');
+      overlay?.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeSidebar = () => {
+      sidebar?.classList.remove('open');
+      overlay?.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    toggle?.addEventListener('click', openSidebar);
+    close?.addEventListener('click', closeSidebar);
+    overlay?.addEventListener('click', closeSidebar);
   });
 </script>
 </body>
