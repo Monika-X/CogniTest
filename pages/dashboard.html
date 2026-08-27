@@ -526,132 +526,246 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====== ADMIN DASHBOARD TAB (hidden by default) ====== -->
+                <!-- ====== ADMIN DASHBOARD TAB (COMMAND CENTER) ====== -->
       <section id="admin-overview" class="dashboard-tab" aria-label="Admin Control Center" hidden>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
-          <div>
-            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1);display:flex;align-items:center;gap:var(--space-3)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-indigo-light)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Admin Control Center
-            </h2>
-            <p style="color:var(--text-muted);font-size:var(--text-sm)">Platform administration, system status, user management, and mock test analytics</p>
-          </div>
-          <div style="display:flex;gap:var(--space-3)">
-            <button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Generating full platform diagnostic report...', 'info')">System Health Check</button>
-            <button class="btn btn-cyan btn-sm" onclick="window.CogniTest?.Toast?.show('Opening AI Question Generator panel...', 'success')">+ Create New Test</button>
+        
+        <!-- Admin Command Top Header -->
+        <div style="background:linear-gradient(135deg,rgba(239,68,68,0.18),rgba(67,56,202,0.18));border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius-2xl);padding:var(--space-6);margin-bottom:var(--space-6);position:relative;overflow:hidden">
+          <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(239,68,68,0.15);border-radius:50%;filter:blur(50px);pointer-events:none"></div>
+          
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4);position:relative;z-index:1">
+            <div>
+              <div style="display:inline-flex;align-items:center;gap:var(--space-2);background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4);border-radius:var(--radius-full);padding:2px 10px;font-size:var(--text-xs);font-weight:800;margin-bottom:var(--space-2)">
+                🛡️ SUPER ADMIN COMMAND CENTER
+              </div>
+              <h2 style="font-family:var(--font-heading);font-size:var(--text-3xl);font-weight:900;letter-spacing:-0.02em;margin-bottom:var(--space-1)">
+                Platform Administration & Global Control
+              </h2>
+              <p style="color:var(--text-muted);font-size:var(--text-sm);display:flex;align-items:center;gap:var(--space-2)">
+                <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 8px #10b981"></span>
+                System Status: All 12 Microservices Online • Active Test Takers: 4,820 • DB Latency: 12ms
+              </p>
+            </div>
+
+            <!-- Admin Quick Actions Toolbar -->
+            <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+              <button class="btn btn-sm" style="background:#ef4444;color:#fff;border:none;font-weight:700" onclick="window.CogniTest?.Toast?.show('Opening AI Question Generator modal...', 'success')">🤖 AI Test Generator</button>
+              <button class="btn btn-cyan btn-sm" onclick="window.CogniTest?.Toast?.show('Opening Course Publishing Wizard...', 'info')">+ Publish Course</button>
+              <button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('Preparing All-India Broadcast Push Notification...', 'info')">📢 Push Broadcast</button>
+            </div>
           </div>
         </div>
 
-        <!-- Admin Stat Widgets -->
-        <div class="stats-grid" role="list" aria-label="Platform administration statistics">
-          <article class="stat-widget" role="listitem">
+        <!-- Admin Stat Widgets Grid -->
+        <div class="stats-grid" role="list" aria-label="Admin Platform Metrics" style="margin-bottom:var(--space-6)">
+          <article class="stat-widget" role="listitem" style="border:1px solid rgba(212,175,55,0.3)">
             <div class="stat-widget-body">
-              <div class="stat-widget-label">Total Registered Students</div>
-              <div class="stat-widget-value">1,04,820</div>
-              <div class="stat-widget-trend positive">↑ +1,240 this week</div>
-            </div>
-            <div class="stat-widget-icon" style="background:rgba(67,56,202,0.15);color:var(--color-indigo-light)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          </article>
-          <article class="stat-widget" role="listitem">
-            <div class="stat-widget-body">
-              <div class="stat-widget-label">Mock Attempts Today</div>
-              <div class="stat-widget-value">18,450</div>
-              <div class="stat-widget-trend positive">↑ +14.2% vs yesterday</div>
-            </div>
-            <div class="stat-widget-icon" style="background:rgba(6,182,212,0.15);color:var(--color-cyan)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          </article>
-          <article class="stat-widget" role="listitem">
-            <div class="stat-widget-body">
-              <div class="stat-widget-label">Monthly Revenue</div>
-              <div class="stat-widget-value">₹48.5L</div>
-              <div class="stat-widget-trend positive">↑ +8.4% target met</div>
+              <div class="stat-widget-label">Total Platform Revenue</div>
+              <div class="stat-widget-value" style="color:var(--color-gold)">₹1.48 Crore</div>
+              <div class="stat-widget-trend positive">↑ +18.4% YoY Target Exceeded</div>
             </div>
             <div class="stat-widget-icon" style="background:rgba(212,175,55,0.15);color:var(--color-gold)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
           </article>
+
           <article class="stat-widget" role="listitem">
             <div class="stat-widget-body">
-              <div class="stat-widget-label">System Uptime</div>
-              <div class="stat-widget-value">99.98%</div>
-              <div class="stat-widget-trend positive">● All Systems Normal</div>
+              <div class="stat-widget-label">Total Enrolled Students</div>
+              <div class="stat-widget-value">1,42,850</div>
+              <div class="stat-widget-trend positive">↑ +2,450 new registrations</div>
+            </div>
+            <div class="stat-widget-icon" style="background:rgba(67,56,202,0.15);color:var(--color-indigo-light)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          </article>
+
+          <article class="stat-widget" role="listitem">
+            <div class="stat-widget-body">
+              <div class="stat-widget-label">AI Question Bank Pool</div>
+              <div class="stat-widget-value">1,25,400</div>
+              <div class="stat-widget-trend positive">↑ +8,400 generated this month</div>
+            </div>
+            <div class="stat-widget-icon" style="background:rgba(6,182,212,0.15);color:var(--color-cyan)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          </article>
+
+          <article class="stat-widget" role="listitem">
+            <div class="stat-widget-body">
+              <div class="stat-widget-label">Infrastructure Health</div>
+              <div class="stat-widget-value" style="color:#10b981">99.98%</div>
+              <div class="stat-widget-trend positive">● All 6 Redis & SQL Clusters Healthy</div>
             </div>
             <div class="stat-widget-icon" style="background:rgba(16,185,129,0.15);color:#10b981"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
           </article>
         </div>
 
-        <!-- Admin Table & Operations -->
-        <div class="dashboard-grid-2" style="margin-bottom:var(--space-6)">
-          <!-- Recent User Moderation -->
-          <div class="dashboard-card">
-            <div class="dashboard-card-header">
-              <h3 class="dashboard-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:text-top"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> User Moderation & Approvals</h3>
-              <span class="badge badge-success">3 Pending</span>
+        <!-- Section 1: User Management & Moderation Table -->
+        <div class="dashboard-card" style="margin-bottom:var(--space-6)">
+          <div class="dashboard-card-header" style="flex-wrap:wrap;gap:var(--space-4)">
+            <div>
+              <h3 class="dashboard-card-title" style="font-size:var(--text-lg);font-weight:800;display:flex;align-items:center;gap:var(--space-2)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-indigo-light)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                User Account Management & Moderation
+              </h3>
+              <p style="font-size:var(--text-xs);color:var(--text-muted);margin-top:2px">Manage user roles, verify accounts, grant premium subscriptions, or suspend access</p>
             </div>
-            <div class="comparison-table-wrap">
-              <table class="comparison-table">
-                <thead>
-                  <tr>
-                    <th>User</th>
-                    <th>Target Exam</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Rohan Verma</strong><br><span style="font-size:var(--text-xs);color:var(--text-muted)">rohan@gmail.com</span></td>
-                    <td>IBPS PO 2025</td>
-                    <td><span class="badge badge-success">Verified</span></td>
-                    <td><button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('User profile details loaded', 'info')">Manage</button></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Ananya Sen</strong><br><span style="font-size:var(--text-xs);color:var(--text-muted)">ananya@yahoo.com</span></td>
-                    <td>SBI Clerk</td>
-                    <td><span class="badge badge-warning">Pending OTP</span></td>
-                    <td><button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('Resent verification OTP', 'success')">Verify</button></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Deepak Kumar</strong><br><span style="font-size:var(--text-xs);color:var(--text-muted)">deepak.k@gmail.com</span></td>
-                    <td>SSC CGL 2025</td>
-                    <td><span class="badge badge-gold">Premium Student</span></td>
-                    <td><button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('User profile details loaded', 'info')">Manage</button></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div style="display:flex;gap:var(--space-3)">
+              <input type="search" class="form-input" placeholder="Search student email, ID..." style="width:220px;font-size:var(--text-xs)">
+              <button class="btn btn-primary btn-sm">+ Add New User</button>
             </div>
           </div>
 
-          <!-- Server Health & Live Traffic -->
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Student ID & Name</th>
+                  <th>Target Exam</th>
+                  <th>Subscription Tier</th>
+                  <th>Mock Attempts</th>
+                  <th>Account Status</th>
+                  <th>Admin Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>#CT-9481 • Rahul Sharma</strong><br>
+                    <span style="font-size:var(--text-xs);color:var(--text-muted)">rahul.sharma@gmail.com</span>
+                  </td>
+                  <td>IBPS PO 2025</td>
+                  <td><span class="badge badge-gold">Pro All-Access</span></td>
+                  <td>47 Mocks</td>
+                  <td><span class="badge badge-success">Active • Verified</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('User permissions panel opened for Rahul Sharma', 'info')">Manage</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>#CT-9482 • Ananya Sen</strong><br>
+                    <span style="font-size:var(--text-xs);color:var(--text-muted)">ananya.sen@yahoo.com</span>
+                  </td>
+                  <td>SBI Clerk 2025</td>
+                  <td><span class="badge badge-primary">Free Trial</span></td>
+                  <td>12 Mocks</td>
+                  <td><span class="badge badge-warning">Pending OTP</span></td>
+                  <td>
+                    <button class="btn btn-cyan btn-sm" onclick="window.CogniTest?.Toast?.show('Resent manual OTP to ananya.sen@yahoo.com', 'success')">Verify OTP</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>#CT-9483 • Deepak Kumar</strong><br>
+                    <span style="font-size:var(--text-xs);color:var(--text-muted)">deepak.k@gmail.com</span>
+                  </td>
+                  <td>SSC CGL 2025</td>
+                  <td><span class="badge badge-gold">Pro All-Access</span></td>
+                  <td>85 Mocks</td>
+                  <td><span class="badge badge-success">Active • Verified</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('User permissions panel opened for Deepak Kumar', 'info')">Manage</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>#CT-9484 • Vikram Malhotra</strong><br>
+                    <span style="font-size:var(--text-xs);color:var(--text-muted)">vikram.m@outlook.com</span>
+                  </td>
+                  <td>GATE 2026</td>
+                  <td><span class="badge badge-danger">Suspended</span></td>
+                  <td>2 Mocks</td>
+                  <td><span class="badge badge-danger">Multiple Login Breach</span></td>
+                  <td>
+                    <button class="btn btn-primary btn-sm" style="background:#10b981;border:none" onclick="window.CogniTest?.Toast?.show('Account unblocked for Vikram Malhotra', 'success')">Unblock</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 2: AI Question Generator & Content Manager Grid -->
+        <div class="dashboard-grid-2" style="margin-bottom:var(--space-6)">
+          <!-- AI Test Generator Panel -->
+          <div class="dashboard-card" style="border:1px solid rgba(67,56,202,0.3)">
+            <div class="dashboard-card-header">
+              <h3 class="dashboard-card-title" style="font-weight:800">🤖 AI Question Bank Generator</h3>
+              <span class="badge badge-gold">v3.4 GPT Engine</span>
+            </div>
+            <form onsubmit="event.preventDefault(); window.CogniTest?.Toast?.show('AI Engine generated 50 new questions for IBPS PO!', 'success');">
+              <div class="form-group" style="margin-bottom:var(--space-3)">
+                <label class="form-label" style="font-size:var(--text-xs)">Target Exam Category</label>
+                <select class="form-select" style="font-size:var(--text-xs)">
+                  <option>IBPS PO 2025 Prelims/Mains</option>
+                  <option>SBI PO 2025 Masterclass</option>
+                  <option>SSC CGL Tier 1 & Tier 2</option>
+                  <option>RRB NTPC Railway Exam</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:var(--space-3)">
+                <label class="form-label" style="font-size:var(--text-xs)">Subject / Sub-Topic</label>
+                <select class="form-select" style="font-size:var(--text-xs)">
+                  <option>Reasoning — Circular & Floor Puzzles</option>
+                  <option>Quant — Data Interpretation Radar & Caselet</option>
+                  <option>English — Reading Comprehension & Inferences</option>
+                  <option>General Awareness — RBI Monetary Policy 2025</option>
+                </select>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-bottom:var(--space-4)">
+                <div>
+                  <label class="form-label" style="font-size:var(--text-xs)">Difficulty</label>
+                  <select class="form-select" style="font-size:var(--text-xs)">
+                    <option>High / Exam Level</option>
+                    <option>Moderate</option>
+                    <option>Easy / Diagnostic</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" style="font-size:var(--text-xs)">Question Count</label>
+                  <input type="number" class="form-input" value="50" style="font-size:var(--text-xs)">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary w-full">⚡ Generate & Publish Test</button>
+            </form>
+          </div>
+
+          <!-- Server Nodes & Infrastructure Health -->
           <div class="dashboard-card">
             <div class="dashboard-card-header">
-              <h3 class="dashboard-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:text-top"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg> System Nodes Status</h3>
-              <span class="badge badge-success">Healthy</span>
+              <h3 class="dashboard-card-title" style="font-weight:800">🖥️ Infrastructure Node Diagnostics</h3>
+              <span class="badge badge-success">All Systems Normal</span>
             </div>
             <div style="display:flex;flex-direction:column;gap:var(--space-4)">
               <div>
                 <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2);font-size:var(--text-sm)">
-                  <span>Database Cluster (Primary SQL)</span>
-                  <span style="color:#10b981;font-weight:700">24% CPU</span>
+                  <span>PostgreSQL Primary Database Cluster</span>
+                  <span style="color:#10b981;font-weight:700">24% CPU (12ms Latency)</span>
                 </div>
                 <div class="progress-bar"><div class="progress-fill" style="width:24%;background:var(--gradient-success)"></div></div>
               </div>
               <div>
                 <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2);font-size:var(--text-sm)">
-                  <span>AI Analytics Worker Nodes</span>
-                  <span style="color:var(--color-indigo-light);font-weight:700">62% Load</span>
+                  <span>AI Percentile Analytics Worker Array</span>
+                  <span style="color:var(--color-indigo-light);font-weight:700">62% Load (8 Workers Active)</span>
                 </div>
                 <div class="progress-bar"><div class="progress-fill" style="width:62%;background:var(--gradient-primary)"></div></div>
               </div>
               <div>
                 <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2);font-size:var(--text-sm)">
+                  <span>Live Stream CDN Bandwidth (HLS Video)</span>
+                  <span style="color:var(--color-cyan);font-weight:700">41% Capacity (1.2 Gbps)</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:41%;background:linear-gradient(135deg,#06B6D4,#22d3ee)"></div></div>
+              </div>
+              <div style="display:flex;gap:var(--space-3);margin-top:var(--space-2)">
+                <button class="btn btn-outline btn-sm w-full" onclick="window.CogniTest?.Toast?.show('Redis cache flushed successfully across all nodes!', 'success')">Clear Redis Cache</button>
+                <button class="btn btn-outline btn-sm w-full" onclick="window.CogniTest?.Toast?.show('System audit logs exported (audit-2025.csv)', 'info')">Export Audit Logs</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <!-- ====== MY COURSES TAB ====== -->
       <section id="my-courses" class="dashboard-tab" aria-label="My Enrolled Courses" hidden>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
           <div>
             <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">My Enrolled Courses</h2>
             <p style="color:var(--text-muted);font-size:var(--text-sm)">Track your learning progress across all enrolled competitive exam courses</p>
