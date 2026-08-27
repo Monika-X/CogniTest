@@ -247,7 +247,18 @@
       });
     });
 
-    // Form submit
+    // Social signup handlers (Google & Mobile OTP) -> Redirect to Home Page
+    document.querySelectorAll('.social-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.CogniTest?.showNotification?.('Creating account with Google/OTP... Redirecting to Home Page!', 'info');
+        setTimeout(() => {
+          window.location.href = '../index.html';
+        }, 1000);
+      });
+    });
+
+    // Form submit -> Redirect to Home Page
     if (form) {
       window.CogniTest?.FormValidator?.initRealTime?.(form);
       form.addEventListener('submit', (e) => {
@@ -256,9 +267,10 @@
           const btn = document.getElementById('signup-btn');
           btn.textContent = 'Creating your account...';
           btn.disabled = true;
+          window.CogniTest?.showNotification?.('Registration Successful! Redirecting to Home Page...', 'success');
           setTimeout(() => {
-            window.location.href = 'dashboard.html';
-          }, 1500);
+            window.location.href = '../index.html';
+          }, 1200);
         }
       });
     }

@@ -208,6 +208,17 @@
       });
     }
 
+    // Social login handlers (Google & Mobile OTP) -> Redirect to Home Page
+    document.querySelectorAll('.social-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.CogniTest?.showNotification?.('Authenticating account... Redirecting to Home Page!', 'info');
+        setTimeout(() => {
+          window.location.href = '../index.html';
+        }, 1000);
+      });
+    });
+
     if (form) {
       window.CogniTest?.FormValidator?.initRealTime?.(form);
       form.addEventListener('submit', (e) => {
@@ -216,8 +227,9 @@
           const btn = document.getElementById('login-btn');
           btn.textContent = 'Signing in...';
           btn.disabled = true;
+          window.CogniTest?.showNotification?.('Login Successful! Redirecting to Home Page...', 'success');
           setTimeout(() => {
-            window.location.href = 'dashboard.html';
+            window.location.href = '../index.html';
           }, 1200);
         }
       });
