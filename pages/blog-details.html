@@ -147,31 +147,8 @@
 <section class="section" style="background:var(--bg-secondary)" aria-labelledby="related-heading">
   <div class="container">
     <h2 class="section-title" id="related-heading" style="margin-bottom:var(--space-8)">Related <span class="highlight">Articles</span></h2>
-    <div class="grid grid-3">
-      <article class="blog-card reveal">
-        <div class="blog-thumbnail" style="height:240px"><img src="https://i.pinimg.com/1200x/ae/89/1f/ae891fbdf81a30ac5cfd76a24401fa27.jpg" alt="English tips" width="400" height="240" loading="lazy" style="object-position:center 30%"></div>
-        <div class="blog-body">
-          <h3 class="blog-title"><a href="blog-details.html?id=english-grammar-shortcuts">English Grammar Shortcuts for Competitive Exams</a></h3>
-          <p class="blog-excerpt">Master error spotting, sentence correction, and fillers with proven shortcut rules.</p>
-          <a href="blog-details.html?id=english-grammar-shortcuts" class="btn btn-outline btn-sm">Read</a>
-        </div>
-      </article>
-      <article class="blog-card reveal delay-100">
-        <div class="blog-thumbnail" style="height:220px"><img src="https://i.pinimg.com/736x/ce/a5/16/cea516a18cbdd75d280b1150797a5c77.jpg" alt="Study techniques" width="400" height="200" loading="lazy" style="object-position:center 0%"></div>
-        <div class="blog-body">
-          <h3 class="blog-title"><a href="blog-details.html?id=pomodoro-technique">The Pomodoro Technique for Exam Preparation</a></h3>
-          <p class="blog-excerpt">How focused study sprints can double your retention and reduce exam anxiety.</p>
-          <a href="blog-details.html?id=pomodoro-technique" class="btn btn-outline btn-sm">Read</a>
-        </div>
-      </article>
-      <article class="blog-card reveal delay-200">
-        <div class="blog-thumbnail" style="height:220px"><img src="https://i.pinimg.com/736x/f3/a6/d9/f3a6d9cf8b02503a46adea06d071a070.jpg" alt="Data interpretation tricks" width="400" height="200" loading="lazy" style="object-position:center 0%"></div>
-        <div class="blog-body">
-          <h3 class="blog-title"><a href="blog-details.html?id=monthly-rbi-banking-awareness">Monthly RBI & Banking Awareness Capsule 2025</a></h3>
-          <p class="blog-excerpt">Complete financial policy, monetary terms and banking awareness capsule.</p>
-          <a href="blog-details.html?id=monthly-rbi-banking-awareness" class="btn btn-outline btn-sm">Read</a>
-        </div>
-      </article>
+    <div class="grid grid-3" id="related-articles-grid">
+      <!-- Dynamically populated related article cards -->
     </div>
   </div>
 </section>
@@ -615,6 +592,47 @@
 
     const authorBioDesc = document.getElementById('author-bio-desc');
     if (authorBioDesc) authorBioDesc.textContent = post.author.bio;
+
+    // Render Dynamic Related Articles Cards
+    const relatedGrid = document.getElementById('related-articles-grid');
+    if (relatedGrid) {
+      const allKeys = Object.keys(BLOG_POSTS);
+      
+      let sameCategoryKeys = allKeys.filter(k => k !== postId && BLOG_POSTS[k].category === post.category);
+      let otherKeys = allKeys.filter(k => k !== postId && BLOG_POSTS[k].category !== post.category);
+
+      let selectedKeys = [...sameCategoryKeys, ...otherKeys].slice(0, 3);
+
+      relatedGrid.innerHTML = selectedKeys.map((relKey, index) => {
+        const relPost = BLOG_POSTS[relKey];
+        const delayClass = index === 1 ? 'delay-100' : (index === 2 ? 'delay-200' : '');
+        const excerptText = relPost.takeaways && relPost.takeaways[0] ? relPost.takeaways[0] : 'Read full strategy and study tips.';
+
+        return `
+          <article class="blog-card reveal ${delayClass}" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="${relPost.heroImage}" alt="${relPost.title}" width="400" height="240" loading="lazy" style="object-position:${relPost.imagePosition || 'center 0%'}">
+              <div class="blog-category-tag"><span class="badge ${relPost.badgeClass}">${relPost.category}</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span class="blog-meta-item">${relPost.date}</span>
+                <span class="blog-meta-item">${relPost.readTime}</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=${relKey}">${relPost.title}</a></h3>
+              <p class="blog-excerpt">${excerptText}</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="${relPost.author.avatar}" alt="${relPost.author.name}" class="blog-author-avatar" width="32" height="32" loading="lazy">
+                  <span class="blog-author-name">${relPost.author.name}</span>
+                </div>
+                <a href="blog-details.html?id=${relKey}" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
 
     // Dynamic Table of Contents (TOC) Builder & ScrollSpy
     const tocNav = document.getElementById('post-toc-nav');
