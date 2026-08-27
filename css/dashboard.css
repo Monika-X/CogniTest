@@ -811,6 +811,64 @@
   pointer-events: auto;
 }
 
+/* Topbar Layout System */
+.dashboard-topbar,
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(21, 25, 35, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-4) var(--space-6);
+  margin-bottom: var(--space-6);
+  border-radius: var(--radius-xl);
+}
+
+.dashboard-topbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.dashboard-topbar-title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.dashboard-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.dashboard-search {
+  position: relative;
+}
+
+.dashboard-search-input {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  width: 260px;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.dashboard-search-input:focus {
+  border-color: var(--border-active);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
 /* Prevent horizontal window scroll overflow */
 html, body {
   overflow-x: hidden;
@@ -835,12 +893,49 @@ html, body {
   .sidebar, .dashboard-sidebar { transform: translateX(-100%); width: 280px; z-index: 1000; box-shadow: var(--shadow-2xl); }
   .sidebar.open, .dashboard-sidebar.open { transform: translateX(0); }
   .dashboard-main { margin-left: 0 !important; width: 100% !important; padding: var(--space-4) !important; }
-  .dashboard-topbar { flex-wrap: wrap; padding: var(--space-3) var(--space-4); gap: var(--space-3); }
-  .dashboard-topbar-left { width: 100%; justify-content: space-between; }
-  .dashboard-topbar-right { width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: var(--space-2); margin-top: var(--space-2); }
-  .dashboard-search { width: 100%; }
-  .dashboard-search-input { width: 100% !important; }
-  .dashboard-search-input:focus { width: 100% !important; }
+
+  .dashboard-topbar,
+  .dashboard-header {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .dashboard-topbar-header {
+    justify-content: space-between;
+  }
+
+  .dashboard-topbar-title-group {
+    gap: var(--space-2);
+  }
+
+  .dashboard-page-title,
+  .dashboard-title {
+    font-size: var(--text-base) !important;
+    line-height: 1.2;
+  }
+
+  .dashboard-page-subtitle,
+  .dashboard-subtitle {
+    font-size: 0.7rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+  }
+
+  .dashboard-topbar-actions {
+    gap: var(--space-2);
+  }
+
+  .dashboard-search {
+    margin-top: var(--space-3);
+    width: 100%;
+  }
+
+  .dashboard-search-input {
+    width: 100% !important;
+    padding: 8px 16px;
+  }
+
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
   .dashboard-grid-2 { grid-template-columns: 1fr; }
   .mock-test-body { grid-template-columns: 1fr; }
@@ -848,9 +943,6 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .dashboard-header { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
-  .dashboard-title, .dashboard-page-title { font-size: var(--text-lg); }
-  .dashboard-subtitle, .dashboard-page-subtitle { font-size: var(--text-xs); }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .comparison-table th, .comparison-table td { padding: var(--space-2) var(--space-3); font-size: var(--text-xs); }
   .admin-badge { font-size: 0.65rem; padding: 2px 8px; }
@@ -858,8 +950,11 @@ html, body {
 
 @media (max-width: 480px) {
   .dashboard-main { padding: var(--space-3) var(--space-2) !important; }
+  .dashboard-page-subtitle,
+  .dashboard-subtitle {
+    display: none;
+  }
   .stats-grid { grid-template-columns: 1fr; }
   .dashboard-card { padding: var(--space-4); }
-  .dashboard-topbar-right { gap: var(--space-2); }
   .nav-action-btn { padding: 4px 8px; font-size: 0.75rem; }
 }

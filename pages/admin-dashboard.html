@@ -168,23 +168,25 @@
     
     <!-- Admin Topbar Header -->
     <header class="dashboard-header">
-      <div style="display:flex;align-items:center;gap:var(--space-3)">
-        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </button>
-        <div>
-          <div class="admin-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px;margin-right:4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> SUPER ADMIN COMMAND CENTER</div>
-          <h1 class="dashboard-title" style="margin-top:var(--space-2)">Platform Administration</h1>
-          <div class="dashboard-subtitle" id="admin-subtitle">● All 12 Microservices Online • Active Test Takers: 4,820 • DB Latency: 12ms</div>
+      <div class="dashboard-topbar-header">
+        <div class="dashboard-topbar-title-group">
+          <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+          <div>
+            <div class="admin-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px;margin-right:4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> SUPER ADMIN COMMAND CENTER</div>
+            <h1 class="dashboard-title" style="margin-top:var(--space-1)">Platform Administration</h1>
+            <div class="dashboard-subtitle" id="admin-subtitle">● All 12 Microservices Online • Active Test Takers: 4,820 • DB Latency: 12ms</div>
+          </div>
         </div>
-      </div>
 
-      <div style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap">
-        <button class="nav-action-btn" data-theme-toggle title="Toggle Light/Dark Mode">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <button class="nav-action-btn" data-rtl-toggle style="font-size:0.7rem;font-weight:700" title="Toggle RTL/LTR">RTL</button>
-        <button class="btn btn-sm" style="background:#ef4444;color:#fff;border:none;font-weight:700" onclick="window.CogniTest?.Toast?.show('Preparing All-India Push Broadcast Notification...', 'info')"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Push Broadcast</button>
+        <div class="dashboard-topbar-actions">
+          <button class="nav-action-btn" data-theme-toggle title="Toggle Light/Dark Mode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button class="nav-action-btn" data-rtl-toggle style="font-size:0.7rem;font-weight:700" title="Toggle RTL/LTR">RTL</button>
+          <button class="btn btn-sm" style="background:#ef4444;color:#fff;border:none;font-weight:700" onclick="window.CogniTest?.Toast?.show('Preparing All-India Push Broadcast Notification...', 'info')"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Push Broadcast</button>
+        </div>
       </div>
     </header>
 
