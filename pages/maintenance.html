@@ -16,25 +16,46 @@
       justify-content: center;
       background: var(--bg-primary);
       position: relative;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: var(--space-8) var(--space-6);
+    }
+    .maintenance-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .maintenance-left-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .maintenance-right-col {
+      text-align: left;
     }
     .countdown-grid {
       display: flex;
       gap: var(--space-4);
-      justify-content: center;
-      margin: var(--space-8) 0;
+      justify-content: flex-start;
+      margin: var(--space-6) 0;
     }
     .countdown-item {
       text-align: center;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-xl);
-      padding: var(--space-5) var(--space-6);
+      padding: var(--space-4) var(--space-6);
       min-width: 80px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
     .countdown-number {
       font-family: var(--font-heading);
-      font-size: var(--text-4xl);
+      font-size: var(--text-3xl);
       font-weight: 800;
       background: var(--gradient-primary);
       -webkit-background-clip: text;
@@ -55,6 +76,59 @@
       filter: blur(100px);
       pointer-events: none;
     }
+    .system-status-pills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+      width: 100%;
+      max-width: 480px;
+      margin-top: var(--space-4);
+    }
+    .status-pill-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3);
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .maintenance-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-8);
+      }
+      .maintenance-right-col {
+        text-align: center;
+      }
+      .countdown-grid {
+        justify-content: center;
+      }
+      .nav-logo {
+        justify-content: center;
+      }
+      #notify-form {
+        margin: 0 auto !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .maintenance-body {
+        padding: var(--space-4) var(--space-3);
+      }
+      .system-status-pills {
+        grid-template-columns: 1fr;
+      }
+      .countdown-grid {
+        gap: var(--space-2);
+      }
+      .countdown-item {
+        padding: var(--space-3) var(--space-4);
+        min-width: 65px;
+      }
+      .countdown-number {
+        font-size: var(--text-2xl);
+      }
+    }
   </style>
 </head>
 <body data-no-header-footer>
@@ -71,181 +145,199 @@
   <div class="maintenance-orb" style="width:500px;height:500px;background:var(--color-indigo);opacity:0.07;top:-150px;right:-100px" aria-hidden="true"></div>
   <div class="maintenance-orb" style="width:400px;height:400px;background:var(--color-cyan);opacity:0.05;bottom:-100px;left:-100px" aria-hidden="true"></div>
 
-  <div style="text-align:center;max-width:640px;padding:var(--space-8);position:relative;z-index:1">
-    <!-- Logo -->
-    <a href="../index.html" class="nav-logo" style="justify-content:center;margin-bottom:var(--space-10);text-decoration:none" aria-label="CogniTest Home">
-      <div class="nav-logo-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-      <div class="nav-logo-text">
-        <span class="nav-logo-primary">CogniTest</span>
-        <span class="nav-logo-tagline">Excel. Qualify. Succeed.</span>
-      </div>
-    </a>
+  <div class="maintenance-container">
 
-    <!-- Status Badge -->
-    <div style="display:inline-flex;align-items:center;gap:var(--space-2);background:rgba(234,179,8,0.1);border:1px solid rgba(234,179,8,0.3);border-radius:var(--radius-full);padding:var(--space-2) var(--space-5);margin-bottom:var(--space-6)">
-      <span style="width:8px;height:8px;border-radius:50%;background:#eab308;animation:pulse 2s ease-in-out infinite;display:inline-block" aria-hidden="true"></span>
-      <span style="color:#eab308;font-weight:700;font-size:var(--text-sm)">Scheduled Maintenance in Progress</span>
-    </div>
+    <!-- ====== LEFT COLUMN: VECTOR GRAPHIC & SYSTEM ILLUMINATION ====== -->
+    <div class="maintenance-left-col">
+      <!-- Animated Vector Illustration Hero -->
+      <svg viewBox="0 0 500 320" width="100%" height="auto" style="max-width:480px;display:block;filter:drop-shadow(0 20px 35px rgba(99,102,241,0.28))" aria-label="System maintenance vector illustration">
+        <defs>
+          <linearGradient id="m-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#06B6D4"/>
+          </linearGradient>
+          <linearGradient id="m-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4338CA"/>
+            <stop offset="100%" stop-color="#ef4444"/>
+          </linearGradient>
+          <linearGradient id="m-grad-card" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(30, 41, 59, 0.95)"/>
+            <stop offset="100%" stop-color="rgba(15, 23, 42, 0.95)"/>
+          </linearGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+        </defs>
 
-    <!-- Animated Vector Illustration Hero -->
-    <svg viewBox="0 0 500 300" width="100%" height="auto" style="max-width:440px;margin:0 auto var(--space-6);display:block;filter:drop-shadow(0 20px 30px rgba(99,102,241,0.25))" aria-label="System maintenance vector illustration">
-      <defs>
-        <linearGradient id="m-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#6366f1"/>
-          <stop offset="100%" stop-color="#06B6D4"/>
-        </linearGradient>
-        <linearGradient id="m-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#4338CA"/>
-          <stop offset="100%" stop-color="#ef4444"/>
-        </linearGradient>
-        <linearGradient id="m-grad-card" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="rgba(30, 41, 59, 0.9)"/>
-          <stop offset="100%" stop-color="rgba(15, 23, 42, 0.9)"/>
-        </linearGradient>
-        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="6" result="blur"/>
-          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-        </filter>
-      </defs>
+        <!-- Background Pulsing Grid Circle -->
+        <circle cx="250" cy="160" r="135" fill="none" stroke="url(#m-grad-1)" stroke-width="1.5" stroke-dasharray="4 8" opacity="0.4">
+          <animateTransform attributeName="transform" type="rotate" from="0 250 160" to="360 250 160" dur="30s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="250" cy="160" r="105" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.25"/>
 
-      <!-- Background Pulsing Grid Circle -->
-      <circle cx="250" cy="150" r="125" fill="none" stroke="url(#m-grad-1)" stroke-width="1.5" stroke-dasharray="4 8" opacity="0.35">
-        <animateTransform attributeName="transform" type="rotate" from="0 250 150" to="360 250 150" dur="30s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="250" cy="150" r="95" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.2"/>
+        <!-- Server Unit Base Grid -->
+        <rect x="130" y="80" width="240" height="160" rx="16" fill="url(#m-grad-card)" stroke="rgba(99,102,241,0.5)" stroke-width="2" filter="url(#glow)"/>
+        
+        <!-- Server Slots -->
+        <rect x="150" y="100" width="200" height="32" rx="8" fill="#0f172a" stroke="rgba(255,255,255,0.08)"/>
+        <circle cx="170" cy="116" r="4" fill="#10b981"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
+        <circle cx="185" cy="116" r="4" fill="#6366f1"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>
+        <rect x="205" y="113" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+        <rect x="205" y="113" width="85" height="6" rx="3" fill="url(#m-grad-1)"/>
 
-      <!-- Server Unit Base Grid -->
-      <rect x="130" y="75" width="240" height="150" rx="16" fill="url(#m-grad-card)" stroke="rgba(99,102,241,0.4)" stroke-width="2" filter="url(#glow)"/>
-      
-      <!-- Server Slots -->
-      <rect x="150" y="95" width="200" height="30" rx="8" fill="#0f172a" stroke="rgba(255,255,255,0.08)"/>
-      <circle cx="170" cy="110" r="4" fill="#10b981"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
-      <circle cx="185" cy="110" r="4" fill="#6366f1"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>
-      <rect x="205" y="107" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
-      <rect x="205" y="107" width="80" height="6" rx="3" fill="url(#m-grad-1)"/>
+        <rect x="150" y="144" width="200" height="32" rx="8" fill="#0f172a" stroke="rgba(255,255,255,0.08)"/>
+        <circle cx="170" cy="160" r="4" fill="#eab308"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle>
+        <circle cx="185" cy="160" r="4" fill="#06B6D4"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></circle>
+        <rect x="205" y="157" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+        <rect x="205" y="157" width="98" height="6" rx="3" fill="url(#m-grad-1)"/>
 
-      <rect x="150" y="135" width="200" height="30" rx="8" fill="#0f172a" stroke="rgba(255,255,255,0.08)"/>
-      <circle cx="170" cy="150" r="4" fill="#eab308"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle>
-      <circle cx="185" cy="150" r="4" fill="#06B6D4"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></circle>
-      <rect x="205" y="147" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
-      <rect x="205" y="147" width="95" height="6" rx="3" fill="url(#m-grad-1)"/>
+        <rect x="150" y="188" width="200" height="32" rx="8" fill="#0f172a" stroke="rgba(255,255,255,0.08)"/>
+        <circle cx="170" cy="204" r="4" fill="#ef4444"><animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/></circle>
+        <circle cx="185" cy="204" r="4" fill="#10b981"><animate attributeName="opacity" values="0.5;1;0.5" dur="1.4s" repeatCount="indefinite"/></circle>
+        <rect x="205" y="201" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+        <rect x="205" y="201" width="65" height="6" rx="3" fill="url(#m-grad-2)"/>
 
-      <rect x="150" y="175" width="200" height="30" rx="8" fill="#0f172a" stroke="rgba(255,255,255,0.08)"/>
-      <circle cx="170" cy="190" r="4" fill="#ef4444"><animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/></circle>
-      <circle cx="185" cy="190" r="4" fill="#10b981"><animate attributeName="opacity" values="0.5;1;0.5" dur="1.4s" repeatCount="indefinite"/></circle>
-      <rect x="205" y="187" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
-      <rect x="205" y="187" width="60" height="6" rx="3" fill="url(#m-grad-2)"/>
-
-      <!-- Rotating Gear Vector Elements -->
-      <g transform="translate(105, 60)">
-        <g>
-          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
-          <circle cx="0" cy="0" r="26" fill="none" stroke="#6366f1" stroke-width="5" stroke-dasharray="7 5"/>
-          <circle cx="0" cy="0" r="14" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+        <!-- Rotating Gear Vector Elements -->
+        <g transform="translate(100, 65)">
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
+            <circle cx="0" cy="0" r="28" fill="none" stroke="#6366f1" stroke-width="5" stroke-dasharray="7 5"/>
+            <circle cx="0" cy="0" r="15" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+          </g>
         </g>
-      </g>
 
-      <g transform="translate(390, 210)">
-        <g>
-          <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="16s" repeatCount="indefinite"/>
-          <circle cx="0" cy="0" r="32" fill="none" stroke="#06B6D4" stroke-width="6" stroke-dasharray="9 7"/>
-          <circle cx="0" cy="0" r="18" fill="#083344" stroke="#06B6D4" stroke-width="2"/>
+        <g transform="translate(395, 230)">
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="16s" repeatCount="indefinite"/>
+            <circle cx="0" cy="0" r="34" fill="none" stroke="#06B6D4" stroke-width="6" stroke-dasharray="9 7"/>
+            <circle cx="0" cy="0" r="19" fill="#083344" stroke="#06B6D4" stroke-width="2"/>
+          </g>
         </g>
-      </g>
 
-      <!-- Tool Emblem -->
-      <g transform="translate(250, 30)">
-        <circle cx="0" cy="0" r="24" fill="url(#m-grad-1)" filter="url(#glow)"/>
-        <path d="M-7,-7 L7,7 M-7,7 L7,-7" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
-      </g>
+        <!-- Tool Emblem -->
+        <g transform="translate(250, 32)">
+          <circle cx="0" cy="0" r="25" fill="url(#m-grad-1)" filter="url(#glow)"/>
+          <path d="M-7,-7 L7,7 M-7,7 L7,-7" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+        </g>
 
-      <!-- Floating Badges -->
-      <g transform="translate(70, 190)">
-        <rect x="0" y="0" width="75" height="24" rx="12" fill="rgba(99,102,241,0.2)" stroke="#6366f1" stroke-width="1"/>
-        <text x="37.5" y="16" fill="#a5b4fc" font-size="10" font-weight="700" text-anchor="middle" font-family="sans-serif">AI ENGINE</text>
-      </g>
+        <!-- Floating Data Badges -->
+        <g transform="translate(65, 210)">
+          <rect x="0" y="0" width="80" height="26" rx="13" fill="rgba(99,102,241,0.2)" stroke="#6366f1" stroke-width="1"/>
+          <text x="40" y="17" fill="#a5b4fc" font-size="10" font-weight="700" text-anchor="middle" font-family="sans-serif">AI ENGINE</text>
+        </g>
 
-      <g transform="translate(345, 45)">
-        <rect x="0" y="0" width="85" height="24" rx="12" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1"/>
-        <text x="42.5" y="16" fill="#6ee7b7" font-size="10" font-weight="700" text-anchor="middle" font-family="sans-serif">DB SYNC 98%</text>
-      </g>
-    </svg>
+        <g transform="translate(350, 40)">
+          <rect x="0" y="0" width="90" height="26" rx="13" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1"/>
+          <text x="45" y="17" fill="#6ee7b7" font-size="10" font-weight="700" text-anchor="middle" font-family="sans-serif">DB SYNC 98%</text>
+        </g>
+      </svg>
 
-    <h1 style="font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:var(--space-4)">We're Making CogniTest <span class="text-gradient">Even Better</span></h1>
-    <p style="color:var(--text-secondary);font-size:var(--text-lg);margin-bottom:var(--space-6);line-height:1.7">Our team is performing scheduled upgrades to give you an even faster, smarter platform. We'll be back shortly. Thank you for your patience!</p>
-
-    <!-- Countdown Timer -->
-    <div class="countdown-grid" role="timer" aria-label="Time remaining until maintenance complete">
-      <div class="countdown-item">
-        <span class="countdown-number" id="countdown-hours" aria-live="polite">02</span>
-        <span class="countdown-label">Hours</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-number" id="countdown-minutes" aria-live="polite">45</span>
-        <span class="countdown-label">Minutes</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-number" id="countdown-seconds" aria-live="polite">00</span>
-        <span class="countdown-label">Seconds</span>
-      </div>
-    </div>
-
-    <!-- Progress -->
-    <div style="margin-bottom:var(--space-8)">
-      <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3)">
-        <span>Upgrade Progress</span>
-        <span id="maintenance-progress-pct" aria-label="Progress percentage">68%</span>
-      </div>
-      <div class="progress-bar" style="height:8px" aria-hidden="true">
-        <div class="progress-fill" id="maintenance-progress" style="width:68%;background:var(--gradient-primary);height:100%;border-radius:4px"></div>
-      </div>
-    </div>
-
-    <!-- What we're upgrading -->
-    <div class="card" style="text-align:left;margin-bottom:var(--space-8)">
-      <h2 style="font-family:var(--font-heading);font-weight:700;margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> What We're Improving:</h2>
-      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
-        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)">
-          <span style="color:#10b981" aria-label="Completed">✓</span>
-          <span>AI Analytics engine — 3x faster processing</span>
-          <span class="badge badge-success" style="margin-left:auto">Done</span>
+      <!-- Live Micro-System Status Pills -->
+      <div class="system-status-pills">
+        <div class="status-pill-item">
+          <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:2px">Engine</div>
+          <div style="font-size:var(--text-xs);font-weight:800;color:#10b981">● AI Active</div>
         </div>
-        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)">
-          <span style="color:#10b981" aria-label="Completed">✓</span>
-          <span>Mobile app performance optimizations</span>
-          <span class="badge badge-success" style="margin-left:auto">Done</span>
+        <div class="status-pill-item">
+          <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:2px">Latency</div>
+          <div style="font-size:var(--text-xs);font-weight:800;color:var(--color-cyan)">12ms Ultra</div>
         </div>
-        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)">
-          <span style="color:var(--color-gold);display:inline-block" aria-label="In progress"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg></span>
-          <span>New live class streaming infrastructure</span>
-          <span class="badge badge-warning" style="margin-left:auto">In Progress</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)">
-          <span style="color:var(--text-muted)" aria-label="Pending">○</span>
-          <span>Database migration & backup verification</span>
-          <span class="badge" style="margin-left:auto;background:rgba(100,116,139,0.1);color:var(--text-muted);border:1px solid var(--border-color)">Pending</span>
+        <div class="status-pill-item">
+          <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:2px">Security</div>
+          <div style="font-size:var(--text-xs);font-weight:800;color:var(--color-gold)">SSL 256-bit</div>
         </div>
       </div>
     </div>
 
-    <!-- Notify Me -->
-    <div>
-      <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-4)">Get notified when we're back online:</p>
-      <form id="notify-form" style="display:flex;gap:var(--space-3);max-width:420px;margin:0 auto" novalidate>
-        <input type="email" class="form-input" placeholder="your@email.com" data-validate="required,email" aria-label="Email to notify when maintenance ends" style="flex:1">
-        <button type="submit" class="btn btn-primary">Notify Me</button>
-      </form>
-    </div>
+    <!-- ====== RIGHT COLUMN: CONTENT & ACTION CONTROLS ====== -->
+    <div class="maintenance-right-col">
+      <!-- Logo -->
+      <a href="../index.html" class="nav-logo" style="margin-bottom:var(--space-6);text-decoration:none" aria-label="CogniTest Home">
+        <div class="nav-logo-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-primary">CogniTest</span>
+          <span class="nav-logo-tagline">Excel. Qualify. Succeed.</span>
+        </div>
+      </a>
 
-    <!-- Contact Info -->
-    <div style="margin-top:var(--space-10);padding-top:var(--space-6);border-top:1px solid var(--border-color)">
-      <p style="font-size:var(--text-sm);color:var(--text-muted)">Emergency? Contact us at <a href="mailto:support@cognitest.in" style="color:var(--color-indigo-light)">support@cognitest.in</a> or Telegram @CogniTestOfficial</p>
-      <div style="display:flex;gap:var(--space-4);justify-content:center;margin-top:var(--space-4)">
-        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Follow for updates on X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Join Telegram for updates"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></a>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Check status on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <!-- Status Badge -->
+      <div style="display:inline-flex;align-items:center;gap:var(--space-2);background:rgba(234,179,8,0.1);border:1px solid rgba(234,179,8,0.3);border-radius:var(--radius-full);padding:var(--space-2) var(--space-5);margin-bottom:var(--space-4)">
+        <span style="width:8px;height:8px;border-radius:50%;background:#eab308;animation:pulse 2s ease-in-out infinite;display:inline-block" aria-hidden="true"></span>
+        <span style="color:#eab308;font-weight:700;font-size:var(--text-sm)">Scheduled Maintenance in Progress</span>
+      </div>
+
+      <h1 style="font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,3rem);font-weight:800;margin-bottom:var(--space-3);line-height:1.2">We're Making CogniTest <span class="text-gradient">Even Better</span></h1>
+      <p style="color:var(--text-secondary);font-size:var(--text-base);margin-bottom:var(--space-6);line-height:1.6">Our engineering team is executing high-speed infrastructure upgrades to give you a faster, smarter exam portal. We'll be back online shortly!</p>
+
+      <!-- Countdown Timer -->
+      <div class="countdown-grid" role="timer" aria-label="Time remaining until maintenance complete">
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-hours" aria-live="polite">02</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-minutes" aria-live="polite">45</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-seconds" aria-live="polite">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <!-- Upgrade Progress Bar -->
+      <div style="margin-bottom:var(--space-6)">
+        <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-2)">
+          <span>Infrastructure Migration Progress</span>
+          <span id="maintenance-progress-pct" style="font-weight:700;color:var(--color-indigo-light)" aria-label="Progress percentage">68%</span>
+        </div>
+        <div class="progress-bar" style="height:8px" aria-hidden="true">
+          <div class="progress-fill" id="maintenance-progress" style="width:68%;background:var(--gradient-primary);height:100%;border-radius:4px"></div>
+        </div>
+      </div>
+
+      <!-- What We're Improving -->
+      <div class="card" style="text-align:left;margin-bottom:var(--space-6);padding:var(--space-4) var(--space-5)">
+        <h2 style="font-family:var(--font-heading);font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-3);display:flex;align-items:center;gap:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> What We're Improving:</h2>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-xs)">
+            <span style="color:#10b981;font-weight:800" aria-label="Completed">✓</span>
+            <span>AI Analytics engine — 3x faster processing</span>
+            <span class="badge badge-success" style="margin-left:auto">Done</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-xs)">
+            <span style="color:#10b981;font-weight:800" aria-label="Completed">✓</span>
+            <span>Mobile app & web portal responsiveness</span>
+            <span class="badge badge-success" style="margin-left:auto">Done</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-xs)">
+            <span style="color:var(--color-gold);display:inline-block" aria-label="In progress"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg></span>
+            <span>New live class streaming CDN</span>
+            <span class="badge badge-warning" style="margin-left:auto">In Progress</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Notification Form -->
+      <div>
+        <p style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">Get notified when CogniTest is back online:</p>
+        <form id="notify-form" style="display:flex;gap:var(--space-3);max-width:420px" novalidate>
+          <input type="email" class="form-input" placeholder="your@email.com" data-validate="required,email" aria-label="Email to notify when maintenance ends" style="flex:1">
+          <button type="submit" class="btn btn-primary">Notify Me</button>
+        </form>
+      </div>
+
+      <!-- Footer Contact -->
+      <div style="margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-3)">
+        <p style="font-size:var(--text-xs);color:var(--text-muted);margin:0">Support: <a href="mailto:support@cognitest.in" style="color:var(--color-indigo-light)">support@cognitest.in</a></p>
+        <div style="display:flex;gap:var(--space-3)">
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Follow for updates on X"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Join Telegram for updates"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></a>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -297,4 +389,3 @@
 </script>
 </body>
 </html>
-
