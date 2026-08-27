@@ -620,36 +620,50 @@
     if (authorBioDesc) authorBioDesc.textContent = post.author.bio;
 
     // Interactive Table of Contents (TOC) ScrollSpy & Smooth Scroll
-    const tocLinks = document.querySelectorAll('.legal-toc-link');
+    const tocLinks = Array.from(document.querySelectorAll('.legal-toc-link'));
+    let isClickScrolling = false;
 
     function updateActiveTOC() {
-      const scrollPosition = window.pageYOffset + 180;
-      let currentActiveLink = null;
+      if (isClickScrolling) return;
 
-      tocLinks.forEach(link => {
+      const threshold = 240;
+      let activeLink = null;
+
+      for (let i = 0; i < tocLinks.length; i++) {
+        const link = tocLinks[i];
         const href = link.getAttribute('href');
         if (href && href.startsWith('#')) {
           const targetEl = document.querySelector(href);
           if (targetEl) {
-            const top = targetEl.getBoundingClientRect().top + window.pageYOffset;
-            if (scrollPosition >= top - 60) {
-              currentActiveLink = link;
+            const rect = targetEl.getBoundingClientRect();
+            if (rect.top <= threshold) {
+              activeLink = link;
             }
           }
         }
-      });
-
-      tocLinks.forEach(l => l.classList.remove('active'));
-      if (currentActiveLink) {
-        currentActiveLink.classList.add('active');
-      } else if (tocLinks.length > 0) {
-        tocLinks[0].classList.add('active');
       }
+
+      // If near bottom of the document, activate last section
+      if ((window.innerHeight + window.pageYOffset) >= (document.body.offsetHeight - 60)) {
+        activeLink = tocLinks[tocLinks.length - 1];
+      }
+
+      if (!activeLink && tocLinks.length > 0) {
+        activeLink = tocLinks[0];
+      }
+
+      tocLinks.forEach(l => {
+        if (l === activeLink) {
+          l.classList.add('active');
+        } else {
+          l.classList.remove('active');
+        }
+      });
     }
 
     window.addEventListener('scroll', updateActiveTOC, { passive: true });
     updateActiveTOC();
-    setTimeout(updateActiveTOC, 300);
+    setTimeout(updateActiveTOC, 400);
 
     tocLinks.forEach(link => {
       link.addEventListener('click', (e) => {
@@ -658,11 +672,25 @@
         if (href && href.startsWith('#')) {
           const targetEl = document.querySelector(href);
           if (targetEl) {
-            const offsetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - 110;
-            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            isClickScrolling = true;
+
             tocLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
             link.blur();
+
+            const navOffset = 110;
+            const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+
+            setTimeout(() => {
+              isClickScrolling = false;
+              updateActiveTOC();
+            }, 700);
           }
         }
       });
