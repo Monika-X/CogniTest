@@ -1422,24 +1422,6 @@
 
     // ====== DYNAMIC INTERACTIVITY SUITE ======
 
-    // 1. Topbar Real-Time Search
-    const searchInput = document.querySelector('.dashboard-search-input');
-    searchInput?.addEventListener('input', (e) => {
-      const q = e.target.value.toLowerCase().trim();
-      const activeTab = document.querySelector('.dashboard-tab:not([hidden])');
-      if (!activeTab) return;
-
-      const searchableItems = activeTab.querySelectorAll('.dashboard-card, .upcoming-item, tr');
-      searchableItems.forEach(item => {
-        if (!q) {
-          item.style.display = '';
-          return;
-        }
-        const text = item.textContent.toLowerCase();
-        item.style.display = text.includes(q) ? '' : 'none';
-      });
-    });
-
     // 2. Interactive Mock Test Simulator Engine
     const mockModal = document.getElementById('mock-test-modal');
     const mockTitle = document.getElementById('modal-test-title');
