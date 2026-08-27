@@ -60,17 +60,55 @@
           </div>
         </article>
 
-        <!-- Blog Grid -->
-        <h2 id="blog-main-heading" style="font-family:var(--font-heading);font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6);color:var(--text-primary)">Latest Articles</h2>
-        <div class="grid grid-2" role="list" aria-label="Blog posts">
+        <!-- Blog Grid Header & Filter -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <h2 id="blog-main-heading" style="font-family:var(--font-heading);font-size:var(--text-xl);font-weight:700;color:var(--text-primary)">Category Articles <span style="font-size:var(--text-sm);font-weight:500;color:var(--text-muted)">(2 cards per category)</span></h2>
+        </div>
 
-          <article class="blog-card reveal" role="listitem">
-            <div class="blog-thumbnail" style="height:220px">
-              <img src="https://i.pinimg.com/736x/70/ff/78/70ff785a5c104c5723c6bf1eff081685.jpg" alt="SSC CGL Tier 2 Maths strategy" width="400" height="220" loading="lazy" style="object-position:center 0%">
+        <div class="grid grid-2" role="list" aria-label="Blog posts" id="blog-cards-container">
+
+          <!-- BANKING CARD 1 -->
+          <article class="blog-card blog-card-item reveal" data-category="banking" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/736x/ba/60/8e/ba608e200e710ce357e99327eab45692.jpg" alt="IBPS PO preparation strategy" width="400" height="240" loading="lazy" style="object-position:center 0%">
+              <div class="blog-category-tag"><span class="badge badge-gold">Banking</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Aug 15, 2025</span><span class="blog-meta-item">8 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">How to Crack IBPS PO in 90 Days: A Complete Strategy by AIR 1 Holder</a></h3>
+              <p class="blog-excerpt">Rahul Sharma, AIR 1 in IBPS PO, breaks down his exact 90-day preparation plan and daily routine.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Rahul Sharma" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Rahul Sharma</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BANKING CARD 2 -->
+          <article class="blog-card blog-card-item reveal delay-100" data-category="banking" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/1200x/c3/20/c4/c320c40a2dcfc6aed41f4fdcc0be0868.jpg" alt="SBI PO & Clerk Master Course" width="400" height="240" loading="lazy" style="object-position:center 0%">
+              <div class="blog-category-tag"><span class="badge badge-gold">Banking</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Aug 12, 2025</span><span class="blog-meta-item">7 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">SBI PO & Clerk Prelims + Mains Master Strategy 2025</a></h3>
+              <p class="blog-excerpt">Complete roadmap for Prelims & Mains with speed calculation tricks and section-wise target scores.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=32&h=32&fit=crop&crop=face" alt="Priya Verma" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Priya Verma</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SSC CARD 1 -->
+          <article class="blog-card blog-card-item reveal" data-category="ssc" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/736x/70/ff/78/70ff785a5c104c5723c6bf1eff081685.jpg" alt="SSC CGL Tier 2 Maths strategy" width="400" height="240" loading="lazy" style="object-position:center 0%">
               <div class="blog-category-tag"><span class="badge badge-gold">SSC</span></div>
             </div>
             <div class="blog-body">
-              <div class="blog-meta"><span class="blog-meta-item">Aug 10, 2025</span><span class="blog-meta-item">6 min</span></div>
+              <div class="blog-meta"><span class="blog-meta-item">Aug 10, 2025</span><span class="blog-meta-item">6 min read</span></div>
               <h3 class="blog-title"><a href="blog-details.html">SSC CGL Tier 2 Maths: 25 Shortcuts That Toppers Use</a></h3>
               <p class="blog-excerpt">Discover the mathematical shortcuts and tricks used by SSC toppers to solve Tier 2 maths questions in half the time.</p>
               <div class="blog-footer">
@@ -80,15 +118,33 @@
             </div>
           </article>
 
-          <article class="blog-card reveal delay-100" role="listitem">
-            <div class="blog-thumbnail" style="height:220px">
-              <img src="https://i.pinimg.com/736x/26/bb/d5/26bbd5f7777334d96f0ff403a54bfe42.jpg" alt="RRB NTPC preparation strategy" width="400" height="220" loading="lazy" style="object-position:center 0%">
+          <!-- SSC CARD 2 -->
+          <article class="blog-card blog-card-item reveal delay-100" data-category="ssc" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/736x/9c/ee/43/9cee4351d801f5bcd803219a7c51093e.jpg" alt="SSC CHSL + MTS Strategy" width="400" height="240" loading="lazy" style="object-position:center 0%">
+              <div class="blog-category-tag"><span class="badge badge-gold">SSC</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Aug 07, 2025</span><span class="blog-meta-item">5 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">SSC CHSL + MTS Combo Preparation Blueprint 2025</a></h3>
+              <p class="blog-excerpt">Comprehensive guide covering English vocabulary, General Awareness, and Reasoning speed tricks.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&crop=face" alt="Sneha Roy" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Sneha Roy</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- RAILWAYS CARD 1 -->
+          <article class="blog-card blog-card-item reveal" data-category="railways" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/736x/26/bb/d5/26bbd5f7777334d96f0ff403a54bfe42.jpg" alt="RRB NTPC preparation strategy" width="400" height="240" loading="lazy" style="object-position:center 0%">
               <div class="blog-category-tag"><span class="badge badge-success">Railways</span></div>
             </div>
             <div class="blog-body">
-              <div class="blog-meta"><span class="blog-meta-item">Aug 8, 2025</span><span class="blog-meta-item">5 min</span></div>
+              <div class="blog-meta"><span class="blog-meta-item">Aug 8, 2025</span><span class="blog-meta-item">5 min read</span></div>
               <h3 class="blog-title"><a href="blog-details.html">RRB NTPC 2025: Complete Syllabus Analysis & Study Plan</a></h3>
-              <p class="blog-excerpt">Our Railways expert breaks down the newly released RRB NTPC 2025 notification and syllabus with a recommended 120-day study plan.</p>
+              <p class="blog-excerpt">Our Railways expert breaks down the newly released RRB NTPC 2025 notification and syllabus with a 120-day plan.</p>
               <div class="blog-footer">
                 <div class="blog-author"><img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=32&h=32&fit=crop&crop=face" alt="Ramesh Gupta" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Ramesh Gupta</span></div>
                 <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
@@ -96,15 +152,33 @@
             </div>
           </article>
 
-          <article class="blog-card reveal delay-200" role="listitem">
-            <div class="blog-thumbnail" style="height:220px">
-              <img src="https://i.pinimg.com/1200x/5d/5e/e7/5d5ee7f610685945f02ae2fa4c1c42ab.jpg" alt="JEE Advanced preparation guide" width="400" height="220" loading="lazy" style="object-position:center 0%">
+          <!-- RAILWAYS CARD 2 -->
+          <article class="blog-card blog-card-item reveal delay-100" data-category="railways" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/736x/4d/96/88/4d9688e77386c6dc59d47c1f456219c9.jpg" alt="RRB JE & SSE Prep" width="400" height="240" loading="lazy" style="object-position:center 20%">
+              <div class="blog-category-tag"><span class="badge badge-success">Railways</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Aug 04, 2025</span><span class="blog-meta-item">8 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">RRB JE & Senior Section Engineer Preparation Guide</a></h3>
+              <p class="blog-excerpt">Technical & general science preparation guide for civil, electrical, and mechanical railway engineers.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&crop=face" alt="Er. Amit Kumar" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Er. Amit Kumar</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ENGINEERING CARD 1 -->
+          <article class="blog-card blog-card-item reveal" data-category="engineering" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/1200x/5d/5e/e7/5d5ee7f610685945f02ae2fa4c1c42ab.jpg" alt="JEE Advanced preparation guide" width="400" height="240" loading="lazy" style="object-position:center 0%">
               <div class="blog-category-tag"><span class="badge badge-indigo">Engineering</span></div>
             </div>
             <div class="blog-body">
-              <div class="blog-meta"><span class="blog-meta-item">Aug 5, 2025</span><span class="blog-meta-item">10 min</span></div>
+              <div class="blog-meta"><span class="blog-meta-item">Aug 5, 2025</span><span class="blog-meta-item">10 min read</span></div>
               <h3 class="blog-title"><a href="blog-details.html">JEE Advanced 2025: Topic-wise Weightage & Smart Strategy</a></h3>
-              <p class="blog-excerpt">An IIT alumnus analyzes 10 years of JEE Advanced papers to identify the most important topics and optimal preparation strategy.</p>
+              <p class="blog-excerpt">An IIT alumnus analyzes 10 years of JEE Advanced papers to identify the most important topics.</p>
               <div class="blog-footer">
                 <div class="blog-author"><img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?w=32&h=32&fit=crop&crop=face" alt="Dr. Kavitha Nair" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Dr. Kavitha Nair</span></div>
                 <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
@@ -112,15 +186,33 @@
             </div>
           </article>
 
-          <article class="blog-card reveal delay-300" role="listitem">
+          <!-- ENGINEERING CARD 2 -->
+          <article class="blog-card blog-card-item reveal delay-100" data-category="engineering" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/736x/19/f2/98/19f298b5f880a536772784b21ca77e25.jpg" alt="GATE 2026 CS EC ME CE Strategy" width="400" height="240" loading="lazy" style="object-position:center 0%">
+              <div class="blog-category-tag"><span class="badge badge-indigo">Engineering</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Aug 02, 2025</span><span class="blog-meta-item">9 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">GATE 2026 CS, EC, ME & CE: 6-Month Preparation Roadmap</a></h3>
+              <p class="blog-excerpt">Step-by-step 6-month roadmap for GATE engineering aspirants with subject weightage breakdown.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="Prof. Rajesh Iyer" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Prof. Rajesh Iyer</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CURRENT AFFAIRS CARD 1 -->
+          <article class="blog-card blog-card-item reveal" data-category="current-affairs" role="listitem">
             <div class="blog-thumbnail" style="height:250px">
               <img src="https://i.pinimg.com/736x/11/9d/dc/119ddc64ae3d09768abb713ea53d66f9.jpg" alt="General Awareness current affairs" width="400" height="250" loading="lazy" style="object-position:center 48%">
               <div class="blog-category-tag"><span class="badge badge-cyan">Current Affairs</span></div>
             </div>
             <div class="blog-body">
-              <div class="blog-meta"><span class="blog-meta-item">Aug 1, 2025</span><span class="blog-meta-item">4 min</span></div>
+              <div class="blog-meta"><span class="blog-meta-item">Aug 1, 2025</span><span class="blog-meta-item">4 min read</span></div>
               <h3 class="blog-title"><a href="blog-details.html">August 2025 Current Affairs: Top 100 Questions for Exams</a></h3>
-              <p class="blog-excerpt">Monthly compilation of the most important current affairs for all competitive exams — banking, SSC, railways and UPSC.</p>
+              <p class="blog-excerpt">Monthly compilation of the most important current affairs for all competitive exams — banking, SSC, and railways.</p>
               <div class="blog-footer">
                 <div class="blog-author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" alt="Prof. Vikram Singh" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Prof. Vikram Singh</span></div>
                 <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
@@ -128,11 +220,93 @@
             </div>
           </article>
 
+          <!-- CURRENT AFFAIRS CARD 2 -->
+          <article class="blog-card blog-card-item reveal delay-100" data-category="current-affairs" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/736x/6e/43/fc/6e43fc740d97bd32adfaeb02b5945264.jpg" alt="Monthly Banking Awareness Capsule" width="400" height="240" loading="lazy" style="object-position:center 0%">
+              <div class="blog-category-tag"><span class="badge badge-cyan">Current Affairs</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Jul 29, 2025</span><span class="blog-meta-item">6 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">Monthly RBI & Banking Awareness Capsule 2025</a></h3>
+              <p class="blog-excerpt">Complete financial, monetary policy, and banking terms overview updated for upcoming exams.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face" alt="Ananya Das" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Ananya Das</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- STUDY TIPS CARD 1 -->
+          <article class="blog-card blog-card-item reveal" data-category="study-tips" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/1200x/ae/89/1f/ae891fbdf81a30ac5cfd76a24401fa27.jpg" alt="English grammar tips for competitive exams" width="400" height="240" loading="lazy" style="object-position:center 30%">
+              <div class="blog-category-tag"><span class="badge badge-purple">Study Tips</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Jul 28, 2025</span><span class="blog-meta-item">7 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">English Grammar Shortcuts for Competitive Exams — Complete Guide</a></h3>
+              <p class="blog-excerpt">Master error spotting, sentence correction, and fillers with these proven shortcut rules used by toppers.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=32&h=32&fit=crop&crop=face" alt="Preethi Sharma" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Preethi Sharma</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- STUDY TIPS CARD 2 -->
+          <article class="blog-card blog-card-item reveal delay-100" data-category="study-tips" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://i.pinimg.com/736x/ce/a5/16/cea516a18cbdd75d280b1150797a5c77.jpg" alt="Study time management strategy" width="400" height="240" loading="lazy" style="object-position:center 0%">
+              <div class="blog-category-tag"><span class="badge badge-purple">Study Tips</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Jul 20, 2025</span><span class="blog-meta-item">5 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">The Pomodoro Technique for Competitive Exam Preparation</a></h3>
+              <p class="blog-excerpt">How time-blocking and focused study sprints can double your retention and reduce exam anxiety by 40%.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=32&h=32&fit=crop&crop=face" alt="Prof. Sunita Rao" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Prof. Sunita Rao</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SUCCESS STORIES CARD 1 -->
+          <article class="blog-card blog-card-item reveal" data-category="success-stories" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=240&fit=crop" alt="Student success story" width="400" height="240" loading="lazy" style="object-position:center">
+              <div class="blog-category-tag"><span class="badge badge-success">Success Stories</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Jul 18, 2025</span><span class="blog-meta-item">6 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">From 3 Failed Attempts to AIR 4 in SBI PO: An Inspirational Journey</a></h3>
+              <p class="blog-excerpt">How mindset shift, weak area tracking, and consistent mock tests led to a top 5 rank.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" alt="Aakash Verma" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Aakash Verma</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SUCCESS STORIES CARD 2 -->
+          <article class="blog-card blog-card-item reveal delay-100" data-category="success-stories" role="listitem">
+            <div class="blog-thumbnail" style="height:240px">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=240&fit=crop" alt="Student success celebration" width="400" height="240" loading="lazy" style="object-position:center">
+              <div class="blog-category-tag"><span class="badge badge-success">Success Stories</span></div>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="blog-meta-item">Jul 14, 2025</span><span class="blog-meta-item">8 min read</span></div>
+              <h3 class="blog-title"><a href="blog-details.html">How I Cleared SSC CGL & RRB NTPC Simultaneously</a></h3>
+              <p class="blog-excerpt">Dual preparation strategy for overlapping syllabus topics in SSC and Railway exams.</p>
+              <div class="blog-footer">
+                <div class="blog-author"><img src="https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?w=32&h=32&fit=crop&crop=face" alt="Meera Krishnan" class="blog-author-avatar" width="32" height="32" loading="lazy"><span class="blog-author-name">Meera Krishnan</span></div>
+                <a href="blog-details.html" class="btn btn-outline btn-sm">Read</a>
+              </div>
+            </div>
+          </article>
+
         </div>
 
-        <div class="text-center" style="margin-top:var(--space-8)">
-          <a href="#" class="btn btn-outline btn-lg">Load More Articles</a>
-        </div>
       </div>
 
       <!-- Sidebar -->
@@ -140,19 +314,20 @@
         <div class="card" style="margin-bottom:var(--space-6)">
           <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4)">Search Articles</h3>
           <div style="position:relative">
-            <input type="search" class="form-input" placeholder="Search..." aria-label="Search blog articles">
+            <input type="search" id="blog-search-input" class="form-input" placeholder="Search articles..." aria-label="Search blog articles">
           </div>
         </div>
         <div class="card" style="margin-bottom:var(--space-6)">
           <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4)">Categories</h3>
           <div style="display:flex;flex-direction:column;gap:var(--space-2)" role="list" aria-label="Blog categories">
-            <a href="#" class="legal-toc-link" role="listitem">Banking (42 articles)</a>
-            <a href="#" class="legal-toc-link" role="listitem">SSC (38 articles)</a>
-            <a href="#" class="legal-toc-link" role="listitem">Railways (29 articles)</a>
-            <a href="#" class="legal-toc-link" role="listitem">Engineering (34 articles)</a>
-            <a href="#" class="legal-toc-link" role="listitem">Current Affairs (120 articles)</a>
-            <a href="#" class="legal-toc-link" role="listitem">Study Tips (56 articles)</a>
-            <a href="#" class="legal-toc-link" role="listitem">Success Stories (24 articles)</a>
+            <button class="category-filter-btn active" data-category="all"><span>All Categories</span><span>(14)</span></button>
+            <button class="category-filter-btn" data-category="banking"><span>Banking</span><span>(2)</span></button>
+            <button class="category-filter-btn" data-category="ssc"><span>SSC</span><span>(2)</span></button>
+            <button class="category-filter-btn" data-category="railways"><span>Railways</span><span>(2)</span></button>
+            <button class="category-filter-btn" data-category="engineering"><span>Engineering</span><span>(2)</span></button>
+            <button class="category-filter-btn" data-category="current-affairs"><span>Current Affairs</span><span>(2)</span></button>
+            <button class="category-filter-btn" data-category="study-tips"><span>Study Tips</span><span>(2)</span></button>
+            <button class="category-filter-btn" data-category="success-stories"><span>Success Stories</span><span>(2)</span></button>
           </div>
         </div>
         <div class="card" style="margin-bottom:var(--space-6)">
@@ -244,6 +419,41 @@
 <script src="../js/core.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.category-filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card-item');
+    const searchInput = document.getElementById('blog-search-input');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const cat = btn.getAttribute('data-category');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        blogCards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        blogCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (!query || text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
     const form = document.getElementById('blog-newsletter');
     if (form) {
       form.addEventListener('submit', (e) => {
