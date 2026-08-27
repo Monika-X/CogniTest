@@ -394,6 +394,17 @@ const Tabs = {
   },
 };
 
+// Color Helper for Canvas Gradients
+const hexToRgba = (hex, alpha = 1) => {
+  if (!hex || typeof hex !== 'string') return `rgba(99, 102, 241, ${alpha})`;
+  if (hex.startsWith('rgba') || hex.startsWith('rgb')) return hex;
+  let c = hex.replace('#', '');
+  if (c.length === 3) c = c.split('').map(x => x + x).join('');
+  const num = parseInt(c, 16);
+  if (isNaN(num)) return `rgba(99, 102, 241, ${alpha})`;
+  return `rgba(${(num >> 16) & 255}, ${(num >> 8) & 255}, ${num & 255}, ${alpha})`;
+};
+
 // ===== SIMPLE BAR CHART (Canvas) =====
 const BarChart = {
   draw(canvasId, data, labels, colors) {
@@ -439,7 +450,7 @@ const BarChart = {
       // Gradient bar
       const grad = ctx.createLinearGradient(0, y, 0, y + barH);
       grad.addColorStop(0, color);
-      grad.addColorStop(1, color + '60');
+      grad.addColorStop(1, hexToRgba(color, 0.4));
       ctx.fillStyle = grad;
       const r = Math.min(6, barW / 2);
       ctx.beginPath();
@@ -522,8 +533,8 @@ const LineChart = {
 
       // Area fill
       const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + chartH);
-      grad.addColorStop(0, dataset.color + '30');
-      grad.addColorStop(1, dataset.color + '00');
+      grad.addColorStop(0, hexToRgba(dataset.color, 0.35));
+      grad.addColorStop(1, hexToRgba(dataset.color, 0));
       ctx.fillStyle = grad;
       ctx.beginPath();
       ctx.moveTo(points[0].x, pad.top + chartH);
