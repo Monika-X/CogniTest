@@ -253,6 +253,28 @@ const injectComponents = () => {
   const footerHTML = `
   <footer class="footer" role="contentinfo">
     <div class="container">
+      <!-- Newsletter Banner -->
+      <div class="footer-newsletter">
+        <div class="footer-newsletter-content">
+          <div class="footer-newsletter-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Stay Ahead
+          </div>
+          <h3 class="footer-newsletter-title">Subscribe to Exam Updates & Free Notes</h3>
+          <p class="footer-newsletter-desc">Get weekly current affairs, exam notification alerts, and exclusive practice questions delivered directly to your inbox.</p>
+        </div>
+        <form class="footer-newsletter-form" id="footer-newsletter-form" novalidate>
+          <div class="footer-newsletter-input-wrap">
+            <input type="email" class="footer-newsletter-input" id="footer-email-input" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+            <button type="submit" class="btn btn-primary footer-newsletter-btn">
+              <span>Subscribe</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+          <p class="footer-newsletter-privacy">Join 45,000+ aspirants. No spam ever. Unsubscribe anytime.</p>
+        </form>
+      </div>
+
       <div class="footer-grid">
         <!-- Brand -->
         <div class="footer-brand">
@@ -328,6 +350,29 @@ const injectComponents = () => {
   const footerEl = document.getElementById('footer-placeholder');
   if (footerEl) footerEl.outerHTML = footerHTML;
   else document.body.insertAdjacentHTML('beforeend', footerHTML);
+
+  // ===== FOOTER NEWSLETTER SUBMIT =====
+  const newsletterForm = document.getElementById('footer-newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = document.getElementById('footer-email-input');
+      if (input && input.value.trim() !== '' && input.value.includes('@')) {
+        if (window.CogniTest && window.CogniTest.Toast) {
+          window.CogniTest.Toast.show('Successfully subscribed to exam updates!', 'success');
+        } else {
+          alert('Successfully subscribed to exam updates!');
+        }
+        input.value = '';
+      } else {
+        if (window.CogniTest && window.CogniTest.Toast) {
+          window.CogniTest.Toast.show('Please enter a valid email address.', 'error');
+        } else {
+          alert('Please enter a valid email address.');
+        }
+      }
+    });
+  }
 
   // ===== BACK TO TOP =====
   document.body.insertAdjacentHTML('beforeend', `
