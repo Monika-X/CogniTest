@@ -616,6 +616,61 @@
 
     const authorBioDesc = document.getElementById('author-bio-desc');
     if (authorBioDesc) authorBioDesc.textContent = post.author.bio;
+
+    // Interactive Table of Contents (TOC) ScrollSpy & Smooth Scroll
+    const tocLinks = document.querySelectorAll('.legal-toc-link');
+    const sections = [
+      { id: 'post-title', el: document.getElementById('post-title') },
+      { id: 'post-takeaways', el: document.querySelector('.blog-details-header') },
+      { id: 'post-body', el: document.getElementById('post-body') },
+      { id: 'author-bio-card', el: document.getElementById('author-bio-card') }
+    ].filter(item => item.el);
+
+    function updateActiveTOC() {
+      const scrollPosition = window.scrollY + 220;
+
+      let activeId = '';
+      sections.forEach(sec => {
+        const top = sec.el.offsetTop;
+        const height = sec.el.offsetHeight;
+        if (scrollPosition >= top && scrollPosition < top + height + 150) {
+          activeId = sec.id;
+        }
+      });
+
+      if (!activeId && sections.length > 0) {
+        activeId = sections[0].id;
+      }
+
+      tocLinks.forEach(link => {
+        const targetId = link.getAttribute('href')?.replace('#', '');
+        if (targetId === activeId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveTOC, { passive: true });
+    setTimeout(updateActiveTOC, 300);
+
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetEl = document.querySelector(href);
+          if (targetEl) {
+            const offsetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - 110;
+            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            tocLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            link.blur();
+          }
+        }
+      });
+    });
   });
 </script>
 </body>
