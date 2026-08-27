@@ -123,11 +123,8 @@
       <aside style="position:sticky;top:calc(var(--nav-height) + 20px);z-index:10;width:100%">
         <div class="card">
           <h3 style="font-family:var(--font-heading);font-weight:700;font-size:var(--text-base);margin-bottom:var(--space-4)">Article Overview</h3>
-          <nav aria-label="Article table of contents">
-            <a href="#sec-intro" class="legal-toc-link active">Introduction</a>
-            <a href="#sec-takeaways" class="legal-toc-link">Key Takeaways</a>
-            <a href="#sec-strategy" class="legal-toc-link">Strategy & Blueprint</a>
-            <a href="#sec-author" class="legal-toc-link">Author Profile</a>
+          <nav aria-label="Article table of contents" id="post-toc-nav">
+            <!-- Dynamically populated per article -->
           </nav>
           <div class="divider" style="margin:var(--space-4) 0"></div>
           <div style="text-align:center">
@@ -619,7 +616,38 @@
     const authorBioDesc = document.getElementById('author-bio-desc');
     if (authorBioDesc) authorBioDesc.textContent = post.author.bio;
 
-    // Interactive Table of Contents (TOC) ScrollSpy & Smooth Scroll
+    // Dynamic Table of Contents (TOC) Builder & ScrollSpy
+    const tocNav = document.getElementById('post-toc-nav');
+    if (tocNav) {
+      let tocHTML = '';
+
+      // 1. Key Takeaways link
+      const takeawaysEl = document.getElementById('sec-takeaways');
+      if (takeawaysEl) {
+        tocHTML += `<a href="#sec-takeaways" class="legal-toc-link active">Key Takeaways</a>`;
+      }
+
+      // 2. Extract h2 headings dynamically from postBody
+      if (postBody) {
+        const headings = postBody.querySelectorAll('h2');
+        headings.forEach((h2, idx) => {
+          const headingId = `article-heading-${idx}`;
+          h2.setAttribute('id', headingId);
+          const isActive = !takeawaysEl && idx === 0;
+          tocHTML += `<a href="#${headingId}" class="legal-toc-link ${isActive ? 'active' : ''}">${h2.textContent.trim()}</a>`;
+        });
+      }
+
+      // 3. Author Profile link
+      const authorBioEl = document.getElementById('sec-author');
+      if (authorBioEl) {
+        tocHTML += `<a href="#sec-author" class="legal-toc-link">Author Profile</a>`;
+      }
+
+      tocNav.innerHTML = tocHTML;
+    }
+
+    // Interactive ScrollSpy & Smooth Scroll Binding
     const tocLinks = Array.from(document.querySelectorAll('.legal-toc-link'));
     let isClickScrolling = false;
 
@@ -650,7 +678,7 @@
         activeLink = tocLinks[tocLinks.length - 1];
       }
 
-      // Top of page fallback: activate first link (Introduction)
+      // Top of page fallback: activate first link
       if (!activeLink && tocLinks.length > 0 && window.pageYOffset < 250) {
         activeLink = tocLinks[0];
       }
