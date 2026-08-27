@@ -160,6 +160,59 @@
 <script>
   // Dynamic Article Database for all 14 Blog Cards
   const BLOG_POSTS = {
+    'ultimate-exam-roadmap': {
+      title: 'The Ultimate All-India Competitive Exam Master Roadmap: AI-Driven 180-Day Blueprint',
+      category: 'Featured Masterclass',
+      badgeClass: 'badge-gold',
+      date: 'August 24, 2026',
+      readTime: '12 min read',
+      views: '68,500 views',
+      author: {
+        name: 'Dr. Siddharth Kaul',
+        role: 'Founder & Chief Mentor • CogniTest',
+        avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop&crop=face',
+        bio: 'Dr. Siddharth Kaul is an IIT Bombay alumnus and former McKinsey consultant with over 12 years of experience mentoring 45,000+ competitive exam toppers.'
+      },
+      heroImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=600&fit=crop&crop=center',
+      imagePosition: 'center 0%',
+      takeaways: [
+        'Comprehensive 180-Day AI-backed master schedule for Banking, SSC, & Railways',
+        'Sectional mastery strategy for Quantitative Aptitude, Reasoning, & General Awareness',
+        'Cognitive memory retention loops & mock test error log methodology',
+        'Final 30-day exam pressure simulation & speed optimization guide'
+      ],
+      tags: ['Masterclass', '180-Day Blueprint', 'Competitive Exams', 'AI Strategy', 'Quant & Reasoning'],
+      body: `
+        <h2>Introduction: The Architecture of Exam Selection</h2>
+        <p>Over the past 7 years at CogniTest, our engineering and academic team analyzed more than 10 million test attempts across IBPS PO, SBI PO, SSC CGL, Railways RRB, and JEE entrance exams. We discovered a profound pattern: selection is not determined by sheer study hours, but by <strong>targeted error elimination and cognitive pace management</strong>.</p>
+        <p>This 180-day master roadmap integrates AI analytics with proven learning science. Whether you are starting from scratch or aiming to boost your percentile from 80 to 99+, this blueprint will guide every single week of your preparation.</p>
+
+        <h2>Phase 1 — Days 1-60: High-Yield Conceptual Foundation</h2>
+        <p>During the first two months, focus exclusively on conceptual mastery. Do not rush into full-length mock tests until your foundational accuracy reaches 85% on fundamental topics.</p>
+        
+        <h3>1. Quantitative Aptitude & Speed Calculation</h3>
+        <p>Master speed math fundamentals in Week 1: Vedic calculation techniques, digital roots, square roots up to 100, cube roots up to 50, and fraction-to-percentage conversions up to 1/25. Eliminating manual paper calculations saves an average of 4.5 minutes per section.</p>
+        
+        <h3>2. Logical Reasoning & High-Level Puzzles</h3>
+        <p>Focus on floor-based puzzles, parallel seating arrangements, and 3-variable matrix puzzles. Develop a systematic notation protocol to eliminate ambiguity during multi-condition questions.</p>
+
+        <blockquote><p>"Exams do not measure your memory under ideal conditions; they measure your decision-making under time pressure."</p></blockquote>
+
+        <h2>Phase 2 — Days 61-120: Adaptive Weak-Spot Eradication</h2>
+        <p>Transition to adaptive topic tests. CogniTest's AI diagnostic engine continuously categorizes your performance into three zones:</p>
+        <ul>
+          <li><strong>Green Zone (High Speed, High Accuracy):</strong> Maintain with weekly 15-minute quick quizzes.</li>
+          <li><strong>Yellow Zone (High Speed, Low Accuracy):</strong> Eliminate silly mistakes by re-studying core formulas.</li>
+          <li><strong>Red Zone (Low Speed, Low Accuracy):</strong> Dedicate 2-hour deep-focus sprints to rebuild concept logic.</li>
+        </ul>
+
+        <h2>Phase 3 — Days 121-180: Exam Simulation & Speed Peak</h2>
+        <p>In the final two months, simulate full exam conditions. Take 3 full-length mock tests per week under strict timed conditions. Spend at least 90 minutes analyzing each test — reviewing not just incorrect answers, but also correct answers that took longer than 45 seconds.</p>
+
+        <h2>Summary: The Topper's Daily Checklist</h2>
+        <p>1. 45 minutes of Current Affairs & Banking Awareness daily.<br>2. 1 hour of Speed Calculations & Vocabulary Flashcards.<br>3. 2 hours of Concept Deep-Dives.<br>4. 1 hour of Adaptive AI Practice Tests.</p>
+      `
+    },
     'ibps-po-90-days': {
       title: 'How to Crack IBPS PO in 90 Days: A Complete Strategy by AIR 1 Holder',
       category: 'Banking',
@@ -515,9 +568,9 @@
   // On DOM Ready: Populate Article Data based on URL Parameter "?id=..."
   document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get('id') || 'ibps-po-90-days';
+    const postId = urlParams.get('id') || 'ultimate-exam-roadmap';
 
-    const post = BLOG_POSTS[postId] || BLOG_POSTS['ibps-po-90-days'];
+    const post = BLOG_POSTS[postId] || BLOG_POSTS['ultimate-exam-roadmap'];
 
     // Update Page Meta & Header
     document.title = `${post.title} | CogniTest Blog`;
