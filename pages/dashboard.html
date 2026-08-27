@@ -1411,10 +1411,13 @@
     });
 
     // Initial render & window resize handler
-    setTimeout(() => renderDashboardCharts('week'), 200);
+    renderDashboardCharts('week');
+    setTimeout(() => renderDashboardCharts('week'), 100);
+    setTimeout(() => renderDashboardCharts('week'), 500);
+    window.addEventListener('load', () => renderDashboardCharts('week'));
     window.addEventListener('resize', () => {
       clearTimeout(window.__chartResizeTimer);
-      window.__chartResizeTimer = setTimeout(() => renderDashboardCharts(), 200);
+      window.__chartResizeTimer = setTimeout(() => renderDashboardCharts(), 150);
     });
 
     // ====== DYNAMIC INTERACTIVITY SUITE ======
