@@ -922,6 +922,33 @@
         </div>
       </section>
 
+      <!-- ====== SUBJECT-WISE TESTS TAB ====== -->
+      <section id="subject-tests" class="dashboard-tab" aria-label="Subject-wise Tests" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Subject-wise Diagnostic Tests</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Focus on individual subjects with topic-wise speed drills and sectional diagnostic tests</p>
+          </div>
+          <span class="badge badge-primary">28 Sectional Mocks</span>
+        </div>
+
+        <div class="dashboard-grid-2">
+          <div class="dashboard-card">
+            <span class="badge badge-cyan" style="margin-bottom:var(--space-2)">QUANTITATIVE APTITUDE</span>
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-2)">Data Interpretation & Caselets Drill #04</h3>
+            <p style="color:var(--text-muted);font-size:var(--text-xs);margin-bottom:var(--space-4)">35 Questions • 20 Minutes • Speed & Accuracy Benchmark</p>
+            <button class="btn btn-primary w-full" onclick="window.CogniTest?.Toast?.show('Launching Quant DI Speed Drill...', 'success')">Start Sectional Test ➔</button>
+          </div>
+
+          <div class="dashboard-card">
+            <span class="badge badge-gold" style="margin-bottom:var(--space-2)">LOGICAL REASONING</span>
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-2)">Floor & Circular Seating Puzzles #06</h3>
+            <p style="color:var(--text-muted);font-size:var(--text-xs);margin-bottom:var(--space-4)">35 Questions • 20 Minutes • High Level Prelims & Mains</p>
+            <button class="btn btn-primary w-full" onclick="window.CogniTest?.Toast?.show('Launching Reasoning Puzzle Drill...', 'success')">Start Sectional Test ➔</button>
+          </div>
+        </div>
+      </section>
+
       <!-- ====== FULL-LENGTH TESTS TAB ====== -->
       <section id="full-tests" class="dashboard-tab" aria-label="Full-Length Mock Tests" hidden>
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
@@ -1000,6 +1027,53 @@
                   <td>60 mins</td>
                   <td><span class="badge badge-warning">Moderate</span></td>
                   <td><button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Loading SBI PO Paper...', 'info')">Attempt Paper</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== SCORE REPORTS TAB ====== -->
+      <section id="score-reports" class="dashboard-tab" aria-label="Score Reports" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Comprehensive Score & Performance Reports</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Detailed breakdown of past test attempts, sectional percentiles, and speed analysis</p>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('Exporting PDF Score Report...', 'info')">Export Score PDF</button>
+        </div>
+
+        <div class="dashboard-card" style="margin-bottom:var(--space-6)">
+          <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-4)">Recent Test History & Percentile Analytics</h3>
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Test Name</th>
+                  <th>Date Attempted</th>
+                  <th>Score</th>
+                  <th>Percentile</th>
+                  <th>AIR Rank</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>IBPS PO Prelims All-India Live Mock #12</strong></td>
+                  <td>Aug 20, 2025</td>
+                  <td><span style="color:#10b981;font-weight:700">79 / 100</span></td>
+                  <td>98.4%</td>
+                  <td>AIR 187</td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('Loading detailed score breakdown...', 'info')">View Report</button></td>
+                </tr>
+                <tr>
+                  <td><strong>SBI PO Mains Speed Mock #04</strong></td>
+                  <td>Aug 14, 2025</td>
+                  <td><span style="color:var(--color-gold);font-weight:700">142 / 200</span></td>
+                  <td>96.1%</td>
+                  <td>AIR 312</td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('Loading detailed score breakdown...', 'info')">View Report</button></td>
                 </tr>
               </tbody>
             </table>
@@ -1226,29 +1300,67 @@
     overlay?.addEventListener('click', closeSidebar);
 
     // Tab navigation function
+    const sidebarLinks = document.querySelectorAll('.sidebar-link[data-tab], .sidebar-link[href^="#"]');
+
     const activateTab = (targetId, titleText) => {
+      if (!targetId) return;
+
+      // Normalize target ID mapping
+      let normId = targetId;
+      if (targetId === 'courses') normId = 'my-courses';
+      if (targetId === 'live') normId = 'live-classes';
+      if (targetId === 'py-papers') normId = 'previous-papers';
+      if (targetId === 'reports') normId = 'score-reports';
+      if (targetId === 'material') normId = 'study-material';
+      if (targetId === 'current') normId = 'current-affairs';
+
       sidebarLinks.forEach(l => {
         const hrefTarget = l.getAttribute('href')?.replace('#', '');
-        const isMatch = (hrefTarget === targetId);
+        const dataTab = l.dataset.tab;
+        const isMatch = (hrefTarget === normId || hrefTarget === targetId || dataTab === targetId);
         l.classList.toggle('active', isMatch);
         if (isMatch) l.setAttribute('aria-current', 'page');
         else l.removeAttribute('aria-current');
       });
-      tabs = document.querySelectorAll('.dashboard-tab');
-      tabs.forEach(tab => {
-        tab.hidden = (tab.id !== targetId);
+
+      const allTabs = document.querySelectorAll('.dashboard-tab');
+      let foundTab = false;
+      allTabs.forEach(tab => {
+        if (tab.id === normId || tab.id === targetId) {
+          tab.removeAttribute('hidden');
+          tab.hidden = false;
+          tab.style.display = 'block';
+          tab.classList.add('active');
+          foundTab = true;
+        } else {
+          tab.setAttribute('hidden', '');
+          tab.hidden = true;
+          tab.style.display = 'none';
+          tab.classList.remove('active');
+        }
       });
+
+      if (!foundTab && allTabs.length > 0) {
+        const overview = document.getElementById('dashboard-overview');
+        if (overview) {
+          overview.removeAttribute('hidden');
+          overview.hidden = false;
+          overview.style.display = 'block';
+        }
+      }
+
       const title = document.querySelector('.dashboard-page-title');
       if (title && titleText) title.textContent = titleText;
+
+      if (normId === 'dashboard-overview') {
+        setTimeout(() => renderDashboardCharts(), 50);
+      }
     };
 
-    // Sidebar links click handler
-    const sidebarLinks = document.querySelectorAll('.sidebar-link[data-tab], .sidebar-link[href^="#"]');
-    let tabs = document.querySelectorAll('.dashboard-tab');
     sidebarLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
-        if (!href || href === '#' || href.startsWith('login.html')) return;
+        if (!href || href === '#' || href.startsWith('login.html') || href.includes('admin-dashboard.html')) return;
         e.preventDefault();
         const targetId = href.replace('#', '');
         const titleText = link.querySelector('.sidebar-link-text')?.textContent || 'Dashboard';
