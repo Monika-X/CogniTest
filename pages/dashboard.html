@@ -647,17 +647,416 @@
               </div>
               <div>
                 <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2);font-size:var(--text-sm)">
-                  <span>Live Streaming Server Array</span>
-                  <span style="color:var(--color-cyan);font-weight:700">41% Bandwidth</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="width:41%;background:linear-gradient(135deg,#06B6D4,#22d3ee)"></div></div>
-              </div>
-              <div style="display:flex;gap:var(--space-3);margin-top:var(--space-2)">
-                <button class="btn btn-outline btn-sm w-full" onclick="window.CogniTest?.Toast?.show('Cache cleared successfully', 'success')">Clear Redis Cache</button>
-                <button class="btn btn-outline btn-sm w-full" onclick="window.CogniTest?.Toast?.show('Server logs fetched', 'info')">View Audit Logs</button>
+      </section>
+
+      <!-- ====== MY COURSES TAB ====== -->
+      <section id="my-courses" class="dashboard-tab" aria-label="My Enrolled Courses" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">My Enrolled Courses</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Track your learning progress across all enrolled competitive exam courses</p>
+          </div>
+          <a href="courses.html" class="btn btn-primary btn-sm">+ Explore New Courses</a>
+        </div>
+
+        <div class="grid grid-2" style="gap:var(--space-6)">
+          <div class="dashboard-card">
+            <div style="display:flex;gap:var(--space-4);margin-bottom:var(--space-4)">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=160&h=120&fit=crop" alt="IBPS PO Masterclass" style="width:100px;height:75px;border-radius:var(--radius-lg);object-fit:cover">
+              <div>
+                <span class="badge badge-success" style="margin-bottom:var(--space-2)">In Progress</span>
+                <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700">IBPS PO 2025 Complete Masterclass</h3>
+                <div style="color:var(--text-muted);font-size:var(--text-xs)">Dr. Sunita Rao & Team • 168 Modules</div>
               </div>
             </div>
+            <div style="margin-bottom:var(--space-4)">
+              <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);margin-bottom:var(--space-2)">
+                <span>Course Completion</span>
+                <span style="color:var(--color-gold);font-weight:700">84% (142/168)</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:84%;background:var(--gradient-gold)"></div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
+              <span style="font-size:var(--text-xs);color:var(--color-cyan)">Next: High Level Puzzles & DI</span>
+              <button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Resuming IBPS PO Masterclass...', 'info')">Continue Learning →</button>
+            </div>
           </div>
+
+          <div class="dashboard-card">
+            <div style="display:flex;gap:var(--space-4);margin-bottom:var(--space-4)">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=160&h=120&fit=crop" alt="Quant Speed Calculation" style="width:100px;height:75px;border-radius:var(--radius-lg);object-fit:cover">
+              <div>
+                <span class="badge badge-gold" style="margin-bottom:var(--space-2)">Almost Done</span>
+                <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700">Quant High-Speed Calculation Tricks</h3>
+                <div style="color:var(--text-muted);font-size:var(--text-xs)">Sanjay Kumar • 35 Modules</div>
+              </div>
+            </div>
+            <div style="margin-bottom:var(--space-4)">
+              <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);margin-bottom:var(--space-2)">
+                <span>Course Completion</span>
+                <span style="color:var(--color-indigo-light);font-weight:700">92% (32/35)</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:92%;background:var(--gradient-primary)"></div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
+              <span style="font-size:var(--text-xs);color:var(--color-cyan)">Next: Vedic Cube Roots</span>
+              <button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Resuming Quant Speed Tricks...', 'info')">Continue Learning →</button>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div style="display:flex;gap:var(--space-4);margin-bottom:var(--space-4)">
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=160&h=120&fit=crop" alt="English Booster" style="width:100px;height:75px;border-radius:var(--radius-lg);object-fit:cover">
+              <div>
+                <span class="badge badge-success" style="margin-bottom:var(--space-2)">Active</span>
+                <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700">English Grammar & Vocab Booster</h3>
+                <div style="color:var(--text-muted);font-size:var(--text-xs)">Preethi Sharma • 40 Modules</div>
+              </div>
+            </div>
+            <div style="margin-bottom:var(--space-4)">
+              <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);margin-bottom:var(--space-2)">
+                <span>Course Completion</span>
+                <span style="color:var(--color-cyan);font-weight:700">65% (26/40)</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:65%;background:linear-gradient(135deg,#06B6D4,#22d3ee)"></div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
+              <span style="font-size:var(--text-xs);color:var(--color-cyan)">Next: Para Jumbles Rules</span>
+              <button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Resuming English Grammar Booster...', 'info')">Continue Learning →</button>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div style="display:flex;gap:var(--space-4);margin-bottom:var(--space-4)">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=160&h=120&fit=crop" alt="Banking Awareness" style="width:100px;height:75px;border-radius:var(--radius-lg);object-fit:cover">
+              <div>
+                <span class="badge badge-warning" style="margin-bottom:var(--space-2)">Needs Attention</span>
+                <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700">Banking & Financial Awareness 2025</h3>
+                <div style="color:var(--text-muted);font-size:var(--text-xs)">Rajesh Verma • 30 Modules</div>
+              </div>
+            </div>
+            <div style="margin-bottom:var(--space-4)">
+              <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);margin-bottom:var(--space-2)">
+                <span>Course Completion</span>
+                <span style="color:#ef4444;font-weight:700">40% (12/30)</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--gradient-danger)"></div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
+              <span style="font-size:var(--text-xs);color:#ef4444">Next: RBI Repo Rate Revision</span>
+              <button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Resuming Banking Awareness...', 'info')">Continue Learning →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== LIVE CLASSES TAB ====== -->
+      <section id="live-classes" class="dashboard-tab" aria-label="Live Classes Schedule" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1);display:flex;align-items:center;gap:var(--space-2)">
+              <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ef4444;box-shadow:0 0 10px #ef4444"></span>
+              Live Classes & Interactive Sessions
+            </h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Join live lectures, ask doubts in real-time, and watch past recordings</p>
+          </div>
+          <span class="badge badge-danger">🔴 1 Session Live Now</span>
+        </div>
+
+        <div class="dashboard-card" style="background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(67,56,202,0.15));border:1px solid rgba(239,68,68,0.3);margin-bottom:var(--space-6)">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+            <div>
+              <span class="badge badge-danger" style="margin-bottom:var(--space-2)">LIVE NOW • STARTED 15 MINS AGO</span>
+              <h3 style="font-family:var(--font-heading);font-size:var(--text-xl);font-weight:800;margin-bottom:var(--space-2)">Reasoning Masterclass: Complex Floor & Circular Puzzles</h3>
+              <p style="color:var(--text-muted);font-size:var(--text-sm)">Instructor: Dr. Sunita Rao • 1,420 Students Connected Live • Real-time Polls Active</p>
+            </div>
+            <button class="btn btn-primary btn-lg" style="background:#ef4444;border:none" onclick="window.CogniTest?.Toast?.show('Connecting to Live Streaming Room...', 'success')">Join Live Stream Now ➔</button>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="dashboard-card-header">
+            <h3 class="dashboard-card-title">Today's Upcoming Live Schedule</h3>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+            <div class="upcoming-item">
+              <div class="upcoming-date" style="background:rgba(6,182,212,0.1);color:var(--color-cyan)"><div class="upcoming-day">5:30</div><div class="upcoming-month">PM</div></div>
+              <div>
+                <div style="font-weight:700;font-size:var(--text-base)">Quant DI Special: Caselet & Radar DI Shortcuts</div>
+                <div style="color:var(--text-muted);font-size:var(--text-xs)">Instructor: Sanjay Kumar • Duration: 90 Mins</div>
+              </div>
+              <button class="btn btn-cyan btn-sm" onclick="window.CogniTest?.Toast?.show('Reminder set for 5:30 PM Quant DI Live Class', 'info')">Set Reminder</button>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-date" style="background:rgba(67,56,202,0.1);color:var(--color-indigo-light)"><div class="upcoming-day">7:00</div><div class="upcoming-month">PM</div></div>
+              <div>
+                <div style="font-weight:700;font-size:var(--text-base)">Daily Hindu Editorial & Vocabulary Analysis</div>
+                <div style="color:var(--text-muted);font-size:var(--text-xs)">Instructor: Preethi Sharma • Duration: 60 Mins</div>
+              </div>
+              <button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('Reminder set for 7:00 PM Editorial Class', 'info')">Set Reminder</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== FULL-LENGTH TESTS TAB ====== -->
+      <section id="full-tests" class="dashboard-tab" aria-label="Full-Length Mock Tests" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Full-Length Exam Mocks</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Simulate real exam conditions with exam-like timer, interface, and national ranking</p>
+          </div>
+          <span class="badge badge-gold">10 Mocks Available</span>
+        </div>
+
+        <div class="grid grid-2" style="gap:var(--space-6)">
+          <div class="dashboard-card" style="border:1px solid var(--color-indigo)">
+            <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-3)">
+              <span class="badge badge-gold">RECOMMENDED</span>
+              <span style="font-size:var(--text-xs);color:var(--text-muted)">100 Qs • 60 Mins • 100 Marks</span>
+            </div>
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-2)">IBPS PO Prelims All-India Live Mock #13</h3>
+            <p style="color:var(--text-muted);font-size:var(--text-xs);margin-bottom:var(--space-4)">Based on latest 2025 exam pattern with detailed solution key & percentile report.</p>
+            <button class="btn btn-primary w-full" onclick="window.CogniTest?.Toast?.show('Launching Live Exam Interface...', 'success')">Attempt Mock Test Now ➔</button>
+          </div>
+
+          <div class="dashboard-card">
+            <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-3)">
+              <span class="badge badge-success">ATTEMPTED</span>
+              <span style="font-size:var(--text-xs);color:var(--text-muted)">Score: 79/100 • AIR 187</span>
+            </div>
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-2)">IBPS PO Prelims Mock #12</h3>
+            <p style="color:var(--text-muted);font-size:var(--text-xs);margin-bottom:var(--space-4)">Completed on Aug 20, 2025 • Accuracy: 82.3%</p>
+            <div style="display:flex;gap:var(--space-3)">
+              <button class="btn btn-outline btn-sm w-full" onclick="window.CogniTest?.Toast?.show('Loading solution analysis report...', 'info')">View Solutions</button>
+              <button class="btn btn-primary btn-sm w-full" onclick="window.CogniTest?.Toast?.show('Re-launching Mock #12...', 'info')">Re-Attempt</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== PREVIOUS YEAR PAPERS TAB ====== -->
+      <section id="previous-papers" class="dashboard-tab" aria-label="Previous Year Papers" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Previous Year Papers</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Solve past 5 years official exam papers with step-by-step video solutions</p>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Exam & Year</th>
+                  <th>Total Questions</th>
+                  <th>Time</th>
+                  <th>Difficulty</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>IBPS PO Prelims 2024 (Official Memory Based)</strong></td>
+                  <td>100 Qs</td>
+                  <td>60 mins</td>
+                  <td><span class="badge badge-warning">Moderate</span></td>
+                  <td><button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Loading 2024 IBPS PO Paper...', 'info')">Attempt Paper</button></td>
+                </tr>
+                <tr>
+                  <td><strong>IBPS PO Mains 2023 Paper</strong></td>
+                  <td>155 Qs</td>
+                  <td>180 mins</td>
+                  <td><span class="badge badge-danger">Hard</span></td>
+                  <td><button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Loading 2023 Mains Paper...', 'info')">Attempt Paper</button></td>
+                </tr>
+                <tr>
+                  <td><strong>SBI PO Prelims 2024 Paper</strong></td>
+                  <td>100 Qs</td>
+                  <td>60 mins</td>
+                  <td><span class="badge badge-warning">Moderate</span></td>
+                  <td><button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Loading SBI PO Paper...', 'info')">Attempt Paper</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== WEAKNESS ANALYSIS TAB ====== -->
+      <section id="weakness-analysis" class="dashboard-tab" aria-label="Weakness Analysis" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1);display:flex;align-items:center;gap:var(--space-2)">
+              Weakness Diagnostic Report
+              <span class="badge badge-warning">3 Focus Areas</span>
+            </h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">CogniTest AI identified sub-topics where accuracy is below your target threshold of 75%</p>
+          </div>
+        </div>
+
+        <div class="grid grid-3" style="gap:var(--space-6)">
+          <div class="dashboard-card" style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)">
+            <span class="badge badge-danger" style="margin-bottom:var(--space-3)">CRITICAL • ACCURACY 48%</span>
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:800;margin-bottom:var(--space-2)">Seating Arrangements & Puzzles</h3>
+            <p style="color:var(--text-muted);font-size:var(--text-xs);margin-bottom:var(--space-4)">Avg Time: 2m 14s/Q • Missed 12 Qs in last 5 mocks.</p>
+            <button class="btn btn-primary w-full" style="background:#ef4444;border:none" onclick="window.CogniTest?.Toast?.show('Generating 50 Targeted Seating Arrangement Questions...', 'success')">Practice 50 Puzzles ➔</button>
+          </div>
+
+          <div class="dashboard-card" style="background:rgba(234,179,8,0.06);border:1px solid rgba(234,179,8,0.2)">
+            <span class="badge badge-gold" style="margin-bottom:var(--space-3)">WARNING • ACCURACY 55%</span>
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:800;margin-bottom:var(--space-2)">Blood Relations & Family Trees</h3>
+            <p style="color:var(--text-muted);font-size:var(--text-xs);margin-bottom:var(--space-4)">Avg Time: 1m 45s/Q • Missed 8 Qs in last 5 mocks.</p>
+            <button class="btn btn-primary w-full" style="background:#eab308;color:#000;border:none" onclick="window.CogniTest?.Toast?.show('Generating 40 Targeted Blood Relation Questions...', 'success')">Practice 40 Questions ➔</button>
+          </div>
+
+          <div class="dashboard-card" style="background:rgba(234,179,8,0.06);border:1px solid rgba(234,179,8,0.2)">
+            <span class="badge badge-gold" style="margin-bottom:var(--space-3)">WARNING • ACCURACY 59%</span>
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:800;margin-bottom:var(--space-2)">Quadratic Equations</h3>
+            <p style="color:var(--text-muted);font-size:var(--text-xs);margin-bottom:var(--space-4)">Avg Time: 1m 10s/Q • Missed 6 Qs in last 5 mocks.</p>
+            <button class="btn btn-primary w-full" style="background:#eab308;color:#000;border:none" onclick="window.CogniTest?.Toast?.show('Generating 30 Targeted Quadratic Equation Questions...', 'success')">Practice 30 Questions ➔</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== PROGRESS TRACKER TAB ====== -->
+      <section id="progress-tracker" class="dashboard-tab" aria-label="Progress Tracker" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Personal Progress Tracker</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Track your daily study milestones and target completion goals</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap:var(--space-6)">
+          <div class="dashboard-card">
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-4)">Target Readiness Index</h3>
+            <div style="margin-bottom:var(--space-4)">
+              <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);margin-bottom:var(--space-2)"><span>Total Questions Solved</span><span style="font-weight:700;color:var(--color-indigo-light)">3,420 / 5,000</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:68.4%;background:var(--gradient-primary)"></div></div>
+            </div>
+            <div style="margin-bottom:var(--space-4)">
+              <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);margin-bottom:var(--space-2)"><span>Study Hours Logged</span><span style="font-weight:700;color:var(--color-gold)">142 / 200 Hours</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:71%;background:var(--gradient-gold)"></div></div>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-4)">Daily Checklist</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm)"><input type="checkbox" checked style="accent-color:var(--color-indigo)"> <span>Complete 1 IBPS PO Full Mock</span></label>
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm)"><input type="checkbox" checked style="accent-color:var(--color-indigo)"> <span>Solve 30 Reasoning Puzzles</span></label>
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm)"><input type="checkbox" style="accent-color:var(--color-indigo)"> <span>Review Today's Hindu Editorial Vocabulary</span></label>
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm)"><input type="checkbox" style="accent-color:var(--color-indigo)"> <span>Attempt Daily Banking Awareness Quiz</span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== STUDY MATERIAL TAB ====== -->
+      <section id="study-material" class="dashboard-tab" aria-label="Study Material & E-Books" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Study Material & PDF Handbooks</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Download comprehensive notes, formula handbooks, and shortcut cheat sheets</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap:var(--space-6)">
+          <div class="dashboard-card" style="display:flex;align-items:center;gap:var(--space-4)">
+            <div style="width:50px;height:50px;border-radius:var(--radius-lg);background:rgba(67,56,202,0.15);color:var(--color-indigo-light);display:flex;align-items:center;justify-content:center;font-size:1.5rem">📄</div>
+            <div style="flex:1">
+              <h4 style="font-weight:700;font-size:var(--text-base)">Quant 1000+ Shortcut Formulas PDF</h4>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">PDF • 4.2 MB • Updated 2025</div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="window.CogniTest?.Toast?.show('Downloading Quant Shortcut PDF...', 'success')">Download</button>
+          </div>
+
+          <div class="dashboard-card" style="display:flex;align-items:center;gap:var(--space-4)">
+            <div style="width:50px;height:50px;border-radius:var(--radius-lg);background:rgba(6,182,212,0.15);color:var(--color-cyan);display:flex;align-items:center;justify-content:center;font-size:1.5rem">📚</div>
+            <div style="flex:1">
+              <h4 style="font-weight:700;font-size:var(--text-base)">500 High-Level Puzzles E-Book</h4>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">PDF • 6.8 MB • Solutions Included</div>
+            </div>
+            <button class="btn btn-cyan btn-sm" onclick="window.CogniTest?.Toast?.show('Downloading 500 Puzzles E-Book...', 'success')">Download</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== CURRENT AFFAIRS TAB ====== -->
+      <section id="current-affairs" class="dashboard-tab" aria-label="Current Affairs" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1);display:flex;align-items:center;gap:var(--space-2)">
+              Daily Current Affairs & Banking Digest
+              <span class="badge badge-success">Updated Today</span>
+            </h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Curated daily news, RBI notifications, and monthly PDF capsules for General Awareness</p>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-4)">Today's Headlines — August 27, 2025</h3>
+          <ul style="display:flex;flex-direction:column;gap:var(--space-3);color:var(--text-secondary);font-size:var(--text-sm);padding-left:var(--space-4)">
+            <li><strong>RBI Updates Digital Rupee Framework:</strong> RBI introduces offline transactions support for e-Rupee in rural pilot zones.</li>
+            <li><strong>Cabinet Approves ₹14,000 Cr Infrastructure Fund:</strong> Multi-modal connectivity project launched for Tier-2 logistics.</li>
+            <li><strong>SEBI Mandates T+0 Settlement:</strong> Optional same-day settlement phase extended to top 500 listed stocks.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====== BOOKMARKS TAB ====== -->
+      <section id="bookmarks" class="dashboard-tab" aria-label="Bookmarked Questions" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Bookmarked & Flagged Questions</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Review difficult questions you saved during mock test attempts</p>
+          </div>
+          <span class="badge badge-gold">24 Bookmarked</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+          <div class="dashboard-card">
+            <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)">
+              <span class="badge badge-primary">Reasoning • Seating Arrangement</span>
+              <button class="btn btn-outline btn-sm" onclick="window.CogniTest?.Toast?.show('Bookmark removed', 'info')">Remove</button>
+            </div>
+            <p style="font-size:var(--text-sm);line-height:1.6;margin-bottom:var(--space-3)">"Eight friends A, B, C, D, E, F, G, H sit in a straight line facing North. C sits third to the right of F..."</p>
+            <button class="btn btn-sm btn-outline" onclick="window.CogniTest?.Toast?.show('Showing detailed step-by-step solution...', 'info')">Show Solution</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== SETTINGS TAB ====== -->
+      <section id="settings" class="dashboard-tab" aria-label="Account Settings" hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4)">
+          <div>
+            <h2 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--space-1)">Account & Platform Settings</h2>
+            <p style="color:var(--text-muted);font-size:var(--text-sm)">Manage your profile, target exam, security credentials, and interface preferences</p>
+          </div>
+        </div>
+
+        <div class="dashboard-card" style="max-width:680px">
+          <form id="settings-form" onsubmit="event.preventDefault(); window.CogniTest?.Toast?.show('Settings saved successfully!', 'success');">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" value="Rahul Sharma">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" value="rahul.sharma@gmail.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Target Exam</label>
+              <select class="form-select">
+                <option selected>IBPS PO 2025</option>
+                <option>SBI PO 2025</option>
+                <option>SSC CGL 2025</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Save Settings</button>
+          </form>
         </div>
       </section>
 
@@ -688,23 +1087,29 @@
     // Tab navigation function
     const activateTab = (targetId, titleText) => {
       sidebarLinks.forEach(l => {
-        const isMatch = l.getAttribute('href') === '#' + targetId;
+        const hrefTarget = l.getAttribute('href')?.replace('#', '');
+        const isMatch = (hrefTarget === targetId);
         l.classList.toggle('active', isMatch);
         if (isMatch) l.setAttribute('aria-current', 'page');
         else l.removeAttribute('aria-current');
       });
-      tabs.forEach(tab => tab.hidden = (tab.id !== targetId));
+      tabs = document.querySelectorAll('.dashboard-tab');
+      tabs.forEach(tab => {
+        tab.hidden = (tab.id !== targetId);
+      });
       const title = document.querySelector('.dashboard-page-title');
       if (title && titleText) title.textContent = titleText;
     };
 
     // Sidebar links click handler
-    const sidebarLinks = document.querySelectorAll('.sidebar-link[data-tab]');
-    const tabs = document.querySelectorAll('.dashboard-tab');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link[data-tab], .sidebar-link[href^="#"]');
+    let tabs = document.querySelectorAll('.dashboard-tab');
     sidebarLinks.forEach(link => {
       link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('login.html')) return;
         e.preventDefault();
-        const targetId = link.getAttribute('href').replace('#', '');
+        const targetId = href.replace('#', '');
         const titleText = link.querySelector('.sidebar-link-text')?.textContent || 'Dashboard';
         activateTab(targetId, titleText);
         window.location.hash = targetId;
@@ -726,15 +1131,20 @@
       });
     });
 
-    // Check initial location hash
+    // Check initial location hash or query
     const initialHash = window.location.hash.replace('#', '');
-    if (initialHash === 'admin' || initialHash === 'admin-overview') {
-      activateTab('admin-overview', 'Admin Control Center');
+    if (initialHash) {
+      const matchLink = document.querySelector(`.sidebar-link[href="#${initialHash}"]`);
+      if (matchLink) {
+        const titleText = matchLink.querySelector('.sidebar-link-text')?.textContent || 'Dashboard';
+        activateTab(initialHash, titleText);
+      } else if (initialHash === 'admin' || initialHash === 'admin-overview') {
+        activateTab('admin-overview', 'Admin Control Center');
+      }
     }
 
     // Render charts
     setTimeout(() => {
-      // Score Trend Chart
       const scoreTrendEl = document.getElementById('score-trend-chart');
       if (scoreTrendEl && window.CogniTest?.Chart) {
         window.CogniTest.Chart.line(scoreTrendEl, {
@@ -746,7 +1156,6 @@
         });
       }
 
-      // Accuracy Donut Chart
       const accuracyEl = document.getElementById('accuracy-chart');
       if (accuracyEl && window.CogniTest?.Chart) {
         window.CogniTest.Chart.bar(accuracyEl, {
