@@ -1044,7 +1044,10 @@ html, body {
 @media (max-width: 768px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .comparison-table th, .comparison-table td { padding: var(--space-2) var(--space-3); font-size: var(--text-xs); }
-  .admin-badge { font-size: 0.65rem; padding: 2px 8px; }
+}
+
+@media (max-width: 576px) {
+  .admin-badge { display: none !important; }
 }
 
 @media (max-width: 480px) {
@@ -1052,6 +1055,14 @@ html, body {
   .dashboard-page-subtitle,
   .dashboard-subtitle {
     display: none !important;
+  }
+  .dashboard-topbar-actions .btn span,
+  .dashboard-topbar-actions .btn-text,
+  .action-btn-text {
+    display: none !important;
+  }
+  .dashboard-topbar-actions .btn {
+    padding: 5px 8px !important;
   }
   .stats-grid { grid-template-columns: 1fr; }
   .dashboard-card { padding: var(--space-4); }
@@ -1071,7 +1082,7 @@ html, body {
   }
 
   .dashboard-main {
-    padding: var(--space-3) 6px !important;
+    padding: var(--space-2) 4px !important;
     max-width: 100vw !important;
     box-sizing: border-box !important;
   }
@@ -1082,28 +1093,55 @@ html, body {
   }
 
   .dashboard-topbar-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     gap: 4px !important;
+    width: 100% !important;
   }
 
   .dashboard-topbar-title-group {
+    display: flex !important;
+    align-items: center !important;
     gap: 4px !important;
+    min-width: 0 !important;
+    flex: 1 !important;
     margin-right: 2px !important;
   }
 
   .dashboard-page-title, .dashboard-title {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
     font-weight: 800 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 125px !important;
+    margin: 0 !important;
+  }
+
+  .admin-badge,
+  .dashboard-page-subtitle,
+  .dashboard-subtitle {
+    display: none !important;
   }
 
   .dashboard-topbar-actions {
-    gap: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
   }
 
   .nav-action-btn {
     width: 26px !important;
     height: 26px !important;
+    min-width: 26px !important;
     padding: 0 !important;
     font-size: 0.6rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .profile-avatar-btn img,
@@ -1147,17 +1185,17 @@ html, body {
   }
 
   .btn {
-    padding: 5px 10px !important;
-    font-size: 0.72rem !important;
+    padding: 4px 8px !important;
+    font-size: 0.7rem !important;
   }
 
   .btn-lg {
-    padding: 7px 12px !important;
-    font-size: 0.78rem !important;
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
   }
 
   .badge {
-    font-size: 0.65rem !important;
-    padding: 2px 6px !important;
+    font-size: 0.62rem !important;
+    padding: 2px 5px !important;
   }
 }
