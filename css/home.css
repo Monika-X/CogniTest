@@ -207,23 +207,30 @@
   position: absolute;
   background: var(--bg-glass);
   backdrop-filter: blur(20px);
-  border: 1px solid var(--bg-glass-border);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-lg);
+  padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-xl);
   animation: float 6s ease-in-out infinite;
+  z-index: 10;
 }
 
 .hero-float-card-1 {
-  top: -24px;
-  right: -24px;
+  top: 20px;
+  right: -15px;
   animation-delay: 0s;
 }
 
 .hero-float-card-2 {
-  bottom: 40px;
-  left: -32px;
+  bottom: 30px;
+  left: -15px;
   animation-delay: -3s;
+}
+
+@media (max-width: 991px) {
+  .hero-float-card-1 { top: 10px; right: 10px; }
+  .hero-float-card-2 { bottom: 10px; left: 10px; }
 }
 
 .float-card-content {

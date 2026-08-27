@@ -127,11 +127,15 @@
 }
 .hero-float-card {
   position: absolute;
-  z-index: 3;
+  z-index: 10;
   animation: floatCard 6s ease-in-out infinite;
 }
-.hero-float-card-1 { bottom: 30px; left: -30px; }
-.hero-float-card-2 { top: 30px; right: -30px; animation-delay: -3s; }
+.hero-float-card-1 { top: 20px; right: -15px; }
+.hero-float-card-2 { bottom: 30px; left: -15px; animation-delay: -3s; }
+@media (max-width: 991px) {
+  .hero-float-card-1 { top: 10px; right: 10px; }
+  .hero-float-card-2 { bottom: 10px; left: 10px; }
+}
 .float-card-content {
   background: rgba(21,25,35,0.9);
   backdrop-filter: blur(20px);
