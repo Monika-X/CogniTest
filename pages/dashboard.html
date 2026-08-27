@@ -115,6 +115,9 @@
     </nav>
   </aside>
 
+  <!-- Mobile Backdrop Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
   <!-- ====== MAIN CONTENT ====== -->
   <main class="dashboard-main" id="dashboard-main" role="main">
 
@@ -1184,19 +1187,37 @@
 <script src="../js/core.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Sidebar toggle
+    // Responsive Mobile Sidebar Toggle Engine
     const toggle = document.getElementById('sidebar-toggle');
     const sidebar = document.getElementById('sidebar');
     const close = document.getElementById('sidebar-close');
-    toggle?.addEventListener('click', () => {
-      sidebar?.classList.toggle('collapsed');
-      const isExpanded = !sidebar?.classList.contains('collapsed');
-      toggle.setAttribute('aria-expanded', isExpanded.toString());
-    });
-    close?.addEventListener('click', () => {
-      sidebar?.classList.add('collapsed');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    const openSidebar = () => {
+      sidebar?.classList.add('open');
+      overlay?.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      toggle?.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeSidebar = () => {
+      sidebar?.classList.remove('open');
+      overlay?.classList.remove('open');
+      document.body.style.overflow = '';
       toggle?.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (sidebar?.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
     });
+
+    close?.addEventListener('click', closeSidebar);
+    overlay?.addEventListener('click', closeSidebar);
 
     // Tab navigation function
     const activateTab = (targetId, titleText) => {
@@ -1227,6 +1248,7 @@
         const titleText = link.querySelector('.sidebar-link-text')?.textContent || 'Dashboard';
         activateTab(targetId, titleText);
         window.location.hash = targetId;
+        closeSidebar();
       });
     });
 
