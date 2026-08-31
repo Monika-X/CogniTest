@@ -1450,8 +1450,31 @@
   .hero-cta { flex-direction: column; }
   .counter-grid { grid-template-columns: 1fr 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
-  .trust-bar-inner { justify-content: center; gap: var(--space-4); }
-  .trust-item { font-size: var(--text-xs); }
+  .trust-bar-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: fit-content !important;
+    margin: 0 auto !important;
+    gap: var(--space-3) !important;
+  }
+  .trust-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: var(--space-3) !important;
+    width: 100% !important;
+    text-align: left !important;
+    font-size: var(--text-xs) !important;
+  }
+  .trust-item-icon {
+    width: 20px !important;
+    min-width: 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
   .blog-card .blog-thumbnail { height: 160px; }
 }
 @media (max-width: 480px) {

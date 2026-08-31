@@ -1040,8 +1040,31 @@
   .hero-cta { display: flex; flex-direction: column; width: 100%; gap: var(--space-3); }
   .hero-cta .btn { width: 100% !important; text-align: center; justify-content: center; }
   .hero-stats { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-  .trust-bar-inner { flex-direction: column; gap: var(--space-3); text-align: center; }
-  .trust-item { justify-content: center; font-size: 0.8rem; }
+  .trust-bar-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: fit-content !important;
+    margin: 0 auto !important;
+    gap: var(--space-3) !important;
+  }
+  .trust-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: var(--space-3) !important;
+    width: 100% !important;
+    text-align: left !important;
+    font-size: 0.8rem !important;
+  }
+  .trust-item-icon {
+    width: 20px !important;
+    min-width: 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
   #faq .container > div { grid-template-columns: 1fr !important; gap: var(--space-6) !important; }
   .home2-app-buttons { flex-direction: column !important; gap: var(--space-3) !important; }
   .home2-app-buttons .btn { width: 100% !important; text-align: center; }
