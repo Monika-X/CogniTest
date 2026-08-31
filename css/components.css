@@ -515,16 +515,22 @@
 
 .footer-inline-form {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-inline-input-wrap {
   display: flex;
   gap: var(--space-2);
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-inline-input {
   flex: 1;
+  min-width: 0;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -533,6 +539,7 @@
   font-size: var(--text-sm);
   outline: none;
   transition: border-color var(--transition-fast);
+  box-sizing: border-box;
 }
 
 .footer-inline-input:focus {
@@ -547,6 +554,10 @@
   text-transform: uppercase;
   border-radius: var(--radius-lg);
   white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Divider Line with Ring Dot in Center */
@@ -625,6 +636,23 @@
   .nav-actions .btn { display: none; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-8); }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-inline-input-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-3) !important;
+    width: 100% !important;
+  }
+  .footer-inline-input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  .footer-inline-btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+  }
 }
 
 @media (max-width: 480px) {
