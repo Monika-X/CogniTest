@@ -531,6 +531,7 @@
   border-radius: var(--radius-full);
   padding: 4px;
   box-sizing: border-box;
+  overflow: hidden;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -549,10 +550,21 @@
   color: var(--text-primary);
   font-size: var(--text-sm);
   box-sizing: border-box;
+  border-radius: var(--radius-full) 0 0 var(--radius-full);
 }
 
 .footer-inline-input::placeholder {
   color: var(--text-muted);
+}
+
+/* Chrome/Safari Autofill override to prevent white box overflow */
+.footer-inline-input:-webkit-autofill,
+.footer-inline-input:-webkit-autofill:hover,
+.footer-inline-input:-webkit-autofill:focus,
+.footer-inline-input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--text-primary) !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(20, 26, 40, 0.95) inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
 }
 
 .footer-inline-btn {
