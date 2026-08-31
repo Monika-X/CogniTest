@@ -702,7 +702,13 @@
     font-size: 0.8rem !important;
   }
   .nav-logo-tagline {
-    display: none !important;
+    display: block !important;
+    font-size: 0.46rem !important;
+    line-height: 1 !important;
+    margin-top: 1px !important;
+    opacity: 0.85 !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.02em !important;
   }
   .nav-logo-icon {
     width: 24px !important;
